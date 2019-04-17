@@ -27,4 +27,11 @@ class AddressGoogleField extends Field
         return $this;
     }
     
+    
+    public function key(string $value): AddressGoogleField
+    {
+        $this->offsetSet('key', $value);
+        return $this;
+    }
+    
     }

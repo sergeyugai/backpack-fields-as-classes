@@ -20,4 +20,11 @@ class WysiwygField extends Field
         return $this;
     }
     
+    
+    public function / view_namespace(string $value): WysiwygField
+    {
+        $this->offsetSet('/ view_namespace', $value);
+        return $this;
+    }
+    
     }

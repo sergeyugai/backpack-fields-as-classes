@@ -34,4 +34,11 @@ class UploadMultipleField extends Field
         return $this;
     }
     
+    
+    public function photos(string $value): UploadMultipleField
+    {
+        $this->offsetSet('photos', $value);
+        return $this;
+    }
+    
     }

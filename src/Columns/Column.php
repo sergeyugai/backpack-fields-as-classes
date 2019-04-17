@@ -1,15 +1,15 @@
 <?php
 
-namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields;
+namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Columns;
 
 /**
- * Class Field
- * This is the base class. It can be used separately to represent ANY field.
+ * Class Column
+ * This is the base class. It can be used separately to represent ANY column.
  *
- * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
+ * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Columns
  */
 
-class Field implements \ArrayAccess
+class Column implements \ArrayAccess
 {
     /**
      * Internal array, which is basically what we are going to provide to whoever accesses us
@@ -18,7 +18,7 @@ class Field implements \ArrayAccess
     protected $result = ['type' => 'text'];
 
     /**
-     * Field constructor.
+     * Column constructor.
      *
      * @param string $name
      * @param string $label
@@ -36,14 +36,9 @@ class Field implements \ArrayAccess
         }
     }
 
-    public function tab(string $value): self {
-        $this->offsetSet('tab', $value);
-        return $this;
-    }
-
     /**
      * With this magic method, we have unlimited usage potential.
-     * Like $field->whateverAttribute('someValue') would turn into ['whateverAttribute' => 'someValue']
+     * Like $col->whateverAttribute('someValue') would turn into ['whateverAttribute' => 'someValue']
      * @param $name
      * @param $arguments
      * @return $this

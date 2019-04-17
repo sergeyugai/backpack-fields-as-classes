@@ -2,7 +2,7 @@
 
 namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Generators;
 
-class FieldsGenerator
+class MainGenerator
 {
     private $docPath;
     /**
@@ -19,7 +19,7 @@ class FieldsGenerator
         $this->docPath = $docPath;
     }
 
-    public function generate() {
+    public function generateFields() {
         $data = file_get_contents($this->docPath);
         $lines = explode("\n", $data);
         $hasStarted = false;
@@ -31,7 +31,25 @@ class FieldsGenerator
             }
         }
         foreach ($this->fields as $fieldName => $fieldDescription) {
-            $this->generateClass($fieldName, $fieldDescription);
+            $this->generateClass($fieldName, $fieldDescription, '/../Fields/', 'Field');
+        }
+    }
+
+    public function generateColumns()
+    {
+        $data = file_get_contents($this->docPath);
+        $lines = explode("\n", $data);
+        $hasStarted = false;
+        foreach ($lines as $l) {
+            if (strpos($l, '### Custom Search Logic for Columns') !== FALSE) break;
+            if ($hasStarted) {
+                $this->parseLine($l);
+            } else {
+                $hasStarted = (strpos($l, '## Default Column Types') !== FALSE);
+            }
+        }
+        foreach ($this->fields as $fieldName => $fieldDescription) {
+            $this->generateClass($fieldName, $fieldDescription, '/../Columns/', 'Column');
         }
     }
 
@@ -53,10 +71,10 @@ class FieldsGenerator
                     $this->fieldItems[$item] = $itemType;
                 }
             } else {
-                $fieldDefinitionRegexp = '/\[\s+\/\/([a-z A-Z0-9_\-,.]+)/';
-                $matches = [];
-                preg_match($fieldDefinitionRegexp, $l, $matches);
-                if (count($matches)) {
+                //$fieldDefinitionRegexp = '/\[\s+\/\/([a-z A-Z0-9_\-,.]+)/';
+                //$matches = [];
+                //preg_match($fieldDefinitionRegexp, $l, $matches);
+                if (strpos($l, '[') !== FALSE) {
                     $this->inFieldDefinition = true;
                     // $this->fieldName = $matches[1];
                     $this->fieldName = $this->fieldNameToConsider;
@@ -65,7 +83,11 @@ class FieldsGenerator
             }
             if (strpos($l, '```') !== FALSE) {
                 $this->inCode = false;
-                $this->fields[$this->fieldName] = $this->fieldItems;
+                if (array_key_exists($this->fieldName, $this->fields)) {
+                    $this->fields[$this->fieldName] = array_merge($this->fields[$this->fieldName], $this->fieldItems);
+                } else {
+                    $this->fields[$this->fieldName] =  $this->fieldItems;
+                }
                 $this->inFieldDefinition = false;
             }
         } else {
@@ -77,17 +99,17 @@ class FieldsGenerator
         }
     }
 
-    private function generateClass(string $fieldName, array $fieldDescription)
+    private function generateClass(string $fieldName, array $fieldDescription, $path, $prefix)
     {
-        $className = $this->getClassNameForFieldName($fieldName);
-        if ($className === 'Field') return;
+        $className = $this->getClassNameForFieldName($fieldName).$prefix;
+        if ($className === $prefix) return;
 
         $classTemplate =<<<TEMPLATE
 <?php
 
-namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields;
+namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\\{$prefix}s;
 
-class {$className} extends Field
+class {$className} extends {$prefix}
 { 
 
     protected \$result = ['type' => '{$fieldName}']; 
@@ -112,7 +134,7 @@ METHOD_TEMPLATE;
 
         $classTemplate .= '}';
 
-        file_put_contents(dirname(__FILE__).'/../Fields/'.$className.'.php', $classTemplate);
+        file_put_contents(dirname(__FILE__).$path.$className.'.php', $classTemplate);
     }
 
     private function getClassNameForFieldName(string $fieldName)
@@ -123,11 +145,12 @@ METHOD_TEMPLATE;
         }
         $trimmed = trim($fieldName);
         if (strpos($trimmed, '_')) {
-            return implode('', array_map(function ($i) { return ucfirst($i); }, explode('_', $trimmed))).'Field';
+            return implode('', array_map(function ($i) { return ucfirst($i); }, explode('_', $trimmed)));
         } else {
-            return ucfirst($trimmed).'Field';
+            return ucfirst($trimmed);
         }
     }
+
 
 
 }

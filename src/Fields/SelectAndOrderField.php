@@ -7,6 +7,13 @@ class SelectAndOrderField extends Field
 
     protected $result = ['type' => 'select_and_order']; 
 
+    public function featured(string $value): SelectAndOrderField
+    {
+        $this->offsetSet('featured', $value);
+        return $this;
+    }
+    
+    
     public function name(string $value): SelectAndOrderField
     {
         $this->offsetSet('name', $value);
@@ -21,7 +28,7 @@ class SelectAndOrderField extends Field
     }
     
     
-    public function options(array $value): SelectAndOrderField
+    public function options(string $value): SelectAndOrderField
     {
         $this->offsetSet('options', $value);
         return $this;
@@ -31,13 +38,6 @@ class SelectAndOrderField extends Field
     public function 1(string $value): SelectAndOrderField
     {
         $this->offsetSet('1', $value);
-        return $this;
-    }
-    
-    
-    public function 2(string $value): SelectAndOrderField
-    {
-        $this->offsetSet('2', $value);
         return $this;
     }
     
