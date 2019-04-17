@@ -34,6 +34,7 @@ Well, for the following benefits:
 2. Readability can be improved (since you can subclass my classes and add some sugar syntax)
 3. When building your own views for fields, you can use $field as object, rather than array, therefore
 you can implement your own helper methods here.
+4. Autogeneration of fields - yeah, we autogenerate those, I did not write actual fields manually.
 
 ## Install
 
@@ -74,6 +75,15 @@ class SomeCrudController extends CrudController
     }
 }
 ```
+
+**Important** - pretty much all the fields and columns are automatically generated from backpack's docs.
+Which gives us benefit of speed (I would kill myself if I had to write each field manually), but there is a chance
+that some of the fields did not get generated well - either help me by issuing a PR or extend the field in your
+project and implement/override methods.
+
+Also, this is something I wrote quick-and-dirty for my own usage. If community shows (unlikely) interest, I'll be happy
+to improve the package, but for my current purposes this whole thing is more than enough to get running.
+
 
 ## What is supported?
 
