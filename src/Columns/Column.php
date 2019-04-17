@@ -110,4 +110,8 @@ class Column implements \ArrayAccess
     {
         unset($this->result[$offset]);
     }
+
+    public function asArray(): array {
+        return $this->result;
+    }
 }
