@@ -1,0 +1,32 @@
+{
+  "name": "sergeyugai/backpack-fields-as-classes",
+  "type": "library",
+  "description": "Package allows to add fields/columns/etc to Laravel Backpack while having them as classes",
+  "keywords": [
+    "laravel",
+    "backpack",
+    "fields",
+    "columns"
+  ],
+  "homepage": "https://github.com/sergeyugai/backpack-fields-as-classes",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Sergey Yugai",
+      "email": "sergey@sergeyugai.com",
+      "homepage": "https://sergeyugai.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "~7.1"
+  },
+  "require-dev": {
+
+  },
+  "autoload": {
+    "psr-4": {
+      "SergeYugai\\Laravel\\Backpack\\FieldsAsClasses\\": "src"
+    }
+  }
+}
