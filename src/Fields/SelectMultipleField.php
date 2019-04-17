@@ -49,7 +49,7 @@ class SelectMultipleField extends Field
     }
     
     
-    public function options(string $value): SelectMultipleField
+    public function options( $value): SelectMultipleField
     {
         $this->offsetSet('options', $value);
         return $this;

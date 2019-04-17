@@ -67,8 +67,14 @@ class MainGenerator
                         $itemType = 'array';
                     } elseif (strpos($bits[1], 'true') !== FALSE || strpos($bits[1], 'false') !== FALSE) {
                         $itemType = 'bool';
+                    } elseif (strpos($bits[1], 'function ') !== FALSE) {
+                        $itemType = ''; // callback
                     }
-                    $this->fieldItems[$item] = $itemType;
+                    if (array_key_exists($item, $this->fieldItems)) {
+                        $this->fieldItems[$item] = '';
+                    } else {
+                        $this->fieldItems[$item] = $itemType;
+                    }
                 }
             } else {
                 //$fieldDefinitionRegexp = '/\[\s+\/\/([a-z A-Z0-9_\-,.]+)/';

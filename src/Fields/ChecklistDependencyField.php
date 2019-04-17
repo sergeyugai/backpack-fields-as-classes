@@ -14,21 +14,21 @@ class ChecklistDependencyField extends Field
     }
     
     
-    public function label(string $value): ChecklistDependencyField
+    public function label( $value): ChecklistDependencyField
     {
         $this->offsetSet('label', $value);
         return $this;
     }
     
     
-    public function name(string $value): ChecklistDependencyField
+    public function name( $value): ChecklistDependencyField
     {
         $this->offsetSet('name', $value);
         return $this;
     }
     
     
-    public function entity(string $value): ChecklistDependencyField
+    public function entity( $value): ChecklistDependencyField
     {
         $this->offsetSet('entity', $value);
         return $this;
@@ -42,28 +42,28 @@ class ChecklistDependencyField extends Field
     }
     
     
-    public function attribute(string $value): ChecklistDependencyField
+    public function attribute( $value): ChecklistDependencyField
     {
         $this->offsetSet('attribute', $value);
         return $this;
     }
     
     
-    public function model(string $value): ChecklistDependencyField
+    public function model( $value): ChecklistDependencyField
     {
         $this->offsetSet('model', $value);
         return $this;
     }
     
     
-    public function pivot(bool $value): ChecklistDependencyField
+    public function pivot( $value): ChecklistDependencyField
     {
         $this->offsetSet('pivot', $value);
         return $this;
     }
     
     
-    public function number_columns(string $value): ChecklistDependencyField
+    public function number_columns( $value): ChecklistDependencyField
     {
         $this->offsetSet('number_columns', $value);
         return $this;

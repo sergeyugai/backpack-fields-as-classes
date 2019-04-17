@@ -63,7 +63,7 @@ class TextField extends Field
     }
     
     
-    public function class(string $value): TextField
+    public function class( $value): TextField
     {
         $this->offsetSet('class', $value);
         return $this;

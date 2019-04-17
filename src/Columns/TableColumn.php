@@ -7,7 +7,7 @@ class TableColumn extends Column
 
     protected $result = ['type' => 'table']; 
 
-    public function name(string $value): TableColumn
+    public function name( $value): TableColumn
     {
         $this->offsetSet('name', $value);
         return $this;

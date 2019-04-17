@@ -56,7 +56,7 @@ class Select2MultipleField extends Field
     }
     
     
-    public function options(string $value): Select2MultipleField
+    public function options( $value): Select2MultipleField
     {
         $this->offsetSet('options', $value);
         return $this;

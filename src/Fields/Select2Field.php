@@ -42,7 +42,7 @@ class Select2Field extends Field
     }
     
     
-    public function options(string $value): Select2Field
+    public function options( $value): Select2Field
     {
         $this->offsetSet('options', $value);
         return $this;

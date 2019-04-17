@@ -7,7 +7,7 @@ class TableField extends Field
 
     protected $result = ['type' => 'table']; 
 
-    public function name(string $value): TableField
+    public function name( $value): TableField
     {
         $this->offsetSet('name', $value);
         return $this;
