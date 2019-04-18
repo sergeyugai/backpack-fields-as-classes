@@ -27,4 +27,5 @@ class ViewColumn extends Column
         return $this;
     }
     
-    }
+    
+}

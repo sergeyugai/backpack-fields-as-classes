@@ -27,4 +27,5 @@ class DateColumn extends Column
         return $this;
     }
     
-    }
+    
+}

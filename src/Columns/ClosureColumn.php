@@ -21,10 +21,11 @@ class ClosureColumn extends Column
     }
     
     
-    public function function(string $value): ClosureColumn
+    public function function($value): ClosureColumn
     {
         $this->offsetSet('function', $value);
         return $this;
     }
     
-    }
+    
+}

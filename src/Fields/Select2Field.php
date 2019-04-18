@@ -4,7 +4,8 @@ namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields;
 
 class Select2Field extends Field
 { 
-    protected $result = ['type' => 'select2'];
+
+    protected $result = ['type' => 'select2']; 
 
     public function label(string $value): Select2Field
     {
@@ -41,10 +42,11 @@ class Select2Field extends Field
     }
     
     
-    public function options( $value): Select2Field
+    public function options($value): Select2Field
     {
         $this->offsetSet('options', $value);
         return $this;
     }
     
-    }
+    
+}

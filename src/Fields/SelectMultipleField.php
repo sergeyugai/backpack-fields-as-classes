@@ -5,7 +5,7 @@ namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields;
 class SelectMultipleField extends Field
 { 
 
-    protected $result = ['type' => 'select_multiple (n-n relationship)']; 
+    protected $result = ['type' => 'select_multiple']; 
 
     public function label(string $value): SelectMultipleField
     {
@@ -42,17 +42,18 @@ class SelectMultipleField extends Field
     }
     
     
-    public function pivot(bool $value): SelectMultipleField
+    public function pivot(bool $value = true): SelectMultipleField
     {
         $this->offsetSet('pivot', $value);
         return $this;
     }
     
     
-    public function options( $value): SelectMultipleField
+    public function options($value): SelectMultipleField
     {
         $this->offsetSet('options', $value);
         return $this;
     }
     
-    }
+    
+}

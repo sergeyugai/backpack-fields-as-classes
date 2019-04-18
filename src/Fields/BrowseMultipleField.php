@@ -21,7 +21,7 @@ class BrowseMultipleField extends Field
     }
     
     
-    public function multiple(bool $value): BrowseMultipleField
+    public function multiple(bool $value = true): BrowseMultipleField
     {
         $this->offsetSet('multiple', $value);
         return $this;
@@ -29,9 +29,16 @@ class BrowseMultipleField extends Field
     
     
     public function mime_types(array $value): BrowseMultipleField
-    {
+    {            
+        // necessary conversion    
+        $arrayable = new Arrayable();
+        foreach ($value as $key => $val) {
+            $arrayable[$key] = $val;
+        }
+        $value = $arrayable;
         $this->offsetSet('mime_types', $value);
         return $this;
     }
     
-    }
+    
+}

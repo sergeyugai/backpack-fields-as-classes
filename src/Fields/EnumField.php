@@ -20,4 +20,5 @@ class EnumField extends Field
         return $this;
     }
     
-    }
+    
+}

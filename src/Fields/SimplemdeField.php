@@ -22,44 +22,51 @@ class SimplemdeField extends Field
     
     
     public function simplemdeAttributes(array $value): SimplemdeField
-    {
+    {            
+        // necessary conversion    
+        $arrayable = new Arrayable();
+        foreach ($value as $key => $val) {
+            $arrayable[$key] = $val;
+        }
+        $value = $arrayable;
         $this->offsetSet('simplemdeAttributes', $value);
         return $this;
     }
     
     
-    public function promptURLs(bool $value): SimplemdeField
+    public function promptURLs(bool $value = true): SimplemdeField
     {
         $this->offsetSet('promptURLs', $value);
         return $this;
     }
     
     
-    public function status(bool $value): SimplemdeField
+    public function status(bool $value = true): SimplemdeField
     {
         $this->offsetSet('status', $value);
         return $this;
     }
     
     
-    public function spellChecker(bool $value): SimplemdeField
+    public function spellChecker(bool $value = true): SimplemdeField
     {
         $this->offsetSet('spellChecker', $value);
         return $this;
     }
     
     
-    public function forceSync(bool $value): SimplemdeField
+    public function forceSync(bool $value = true): SimplemdeField
     {
         $this->offsetSet('forceSync', $value);
         return $this;
     }
     
     
-    public function simplemdeAttributesRaw(string $value): SimplemdeField
+    public function simplemdeAttributesRaw($value): SimplemdeField
     {
         $this->offsetSet('simplemdeAttributesRaw', $value);
         return $this;
     }
     
-    }
+    
+}

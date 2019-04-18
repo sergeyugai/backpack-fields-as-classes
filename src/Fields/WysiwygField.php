@@ -27,4 +27,5 @@ class WysiwygField extends Field
         return $this;
     }
     
-    }
+    
+}

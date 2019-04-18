@@ -28,24 +28,25 @@ class Base64ImageField extends Field
     }
     
     
-    public function aspect_ratio(string $value): Base64ImageField
+    public function aspect_ratio($value): Base64ImageField
     {
         $this->offsetSet('aspect_ratio', $value);
         return $this;
     }
     
     
-    public function crop(bool $value): Base64ImageField
+    public function crop(bool $value = true): Base64ImageField
     {
         $this->offsetSet('crop', $value);
         return $this;
     }
     
     
-    public function src(string $value): Base64ImageField
+    public function src($value): Base64ImageField
     {
         $this->offsetSet('src', $value);
         return $this;
     }
     
-    }
+    
+}

@@ -4,7 +4,6 @@ namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Generators;
 
 class MainGenerator
 {
-    private $docPath;
     /**
      * @var array
      */
@@ -13,88 +12,71 @@ class MainGenerator
      * @var bool
      */
     private $inCode;
+    private $fieldItems;
+    /**
+     * @var bool
+     */
+    private $inFieldDefinition;
+    private $fieldName;
+    private $fieldNameToConsider;
 
-    public function __construct($docPath)
-    {
-        $this->docPath = $docPath;
+    public function generateFields($docPath): void {
+        $this->parseAndRun($docPath, function () {
+            foreach ($this->fields as $fieldName => $fieldDescription) {
+                $this->generateClass($fieldName, $fieldDescription, '/../Fields/', 'Field');
+            }
+        }, '#### Split Fields into Tabs');
     }
 
-    public function generateFields() {
-        $data = file_get_contents($this->docPath);
+    public function generateColumns($docPath): void
+    {
+        $this->parseAndRun($docPath, function () {
+            foreach ($this->fields as $fieldName => $fieldDescription) {
+                $this->generateClass($fieldName, $fieldDescription, '/../Columns/', 'Column');
+            }
+        }, '## Default Column Types', '### Custom Search Logic for Columns');
+    }
+
+    public function parseAndRun($docPath, $callback, $parseFromLine = null, $parseTillLine = null) {
+        $data = file_get_contents($docPath);
         $lines = explode("\n", $data);
         $hasStarted = false;
+        $this->fields = [];
+        $this->inCode = false;
+        $this->fieldItems = [];
+        $this->inFieldDefinition = false;
+        $this->fieldName = $this->fieldNameToConsider = '';
         foreach ($lines as $l) {
+            if (! is_null($parseTillLine)) {
+                if (strpos($l, $parseTillLine) !== FALSE) {
+                    break;
+                }
+            }
             if ($hasStarted) {
                 $this->parseLine($l);
             } else {
-                $hasStarted = (strpos($l, '#### Split Fields into Tabs') !== FALSE);
+                $hasStarted = (strpos($l, $parseFromLine) !== FALSE);
             }
         }
-        foreach ($this->fields as $fieldName => $fieldDescription) {
-            $this->generateClass($fieldName, $fieldDescription, '/../Fields/', 'Field');
-        }
+
+        $callback();
     }
 
-    public function generateColumns()
-    {
-        $data = file_get_contents($this->docPath);
-        $lines = explode("\n", $data);
-        $hasStarted = false;
-        foreach ($lines as $l) {
-            if (strpos($l, '### Custom Search Logic for Columns') !== FALSE) break;
-            if ($hasStarted) {
-                $this->parseLine($l);
-            } else {
-                $hasStarted = (strpos($l, '## Default Column Types') !== FALSE);
-            }
-        }
-        foreach ($this->fields as $fieldName => $fieldDescription) {
-            $this->generateClass($fieldName, $fieldDescription, '/../Columns/', 'Column');
-        }
-    }
-
-    private function parseLine(string $l)
+    private function parseLine(string $l):void
     {
         if ($this->inCode) {
             if ($this->inFieldDefinition) {
-                $trimmed = trim($l);
-                if (strpos($trimmed, '=>')) {
-                    $bits = explode('=>', $trimmed);
-                    $item = trim(str_replace("'", "", $bits[0]));
-                    $item = trim(str_replace('//', '', $item));
-                    $itemType = 'string';
-                    if (strpos($bits[1], '[') !== FALSE) {
-                        $itemType = 'array';
-                    } elseif (strpos($bits[1], 'true') !== FALSE || strpos($bits[1], 'false') !== FALSE) {
-                        $itemType = 'bool';
-                    } elseif (strpos($bits[1], 'function ') !== FALSE) {
-                        $itemType = ''; // callback
-                    }
-                    if (array_key_exists($item, $this->fieldItems)) {
-                        $this->fieldItems[$item] = '';
-                    } else {
-                        $this->fieldItems[$item] = $itemType;
-                    }
-                }
+                $this->addFieldItemFromLine($l);
             } else {
-                //$fieldDefinitionRegexp = '/\[\s+\/\/([a-z A-Z0-9_\-,.]+)/';
-                //$matches = [];
-                //preg_match($fieldDefinitionRegexp, $l, $matches);
                 if (strpos($l, '[') !== FALSE) {
                     $this->inFieldDefinition = true;
-                    // $this->fieldName = $matches[1];
                     $this->fieldName = $this->fieldNameToConsider;
                     $this->fieldItems = [];
                 }
             }
             if (strpos($l, '```') !== FALSE) {
                 $this->inCode = false;
-                if (array_key_exists($this->fieldName, $this->fields)) {
-                    $this->fields[$this->fieldName] = array_merge($this->fields[$this->fieldName], $this->fieldItems);
-                } else {
-                    $this->fields[$this->fieldName] =  $this->fieldItems;
-                }
-                $this->inFieldDefinition = false;
+                $this->finalizeFieldDefinition();
             }
         } else {
             $this->inCode = strpos($l, '```php') !== FALSE;
@@ -108,6 +90,15 @@ class MainGenerator
     private function generateClass(string $fieldName, array $fieldDescription, $path, $prefix)
     {
         $className = $this->getClassNameForFieldName($fieldName).$prefix;
+
+        $posOfBracket = strpos($fieldName, '(');
+        $properFieldType = $fieldName;
+        if ($posOfBracket) {
+            $properFieldType = substr($fieldName, 0, $posOfBracket - 1);
+        }
+        $properFieldType = trim($properFieldType);
+
+
         if ($className === $prefix) return;
 
         $classTemplate =<<<TEMPLATE
@@ -118,16 +109,31 @@ namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\\{$prefix}s;
 class {$className} extends {$prefix}
 { 
 
-    protected \$result = ['type' => '{$fieldName}']; 
+    protected \$result = ['type' => '{$properFieldType}']; 
 
 TEMPLATE;
 
         foreach ($fieldDescription as $fieldName => $fieldType) {
             if ($fieldName != 'type') {
+
+                $defaultValue = $fieldType == 'bool' ? ' = true' : '';
+                $extra_code = '';
+                if ($fieldType == 'array') {
+                    $extra_code=<<<EXTRA
+            
+        // necessary conversion    
+        \$arrayable = new Arrayable();
+        foreach (\$value as \$key => \$val) {
+            \$arrayable[\$key] = \$val;
+        }
+        \$value = \$arrayable;
+EXTRA;
+                }
+                $fieldType = strlen($fieldType)? $fieldType.' ' : $fieldType;
                 $classTemplate .= <<<METHOD_TEMPLATE
 
-    public function {$fieldName}({$fieldType} \$value): {$className}
-    {
+    public function {$fieldName}({$fieldType}\$value{$defaultValue}): {$className}
+    {{$extra_code}
         \$this->offsetSet('{$fieldName}', \$value);
         return \$this;
     }
@@ -138,7 +144,7 @@ METHOD_TEMPLATE;
             }
         }
 
-        $classTemplate .= '}';
+        $classTemplate .= "\n}";
 
         file_put_contents(dirname(__FILE__).$path.$className.'.php', $classTemplate);
     }
@@ -157,6 +163,40 @@ METHOD_TEMPLATE;
         }
     }
 
+    private function addFieldItemFromLine(string $l): void
+    {
+        $trimmed = trim($l);
+        if (strpos($trimmed, '=>')) {
+            $bits = explode('=>', $trimmed);
+            $item = trim(str_replace("'", "", $bits[0]));
+            $item = trim(str_replace('//', '', $item));
+            $itemType = '';
+            if (strpos($bits[1], '[') !== FALSE) {
+                $itemType = 'array';
+            } elseif (strpos($bits[1], 'true') !== FALSE || strpos($bits[1], 'false') !== FALSE) {
+                $itemType = 'bool';
+            } elseif (strpos($bits[1], 'function ') !== FALSE) {
+                $itemType = ''; // callback
+            } elseif (strpos($bits[1], '\'') !== FALSE || strpos($bits[1], '"') !== FALSE) {
+                $itemType = 'string';
+            }
+            if (array_key_exists($item, $this->fieldItems)) {
+                $this->fieldItems[$item] = '';
+            } else {
+                $this->fieldItems[$item] = $itemType;
+            }
+        }
+    }
+
+    private function finalizeFieldDefinition():void
+    {
+        if (array_key_exists($this->fieldName, $this->fields)) {
+            $this->fields[$this->fieldName] = array_merge($this->fields[$this->fieldName], $this->fieldItems);
+        } else {
+            $this->fields[$this->fieldName] =  $this->fieldItems;
+        }
+        $this->inFieldDefinition = false;
+    }
 
 
 }

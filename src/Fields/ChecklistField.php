@@ -42,10 +42,11 @@ class ChecklistField extends Field
     }
     
     
-    public function pivot(bool $value): ChecklistField
+    public function pivot(bool $value = true): ChecklistField
     {
         $this->offsetSet('pivot', $value);
         return $this;
     }
     
-    }
+    
+}

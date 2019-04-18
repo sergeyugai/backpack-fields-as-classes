@@ -29,16 +29,23 @@ class ModelFunctionColumn extends Column
     
     
     public function function_parameters(array $value): ModelFunctionColumn
-    {
+    {            
+        // necessary conversion    
+        $arrayable = new Arrayable();
+        foreach ($value as $key => $val) {
+            $arrayable[$key] = $val;
+        }
+        $value = $arrayable;
         $this->offsetSet('function_parameters', $value);
         return $this;
     }
     
     
-    public function limit(string $value): ModelFunctionColumn
+    public function limit($value): ModelFunctionColumn
     {
         $this->offsetSet('limit', $value);
         return $this;
     }
     
-    }
+    
+}

@@ -20,4 +20,5 @@ class BrowseField extends Field
         return $this;
     }
     
-    }
+    
+}

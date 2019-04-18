@@ -27,4 +27,5 @@ class ArrayCountColumn extends Column
         return $this;
     }
     
-    }
+    
+}

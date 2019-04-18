@@ -22,9 +22,16 @@ class ColorPickerField extends Field
     
     
     public function color_picker_options(array $value): ColorPickerField
-    {
+    {            
+        // necessary conversion    
+        $arrayable = new Arrayable();
+        foreach ($value as $key => $val) {
+            $arrayable[$key] = $val;
+        }
+        $value = $arrayable;
         $this->offsetSet('color_picker_options', $value);
         return $this;
     }
     
-    }
+    
+}

@@ -20,4 +20,5 @@ class CheckColumn extends Column
         return $this;
     }
     
-    }
+    
+}

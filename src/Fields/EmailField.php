@@ -20,4 +20,5 @@ class EmailField extends Field
         return $this;
     }
     
-    }
+    
+}

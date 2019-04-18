@@ -22,13 +22,19 @@ class Select2FromArrayField extends Field
     
     
     public function options(array $value): Select2FromArrayField
-    {
+    {            
+        // necessary conversion    
+        $arrayable = new Arrayable();
+        foreach ($value as $key => $val) {
+            $arrayable[$key] = $val;
+        }
+        $value = $arrayable;
         $this->offsetSet('options', $value);
         return $this;
     }
     
     
-    public function allows_null(bool $value): Select2FromArrayField
+    public function allows_null(bool $value = true): Select2FromArrayField
     {
         $this->offsetSet('allows_null', $value);
         return $this;
@@ -42,10 +48,11 @@ class Select2FromArrayField extends Field
     }
     
     
-    public function allows_multiple(bool $value): Select2FromArrayField
+    public function allows_multiple(bool $value = true): Select2FromArrayField
     {
         $this->offsetSet('allows_multiple', $value);
         return $this;
     }
     
-    }
+    
+}

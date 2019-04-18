@@ -27,4 +27,5 @@ class IconPickerField extends Field
         return $this;
     }
     
-    }
+    
+}

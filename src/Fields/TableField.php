@@ -7,7 +7,7 @@ class TableField extends Field
 
     protected $result = ['type' => 'table']; 
 
-    public function name( $value): TableField
+    public function name($value): TableField
     {
         $this->offsetSet('name', $value);
         return $this;
@@ -29,7 +29,13 @@ class TableField extends Field
     
     
     public function columns(array $value): TableField
-    {
+    {            
+        // necessary conversion    
+        $arrayable = new Arrayable();
+        foreach ($value as $key => $val) {
+            $arrayable[$key] = $val;
+        }
+        $value = $arrayable;
         $this->offsetSet('columns', $value);
         return $this;
     }
@@ -49,17 +55,18 @@ class TableField extends Field
     }
     
     
-    public function max(string $value): TableField
+    public function max($value): TableField
     {
         $this->offsetSet('max', $value);
         return $this;
     }
     
     
-    public function min(string $value): TableField
+    public function min($value): TableField
     {
         $this->offsetSet('min', $value);
         return $this;
     }
     
-    }
+    
+}

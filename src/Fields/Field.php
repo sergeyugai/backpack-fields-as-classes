@@ -37,6 +37,12 @@ class Field extends Arrayable
         }
     }
 
+    /**
+     * Add field to certain tab
+     *
+     * @param string $value
+     * @return Field
+     */
     public function tab(string $value): self {
         $this->offsetSet('tab', $value);
         return $this;

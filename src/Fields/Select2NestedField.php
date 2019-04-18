@@ -41,4 +41,5 @@ class Select2NestedField extends Field
         return $this;
     }
     
-    }
+    
+}

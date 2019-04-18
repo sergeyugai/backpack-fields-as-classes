@@ -5,7 +5,7 @@ namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields;
 class SelectField extends Field
 { 
 
-    protected $result = ['type' => 'select (1-n relationship)']; 
+    protected $result = ['type' => 'select']; 
 
     public function label(string $value): SelectField
     {
@@ -42,10 +42,11 @@ class SelectField extends Field
     }
     
     
-    public function options( $value): SelectField
+    public function options($value): SelectField
     {
         $this->offsetSet('options', $value);
         return $this;
     }
     
-    }
+    
+}

@@ -21,10 +21,11 @@ class EmailColumn extends Column
     }
     
     
-    public function limit(string $value): EmailColumn
+    public function limit($value): EmailColumn
     {
         $this->offsetSet('limit', $value);
         return $this;
     }
     
-    }
+    
+}

@@ -7,7 +7,7 @@ class TableColumn extends Column
 
     protected $result = ['type' => 'table']; 
 
-    public function name( $value): TableColumn
+    public function name($value): TableColumn
     {
         $this->offsetSet('name', $value);
         return $this;
@@ -22,7 +22,13 @@ class TableColumn extends Column
     
     
     public function columns(array $value): TableColumn
-    {
+    {            
+        // necessary conversion    
+        $arrayable = new Arrayable();
+        foreach ($value as $key => $val) {
+            $arrayable[$key] = $val;
+        }
+        $value = $arrayable;
         $this->offsetSet('columns', $value);
         return $this;
     }
@@ -48,4 +54,5 @@ class TableColumn extends Column
         return $this;
     }
     
-    }
+    
+}

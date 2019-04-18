@@ -20,4 +20,5 @@ class VideoField extends Field
         return $this;
     }
     
-    }
+    
+}

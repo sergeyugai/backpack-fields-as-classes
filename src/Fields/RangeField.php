@@ -20,4 +20,5 @@ class RangeField extends Field
         return $this;
     }
     
-    }
+    
+}

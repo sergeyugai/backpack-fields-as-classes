@@ -22,27 +22,39 @@ class CkeditorField extends Field
     
     
     public function extra_plugins(array $value): CkeditorField
-    {
+    {            
+        // necessary conversion    
+        $arrayable = new Arrayable();
+        foreach ($value as $key => $val) {
+            $arrayable[$key] = $val;
+        }
+        $value = $arrayable;
         $this->offsetSet('extra_plugins', $value);
         return $this;
     }
     
     
     public function options(array $value): CkeditorField
-    {
+    {            
+        // necessary conversion    
+        $arrayable = new Arrayable();
+        foreach ($value as $key => $val) {
+            $arrayable[$key] = $val;
+        }
+        $value = $arrayable;
         $this->offsetSet('options', $value);
         return $this;
     }
     
     
-    public function autoGrow_minHeight(string $value): CkeditorField
+    public function autoGrow_minHeight($value): CkeditorField
     {
         $this->offsetSet('autoGrow_minHeight', $value);
         return $this;
     }
     
     
-    public function autoGrow_bottomSpace(string $value): CkeditorField
+    public function autoGrow_bottomSpace($value): CkeditorField
     {
         $this->offsetSet('autoGrow_bottomSpace', $value);
         return $this;
@@ -55,4 +67,5 @@ class CkeditorField extends Field
         return $this;
     }
     
-    }
+    
+}

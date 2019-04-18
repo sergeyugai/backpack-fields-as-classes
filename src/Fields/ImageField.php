@@ -21,21 +21,21 @@ class ImageField extends Field
     }
     
     
-    public function upload(bool $value): ImageField
+    public function upload(bool $value = true): ImageField
     {
         $this->offsetSet('upload', $value);
         return $this;
     }
     
     
-    public function crop(bool $value): ImageField
+    public function crop(bool $value = true): ImageField
     {
         $this->offsetSet('crop', $value);
         return $this;
     }
     
     
-    public function aspect_ratio(string $value): ImageField
+    public function aspect_ratio($value): ImageField
     {
         $this->offsetSet('aspect_ratio', $value);
         return $this;
@@ -55,4 +55,5 @@ class ImageField extends Field
         return $this;
     }
     
-    }
+    
+}

@@ -20,4 +20,5 @@ class ViewField extends Field
         return $this;
     }
     
-    }
+    
+}

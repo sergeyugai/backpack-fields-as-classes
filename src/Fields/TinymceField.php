@@ -20,4 +20,5 @@ class TinymceField extends Field
         return $this;
     }
     
-    }
+    
+}

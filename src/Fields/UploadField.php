@@ -21,7 +21,7 @@ class UploadField extends Field
     }
     
     
-    public function upload(bool $value): UploadField
+    public function upload(bool $value = true): UploadField
     {
         $this->offsetSet('upload', $value);
         return $this;
@@ -34,4 +34,5 @@ class UploadField extends Field
         return $this;
     }
     
-    }
+    
+}

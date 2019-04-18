@@ -41,4 +41,5 @@ class SelectColumn extends Column
         return $this;
     }
     
-    }
+    
+}

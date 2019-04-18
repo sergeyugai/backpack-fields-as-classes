@@ -21,31 +21,32 @@ class CheckboxColumn extends Column
     }
     
     
-    public function priority(string $value): CheckboxColumn
+    public function priority($value): CheckboxColumn
     {
         $this->offsetSet('priority', $value);
         return $this;
     }
     
     
-    public function searchLogic(bool $value): CheckboxColumn
+    public function searchLogic(bool $value = true): CheckboxColumn
     {
         $this->offsetSet('searchLogic', $value);
         return $this;
     }
     
     
-    public function orderable(bool $value): CheckboxColumn
+    public function orderable(bool $value = true): CheckboxColumn
     {
         $this->offsetSet('orderable', $value);
         return $this;
     }
     
     
-    public function visibleInModal(bool $value): CheckboxColumn
+    public function visibleInModal(bool $value = true): CheckboxColumn
     {
         $this->offsetSet('visibleInModal', $value);
         return $this;
     }
     
-    }
+    
+}

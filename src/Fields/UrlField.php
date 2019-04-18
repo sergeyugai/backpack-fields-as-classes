@@ -20,4 +20,5 @@ class UrlField extends Field
         return $this;
     }
     
-    }
+    
+}

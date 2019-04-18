@@ -7,6 +7,7 @@
 require_once 'vendor/autoload.php';
 
 $backpackFieldsDoc = 'https://raw.githubusercontent.com/Laravel-Backpack/Docs/master/3.5/crud-fields.md';
-(new \SergeYugai\Laravel\Backpack\FieldsAsClasses\Generators\MainGenerator($backpackFieldsDoc))->generateFields();
-$backpackFieldsDoc = 'https://raw.githubusercontent.com/Laravel-Backpack/Docs/master/3.5/crud-columns.md';
-(new \SergeYugai\Laravel\Backpack\FieldsAsClasses\Generators\MainGenerator($backpackFieldsDoc))->generateColumns();
+$backpackColumnsDoc = 'https://raw.githubusercontent.com/Laravel-Backpack/Docs/master/3.5/crud-columns.md';
+$generator = new \SergeYugai\Laravel\Backpack\FieldsAsClasses\Generators\MainGenerator();
+$generator->generateFields($backpackFieldsDoc);
+$generator->generateColumns($backpackColumnsDoc);

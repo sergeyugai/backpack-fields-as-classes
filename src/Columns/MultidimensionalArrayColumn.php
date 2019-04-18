@@ -27,4 +27,5 @@ class MultidimensionalArrayColumn extends Column
         return $this;
     }
     
-    }
+    
+}

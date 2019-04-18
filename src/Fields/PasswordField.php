@@ -20,4 +20,5 @@ class PasswordField extends Field
         return $this;
     }
     
-    }
+    
+}

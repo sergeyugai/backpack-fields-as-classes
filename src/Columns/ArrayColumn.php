@@ -20,4 +20,5 @@ class ArrayColumn extends Column
         return $this;
     }
     
-    }
+    
+}

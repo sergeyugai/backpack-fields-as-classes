@@ -21,7 +21,7 @@ class AddressGoogleField extends Field
     }
     
     
-    public function store_as_json(bool $value): AddressGoogleField
+    public function store_as_json(bool $value = true): AddressGoogleField
     {
         $this->offsetSet('store_as_json', $value);
         return $this;
@@ -34,4 +34,5 @@ class AddressGoogleField extends Field
         return $this;
     }
     
-    }
+    
+}

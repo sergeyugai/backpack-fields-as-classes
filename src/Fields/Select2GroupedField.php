@@ -55,4 +55,5 @@ class Select2GroupedField extends Field
         return $this;
     }
     
-    }
+    
+}

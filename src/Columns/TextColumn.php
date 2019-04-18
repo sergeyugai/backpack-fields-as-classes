@@ -35,10 +35,11 @@ class TextColumn extends Column
     }
     
     
-    public function limit(string $value): TextColumn
+    public function limit($value): TextColumn
     {
         $this->offsetSet('limit', $value);
         return $this;
     }
     
-    }
+    
+}

@@ -20,4 +20,5 @@ class VideoColumn extends Column
         return $this;
     }
     
-    }
+    
+}

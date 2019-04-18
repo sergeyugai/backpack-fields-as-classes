@@ -21,10 +21,11 @@ class AddressAlgoliaField extends Field
     }
     
     
-    public function store_as_json(bool $value): AddressAlgoliaField
+    public function store_as_json(bool $value = true): AddressAlgoliaField
     {
         $this->offsetSet('store_as_json', $value);
         return $this;
     }
     
-    }
+    
+}

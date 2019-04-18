@@ -35,10 +35,11 @@ class NumberColumn extends Column
     }
     
     
-    public function decimals(string $value): NumberColumn
+    public function decimals($value): NumberColumn
     {
         $this->offsetSet('decimals', $value);
         return $this;
     }
     
-    }
+    
+}

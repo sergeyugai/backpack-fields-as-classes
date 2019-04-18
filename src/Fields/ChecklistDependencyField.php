@@ -8,27 +8,33 @@ class ChecklistDependencyField extends Field
     protected $result = ['type' => 'checklist_dependency']; 
 
     public function primary(array $value): ChecklistDependencyField
-    {
+    {            
+        // necessary conversion    
+        $arrayable = new Arrayable();
+        foreach ($value as $key => $val) {
+            $arrayable[$key] = $val;
+        }
+        $value = $arrayable;
         $this->offsetSet('primary', $value);
         return $this;
     }
     
     
-    public function label( $value): ChecklistDependencyField
+    public function label($value): ChecklistDependencyField
     {
         $this->offsetSet('label', $value);
         return $this;
     }
     
     
-    public function name( $value): ChecklistDependencyField
+    public function name($value): ChecklistDependencyField
     {
         $this->offsetSet('name', $value);
         return $this;
     }
     
     
-    public function entity( $value): ChecklistDependencyField
+    public function entity($value): ChecklistDependencyField
     {
         $this->offsetSet('entity', $value);
         return $this;
@@ -42,28 +48,28 @@ class ChecklistDependencyField extends Field
     }
     
     
-    public function attribute( $value): ChecklistDependencyField
+    public function attribute($value): ChecklistDependencyField
     {
         $this->offsetSet('attribute', $value);
         return $this;
     }
     
     
-    public function model( $value): ChecklistDependencyField
+    public function model($value): ChecklistDependencyField
     {
         $this->offsetSet('model', $value);
         return $this;
     }
     
     
-    public function pivot( $value): ChecklistDependencyField
+    public function pivot($value): ChecklistDependencyField
     {
         $this->offsetSet('pivot', $value);
         return $this;
     }
     
     
-    public function number_columns( $value): ChecklistDependencyField
+    public function number_columns($value): ChecklistDependencyField
     {
         $this->offsetSet('number_columns', $value);
         return $this;
@@ -71,7 +77,13 @@ class ChecklistDependencyField extends Field
     
     
     public function secondary(array $value): ChecklistDependencyField
-    {
+    {            
+        // necessary conversion    
+        $arrayable = new Arrayable();
+        foreach ($value as $key => $val) {
+            $arrayable[$key] = $val;
+        }
+        $value = $arrayable;
         $this->offsetSet('secondary', $value);
         return $this;
     }
@@ -83,4 +95,5 @@ class ChecklistDependencyField extends Field
         return $this;
     }
     
-    }
+    
+}

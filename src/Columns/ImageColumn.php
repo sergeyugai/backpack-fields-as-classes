@@ -41,4 +41,5 @@ class ImageColumn extends Column
         return $this;
     }
     
-    }
+    
+}

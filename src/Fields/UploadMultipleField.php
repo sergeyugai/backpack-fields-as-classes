@@ -21,7 +21,7 @@ class UploadMultipleField extends Field
     }
     
     
-    public function upload(bool $value): UploadMultipleField
+    public function upload(bool $value = true): UploadMultipleField
     {
         $this->offsetSet('upload', $value);
         return $this;
@@ -41,4 +41,5 @@ class UploadMultipleField extends Field
         return $this;
     }
     
-    }
+    
+}

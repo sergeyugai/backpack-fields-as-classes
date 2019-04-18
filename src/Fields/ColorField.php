@@ -20,4 +20,5 @@ class ColorField extends Field
         return $this;
     }
     
-    }
+    
+}

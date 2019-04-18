@@ -22,7 +22,13 @@ class NumberField extends Field
     
     
     public function attributes(array $value): NumberField
-    {
+    {            
+        // necessary conversion    
+        $arrayable = new Arrayable();
+        foreach ($value as $key => $val) {
+            $arrayable[$key] = $val;
+        }
+        $value = $arrayable;
         $this->offsetSet('attributes', $value);
         return $this;
     }
@@ -41,4 +47,5 @@ class NumberField extends Field
         return $this;
     }
     
-    }
+    
+}

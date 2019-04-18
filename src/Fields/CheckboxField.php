@@ -20,4 +20,5 @@ class CheckboxField extends Field
         return $this;
     }
     
-    }
+    
+}

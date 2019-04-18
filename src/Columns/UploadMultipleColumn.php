@@ -27,4 +27,5 @@ class UploadMultipleColumn extends Column
         return $this;
     }
     
-    }
+    
+}

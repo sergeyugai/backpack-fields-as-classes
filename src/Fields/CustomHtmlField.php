@@ -20,4 +20,5 @@ class CustomHtmlField extends Field
         return $this;
     }
     
-    }
+    
+}
