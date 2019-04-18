@@ -4,13 +4,18 @@ namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields;
 
 class HiddenField extends Field
 { 
-
-    protected $result = ['type' => 'hidden']; 
+    protected $result = ['type' => 'hidden', 'wrapperAttributes' => ['class' => 'hidden']];
 
     public function name(string $value): HiddenField
     {
         $this->offsetSet('name', $value);
         return $this;
     }
-    
+
+    public function value(string $value): HiddenField
+    {
+        $this->offsetSet('name', $value);
+        return $this;
     }
+
+}

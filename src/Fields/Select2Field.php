@@ -4,8 +4,7 @@ namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields;
 
 class Select2Field extends Field
 { 
-
-    protected $result = ['type' => 'select2 (1-n relationship)']; 
+    protected $result = ['type' => 'select2'];
 
     public function label(string $value): Select2Field
     {
