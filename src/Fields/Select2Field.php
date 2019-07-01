@@ -42,6 +42,13 @@ class Select2Field extends Field
     }
     
     
+    public function default($value): Select2Field
+    {
+        $this->offsetSet('default', $value);
+        return $this;
+    }
+    
+    
     public function options($value): Select2Field
     {
         $this->offsetSet('options', $value);

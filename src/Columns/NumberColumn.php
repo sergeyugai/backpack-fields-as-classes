@@ -42,4 +42,18 @@ class NumberColumn extends Column
     }
     
     
+    public function dec_point(string $value): NumberColumn
+    {
+        $this->offsetSet('dec_point', $value);
+        return $this;
+    }
+    
+    
+    public function thousands_sep(string $value): NumberColumn
+    {
+        $this->offsetSet('thousands_sep', $value);
+        return $this;
+    }
+    
+    
 }
