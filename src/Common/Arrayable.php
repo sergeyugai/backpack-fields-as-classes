@@ -2,13 +2,14 @@
 
 namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Common;
 
-class Arrayable implements \ArrayAccess
+class Arrayable implements \ArrayAccess, \Iterator
 {
     /**
      * Internal array, which is basically what we are going to provide to whoever accesses us
      * @var array
      */
     protected $result = [];
+    protected $index = 0;
 
     /**
      * Whether a offset exists
@@ -72,4 +73,73 @@ class Arrayable implements \ArrayAccess
         unset($this->result[$offset]);
     }
 
+    /**
+     * Return the current element
+     * @link https://php.net/manual/en/iterator.current.php
+     * @return mixed Can return any type.
+     * @since 5.0.0
+     */
+    public function current()
+    {
+        $k = array_keys($this->result);
+        $var = $this->result[$k[$this->index]];
+        return $var;
+    }
+
+    /**
+     * Move forward to next element
+     * @link https://php.net/manual/en/iterator.next.php
+     * @return void Any returned value is ignored.
+     * @since 5.0.0
+     */
+    public function next()
+    {
+        $k = array_keys($this->result);
+        if (isset($k[++$this->index])) {
+            $var = $this->result[$k[$this->index]];
+            return $var;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    /**
+     * Return the key of the current element
+     * @link https://php.net/manual/en/iterator.key.php
+     * @return mixed scalar on success, or null on failure.
+     * @since 5.0.0
+     */
+    public function key()
+    {
+        $k = array_keys($this->result);
+        $var = $k[$this->index];
+        return $var;
+    }
+
+    /**
+     * Checks if current position is valid
+     * @link https://php.net/manual/en/iterator.valid.php
+     * @return boolean The return value will be casted to boolean and then evaluated.
+     * Returns true on success or false on failure.
+     * @since 5.0.0
+     */
+    public function valid()
+    {
+        $k = array_keys($this->result);
+        $var = isset($k[$this->index]);
+        return $var;
+    }
+
+    /**
+     * Rewind the Iterator to the first element
+     * @link https://php.net/manual/en/iterator.rewind.php
+     * @return void Any returned value is ignored.
+     * @since 5.0.0
+     */
+    public function rewind()
+    {
+        $this->index = 0;
+    }
 }
