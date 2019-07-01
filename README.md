@@ -5,9 +5,12 @@ declarations-via-array with object-oriented approach. Allows your IDE to help yo
 
 **Requires no changes to existing code** and can be used alongside existing definitions.
 
+Also you can make your code more DRY by using **field collections** which also work as drop-in with current Backpack.
+
 * Code example
 * Quick start
 * Extra perks that you get
+* Collections
 * Rationale behind this
 * Code generation? 
 * What is supported?
@@ -52,6 +55,28 @@ $this->crud->addField(
         ->prefix('1.')
 );
 ```
+
+If you have repeatable code, you could use something cool like this:
+```php
+$this->crud->addFields(
+    FieldCollection::make([
+        TextFields([
+            'name' => 'First name',
+            'surname' => 'Last name',
+            TextField::make('some_prefixed_field')->label('I need special stuff')->prefix('Stuff:'),
+        ])->tab('User'),
+        NumericFields([
+            'visits' => '# Visits',
+            'purchases' => '# Purchases',
+            'profile_views' => '# Views'
+        ])->prefix('#')->suffix(' times')->tab('Stats')
+    ])
+    ->hint('Global hint for all the fields, or something else')
+    ->attributes([...]) // set for all fields in collection
+);
+```
+
+Read about collections below.
 
 ## Quick start
 
@@ -118,6 +143,36 @@ class SomeCrudController extends CrudController
 This way, you can add/remove fields by commenting/uncommenting a method call, and you also get "one method is responsible
 for one field declaration", which may be clever for some methods with complex logic. Also gives your crud setup better
 overview. Then again, its just a matter of taste.
+
+## Collections
+
+One of the biggest issues IMO with readability of Laravel Backpack code is that there are sometimes a lot of repetitive
+things - for instance, if you use tabs, you could have lots of repetitive lines like:
+```php
+    'tab' => 'some_tab'
+```
+which, together with lots of other repetitive stuff, is just not cool.
+
+Well, I decided that it would be cool to create Fields Collections on top of the Fields that I've created.
+The way it works is:
+1. You create a collection either from existing fields or using shorthand methods
+2. And then apply all of the attributes that are the same.
+
+For instance:
+```php
+$this->crud->addFields(
+   FieldsCollection::make()->addFieldsOfType(NumericField::class, [
+      'min_price_of_item' => 'Min price of item',
+      'max_price_of_item' => 'Max price of item',
+   ])->prefix('$')->attributes(['step' => '5'])->tab('Pricing')
+);   
+```
+
+That's it - this collection knows how to represent its contents to Laravel Backpack's CRUD.
+
+You can mix and match FieldsCollections of different types, but its up to you to control that specific field
+actually supports a passed parameter (although its usually not an issue since its safe to call non-existing methods
+on any field).
 
 ## Rationale 
 

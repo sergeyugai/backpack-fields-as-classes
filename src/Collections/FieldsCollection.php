@@ -12,18 +12,29 @@ class FieldsCollection extends Arrayable implements \Countable
     public function __construct($fields = null)
     {
         if ($fields !== null) {
-            foreach ($fields as $f) {
-                $this->addField($f);
+            foreach ($fields as $index => $f) {
+                if ($f instanceof Field) {
+                    $this->addField($f);
+                } else if (is_string($index) && is_string($f)) {
+                    $this->addField(new Field($index, $f));
+                }
             }
         }
     }
 
-    public function addField(Field $field): FieldsCollection {
+    public static function make($fields = null): FieldsCollection
+    {
+        return new FieldsCollection($fields);
+    }
+
+    public function addField(Field $field): FieldsCollection
+    {
         $this->result[] = $field;
         return $this;
     }
 
-    public function addFieldsOfType($class, $nameToLabelMap): FieldsCollection {
+    public function addFieldsOfType($class, $nameToLabelMap): FieldsCollection
+    {
         foreach ($nameToLabelMap as $name => $label) {
             $f = new $class($name, $label);
             $this->addField($f);
@@ -35,6 +46,14 @@ class FieldsCollection extends Arrayable implements \Countable
     {
         foreach ($this->result as $field) {
             call_user_func_array([$field, $name], $arguments);
+        }
+        return $this;
+    }
+
+    public function tab($tabName): FieldsCollection
+    {
+        foreach ($this->result as $field) {
+            $field->tab($tabName);
         }
         return $this;
     }
