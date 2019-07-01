@@ -2,6 +2,8 @@
 
 namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields;
 
+use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
+
 /**
  * Class DatetimePickerField 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields

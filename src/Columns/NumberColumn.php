@@ -2,6 +2,8 @@
 
 namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Columns;
 
+use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
+
 /**
  * Class NumberColumn 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Columns

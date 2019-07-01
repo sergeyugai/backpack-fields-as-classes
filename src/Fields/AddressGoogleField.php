@@ -2,6 +2,8 @@
 
 namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields;
 
+use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
+
 /**
  * Class AddressGoogleField 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields

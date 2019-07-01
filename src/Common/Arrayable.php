@@ -1,6 +1,6 @@
 <?php
 
-namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields;
+namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Common;
 
 class Arrayable implements \ArrayAccess
 {

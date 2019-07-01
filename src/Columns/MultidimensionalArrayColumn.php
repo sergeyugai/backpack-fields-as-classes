@@ -2,6 +2,8 @@
 
 namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Columns;
 
+use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
+
 /**
  * Class MultidimensionalArrayColumn 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Columns

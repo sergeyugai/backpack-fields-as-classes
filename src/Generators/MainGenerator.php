@@ -112,6 +112,8 @@ class MainGenerator
 
 namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\\{$prefix}s;
 
+use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
+
 /**
  * Class {$className} 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\\{$prefix}s
