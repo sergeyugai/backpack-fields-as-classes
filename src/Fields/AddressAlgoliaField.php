@@ -6,6 +6,18 @@ namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields;
  * Class AddressAlgoliaField 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
  * @link https://backpackforlaravel.com/docs/3.6/crud-fields#address_algolia Documentation
+ * 
+* If you forget to specify a tab name for a field, Backpack will place it above all tabs.
+* 
+* 
+* <a name="default-field-types"></a>
+* ## Default Field Types
+* 
+* <a name="address_algolia"></a>
+* 
+* Use [Algolia Places autocomplete](https://community.algolia.com/places/) to help users type their address faster. With the ```store_as_json``` option, it will store the address, postcode, city, country, latitude and longitude in a JSON in the database. Without it, it will just store the address string.
+* 
+* ```php
  */
 class AddressAlgoliaField extends Field
 { 

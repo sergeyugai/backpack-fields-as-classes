@@ -6,6 +6,14 @@ namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Columns;
  * Class ModelFunctionColumn 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Columns
  * @link https://backpackforlaravel.com/docs/3.6/crud-columns#model_function Documentation
+ * 
+* <a name="model_function"></a>
+* 
+* 
+* The model_function column will output a function on your main model. Its definition is:
+* ```php
+* For this example, if your model would feature this method, it would return the link to that entity:
+* ```php
  */
 class ModelFunctionColumn extends Column
 { 

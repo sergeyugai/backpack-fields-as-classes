@@ -6,6 +6,12 @@ namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Columns;
  * Class ArrayCountColumn 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Columns
  * @link https://backpackforlaravel.com/docs/3.6/crud-columns#array_count Documentation
+ * 
+* <a name="array_count"></a>
+* 
+* Count the items in an array stored in the db column as JSON.
+* 
+* ```php
  */
 class ArrayCountColumn extends Column
 { 

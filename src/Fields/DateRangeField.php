@@ -6,6 +6,21 @@ namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields;
  * Class DateRangeField 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
  * @link https://backpackforlaravel.com/docs/3.6/crud-fields#date_range Documentation
+ * 
+* Please note it is recommended that you use [attribute casting](https://laravel.com/docs/5.3/eloquent-mutators#attribute-casting) on your model (cast to date).
+* 
+* 
+* Input preview: 
+* 
+* ![CRUD Field - date_picker](https://backpackforlaravel.com/uploads/docs-3-5/fields/date_picker.png)
+* 
+* <a name="date-range"></a>
+* 
+* Starting with Backpack\CRUD 3.1.59
+* 
+* Show a DateRangePicker and let the user choose a start date and end date.
+* 
+* ```php
  */
 class DateRangeField extends Field
 { 

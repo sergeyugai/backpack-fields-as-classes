@@ -6,6 +6,17 @@ namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields;
  * Class Select2GroupedField 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
  * @link https://backpackforlaravel.com/docs/3.6/crud-fields#select2_grouped Documentation
+ * 
+* Input preview:
+* 
+* ![CRUD Field - select2_nested](https://backpackforlaravel.com/uploads/docs-3-5/fields/select2_nested.png)
+* 
+* 
+* <a name="select2-grouped"></a>
+* 
+* Display a select2 where the options are grouped by a second entity (like Categories).
+* 
+* ```php
  */
 class Select2GroupedField extends Field
 { 

@@ -6,6 +6,12 @@ namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Columns;
  * Class BooleanColumn 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Columns
  * @link https://backpackforlaravel.com/docs/3.6/crud-columns#boolean Documentation
+ * 
+* <a name="boolean"></a>
+* 
+* Show Yes/No (or custom text) instead of 1/0.
+* 
+* ```php
  */
 class BooleanColumn extends Column
 { 

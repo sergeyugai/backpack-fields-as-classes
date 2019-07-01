@@ -6,6 +6,21 @@ namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields;
  * Class Select2MultipleField 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
  * @link https://backpackforlaravel.com/docs/3.6/crud-fields#select2_multiple (n-n relationship) Documentation
+ * 
+* Input preview: 
+* 
+* ![CRUD Field - select_multiple](https://backpackforlaravel.com/uploads/docs-3-5/fields/select_multiple.png)
+* 
+* 
+* 
+* <a name="select2-multiple"></a>
+* 
+* [Works just like the SELECT field, but prettier]
+* 
+* Show a Select2 with the names of the connected entity and let the user select any number of them.
+* Your relationships should already be defined on your models as hasMany() or belongsToMany().
+* 
+* ```php
  */
 class Select2MultipleField extends Field
 { 

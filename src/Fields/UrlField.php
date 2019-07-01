@@ -6,6 +6,17 @@ namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields;
  * Class UrlField 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
  * @link https://backpackforlaravel.com/docs/3.6/crud-fields#url Documentation
+ * 
+* You might notice the field is using a ```clear_photos``` variable. Don't worry, you don't need it in your db table. That's just used to delete photos upon "update". If you use ```$fillable``` on your model, just don't include it. If you use ```$guarded``` on your model, place it in guarded.
+* 
+* Input preview: 
+* 
+* ![CRUD Field - upload_multiple](https://backpackforlaravel.com/uploads/docs-3-5/fields/upload_multiple.png)
+* 
+* 
+* 
+* [/block]
+* ```php
  */
 class UrlField extends Field
 { 

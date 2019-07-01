@@ -6,6 +6,13 @@ namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Columns;
  * Class RadioColumn 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Columns
  * @link https://backpackforlaravel.com/docs/3.6/crud-columns#radio Documentation
+ * 
+* <a name="radio"></a>
+* 
+* 
+* Show a pretty text instead of the database value, according to an associative array. Usually used as a column for the "radio" field type.
+* 
+* ```php
  */
 class RadioColumn extends Column
 { 

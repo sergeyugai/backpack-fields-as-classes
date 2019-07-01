@@ -6,6 +6,15 @@ namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Columns;
  * Class TableColumn 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Columns
  * @link https://backpackforlaravel.com/docs/3.6/crud-columns#table Documentation
+ * 
+* <a name="table"></a>
+* 
+* 
+* The ```table``` column will output a condensed table, when used on an attribute that stores a JSON array or object. It is meant to be used inside the show functionality (not list, though it also works there).
+* 
+* Its definition is very similar to the [table *field type*](/docs/{{version}}/crud-fields#table).
+* 
+* ```php
  */
 class TableColumn extends Column
 { 

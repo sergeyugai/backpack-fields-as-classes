@@ -6,6 +6,19 @@ namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Columns;
  * Class CheckColumn 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Columns
  * @link https://backpackforlaravel.com/docs/3.6/crud-columns#check Documentation
+ * 
+* <a name="check"></a>
+* 
+* Show a favicon with a checked or unchecked box, depending on the given boolean.
+* ```php
+* 
+* 
+* <a name="checkbox"></a>
+* 
+* Shows a checkbox (the form element), and inserts the js logic needed to select/deselect multiple entries. It is mostly used for [the Bulk Delete action](/docs/{{version}}/crud-operation-delete#delete-multiple-items-bulk-delete), and [custom bulk actions](/docs/{{version}}/crud-operations#creating-a-new-operation-with-a-bulk-action-no-interface).
+* 
+* Shorthand:
+* ```php
  */
 class CheckColumn extends Column
 { 

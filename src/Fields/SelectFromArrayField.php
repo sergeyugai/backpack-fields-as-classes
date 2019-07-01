@@ -6,6 +6,17 @@ namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields;
  * Class SelectFromArrayField 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
  * @link https://backpackforlaravel.com/docs/3.6/crud-fields#select_from_array Documentation
+ * 
+* Input preview: 
+* 
+* ![CRUD Field - select_and_order](https://backpackforlaravel.com/uploads/docs-3-5/fields/select_and_order.png)
+* 
+* 
+* <a name="select-from-array"></a>
+* 
+* Display a select with the values you want:
+* 
+* ```php
  */
 class SelectFromArrayField extends Field
 { 

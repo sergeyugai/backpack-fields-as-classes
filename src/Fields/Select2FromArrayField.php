@@ -6,6 +6,16 @@ namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields;
  * Class Select2FromArrayField 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
  * @link https://backpackforlaravel.com/docs/3.6/crud-fields#select2_from_array Documentation
+ * 
+* Input preview: 
+* 
+* ![CRUD Field - select_from_array](https://backpackforlaravel.com/uploads/docs-3-5/fields/select_from_array.png)
+* 
+* <a name="select2-from-array"></a>
+* 
+* Display a select2 with the values you want:
+* 
+* ```php
  */
 class Select2FromArrayField extends Field
 { 

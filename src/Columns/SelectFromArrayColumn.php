@@ -6,6 +6,12 @@ namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Columns;
  * Class SelectFromArrayColumn 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Columns
  * @link https://backpackforlaravel.com/docs/3.6/crud-columns#select_from_array Documentation
+ * 
+* <a name="select_from_array"></a>
+* 
+* Show a particular text depending on the value of the attribute.
+* 
+* ```php
  */
 class SelectFromArrayColumn extends Column
 { 

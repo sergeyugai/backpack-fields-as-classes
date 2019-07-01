@@ -6,6 +6,14 @@ namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields;
  * Class RangeField 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
  * @link https://backpackforlaravel.com/docs/3.6/crud-fields#range Documentation
+ * 
+* Input preview: 
+* 
+* ![CRUD Field - radio](https://backpackforlaravel.com/uploads/docs-3-5/fields/radio.png)
+* 
+* <a name="range"></a>
+* 
+* ```php
  */
 class RangeField extends Field
 { 

@@ -6,6 +6,11 @@ namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Columns;
  * Class SelectMultipleColumn 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Columns
  * @link https://backpackforlaravel.com/docs/3.6/crud-columns#select_multiple Documentation
+ * 
+* <a name="select_multiple"></a>
+* 
+* The select_multiple column will output a comma separated list of its connected entities. Used for relationships like hasMany() and belongsToMany(). Its name and definition is the same as the select_multiple field:
+* ```php
  */
 class SelectMultipleColumn extends Column
 { 

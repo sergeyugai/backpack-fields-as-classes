@@ -6,6 +6,14 @@ namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields;
  * Class PasswordField 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
  * @link https://backpackforlaravel.com/docs/3.6/crud-fields#password Documentation
+ * 
+* Input preview: 
+* 
+* ![CRUD Field - page_or_link](https://backpackforlaravel.com/uploads/docs-3-5/fields/page_or_link.png)
+* 
+* <a name="password"></a>
+* 
+* ```php
  */
 class PasswordField extends Field
 { 

@@ -6,6 +6,16 @@ namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields;
  * Class SummernoteField 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
  * @link https://backpackforlaravel.com/docs/3.6/crud-fields#summernote Documentation
+ * 
+* Input preview: 
+* 
+* ![CRUD Field - simplemde](https://backpackforlaravel.com/uploads/docs-3-5/fields/simplemde.png)
+* 
+* <a name="summernote"></a>
+* 
+* Show a [Summernote wysiwyg editor](http://summernote.org/) to the user.
+* 
+* ```php
  */
 class SummernoteField extends Field
 { 

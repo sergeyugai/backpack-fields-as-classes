@@ -6,6 +6,16 @@ namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields;
  * Class CustomHtmlField 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
  * @link https://backpackforlaravel.com/docs/3.6/crud-fields#custom_html Documentation
+ * 
+* Input preview: 
+* 
+* ![CRUD Field - color_picker](https://backpackforlaravel.com/uploads/docs-3-5/fields/color_picker.png)
+* 
+* <a name="custom-html"></a>
+* 
+* Allows you to insert custom HTML in the create/update forms. Usually used in forms with a lot of fields, to separate them using h1-h5, hr, etc, but can be used for any HTML.
+* 
+* ```php
  */
 class CustomHtmlField extends Field
 { 

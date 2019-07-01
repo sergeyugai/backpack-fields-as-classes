@@ -6,6 +6,16 @@ namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields;
  * Class TableField 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
  * @link https://backpackforlaravel.com/docs/3.6/crud-fields#table Documentation
+ * 
+* Input preview: 
+* 
+* ![CRUD Field - summernote](https://backpackforlaravel.com/uploads/docs-3-5/fields/summernote.png)
+* 
+* <a name="table"></a>
+* 
+* Show a table with multiple inputs per row and store the values as JSON in the database. The user can add more rows and reorder the rows as they please.
+* 
+* ```php
  */
 class TableField extends Field
 { 

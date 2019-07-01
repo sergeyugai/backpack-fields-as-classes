@@ -6,6 +6,13 @@ namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Columns;
  * Class DateColumn 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Columns
  * @link https://backpackforlaravel.com/docs/3.6/crud-columns#date Documentation
+ * 
+* <a name="date"></a>
+* 
+* 
+* The date column will show a localized date in the default date format (as specified in the ```config/backpack/base.php``` file), whether the attribute is casted as date in the model or not:
+* 
+* ```php
  */
 class DateColumn extends Column
 { 

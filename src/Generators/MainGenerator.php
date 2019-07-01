@@ -12,6 +12,7 @@ class MainGenerator
      * @var bool
      */
     private $inCode;
+    private $fieldDocs;
     private $fieldItems;
     /**
      * @var bool
@@ -19,6 +20,7 @@ class MainGenerator
     private $inFieldDefinition;
     private $fieldName;
     private $fieldNameToConsider;
+    private $fieldDocumentation;
 
     public function generateFields($docPath, $basePath): void {
         $this->parseAndRun($docPath, function () use ($basePath) {
@@ -45,6 +47,8 @@ class MainGenerator
         $this->inCode = false;
         $this->fieldItems = [];
         $this->inFieldDefinition = false;
+        $this->fieldDocumentation = [];
+        $this->fieldDocs = [];
         $this->fieldName = $this->fieldNameToConsider = '';
         foreach ($lines as $l) {
             $isThisTheFinalLine = ($parseTillLine !== null) && strpos($l, $parseTillLine) !== FALSE;
@@ -80,6 +84,8 @@ class MainGenerator
 
             if (strpos($l, '### ') !== FALSE) {
                 $this->fieldNameToConsider = str_replace('### ', '', $l);
+            } else {
+                $this->fieldDocumentation[] = $l;
             }
         }
     }
@@ -98,6 +104,9 @@ class MainGenerator
 
         if ($className === $prefix) return;
 
+        $docs = array_key_exists($fieldName, $this->fieldDocs) ? implode("\n", array_map(static function ($item) {
+            return '* '.$item;
+        }, $this->fieldDocs[$fieldName])) : '';
         $classTemplate =<<<TEMPLATE
 <?php
 
@@ -107,6 +116,7 @@ namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\\{$prefix}s;
  * Class {$className} 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\\{$prefix}s
  * @link {$docSiteBasePath}$fieldName Documentation
+ $docs
  */
 class {$className} extends {$prefix}
 { 
@@ -203,6 +213,12 @@ METHOD_TEMPLATE;
         } else {
             $this->fields[$this->fieldName] =  $this->fieldItems;
         }
+        if (array_key_exists($this->fieldName, $this->fieldDocs)) {
+            $this->fieldDocs[$this->fieldName] = array_merge($this->fieldDocs[$this->fieldName], $this->fieldDocumentation);
+        } else {
+            $this->fieldDocs[$this->fieldName] =  $this->fieldDocumentation;
+        }
+        $this->fieldDocumentation = [];
         $this->inFieldDefinition = false;
     }
 

@@ -6,6 +6,17 @@ namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields;
  * Class SelectField 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
  * @link https://backpackforlaravel.com/docs/3.6/crud-fields#select (1-n relationship) Documentation
+ * 
+* Input preview: 
+* 
+* ![CRUD Field - range](https://backpackforlaravel.com/uploads/docs-3-5/fields/range.png)
+* 
+* <a name="select"></a>
+* 
+* Show a Select with the names of the connected entity and let the user select one of them.
+* Your relationships should already be defined on your models as hasOne() or belongsTo().
+* 
+* ```php
  */
 class SelectField extends Field
 { 

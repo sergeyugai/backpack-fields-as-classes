@@ -6,6 +6,16 @@ namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields;
  * Class RadioField 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
  * @link https://backpackforlaravel.com/docs/3.6/crud-fields#radio Documentation
+ * 
+* Input preview: 
+* 
+* ![CRUD Field - password](https://backpackforlaravel.com/uploads/docs-3-5/fields/password.png)
+* 
+* <a name="radio"></a>
+* 
+* Show radios according to an associative array you give the input and let the user pick from them. You can choose for the radio options to be displayed inline or one-per-line.
+* 
+* ```php
  */
 class RadioField extends Field
 { 

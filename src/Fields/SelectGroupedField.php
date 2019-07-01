@@ -6,6 +6,17 @@ namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields;
  * Class SelectGroupedField 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
  * @link https://backpackforlaravel.com/docs/3.6/crud-fields#select_grouped Documentation
+ * 
+* Input preview: 
+* 
+* ![CRUD Field - select](https://backpackforlaravel.com/uploads/docs-3-5/fields/select.png)
+* 
+* 
+* <a name="select-grouped"></a>
+* 
+* Display a select where the options are grouped by a second entity (like Categories).
+* 
+* ```php
  */
 class SelectGroupedField extends Field
 { 

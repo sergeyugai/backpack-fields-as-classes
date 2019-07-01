@@ -37,7 +37,7 @@ class Field extends Arrayable
         }
     }
 
-    public static function make(string $name = null, string $label = null): Field
+    public static function make(string $name = null, string $label = null)
     {
         return new self($name, $label);
     }

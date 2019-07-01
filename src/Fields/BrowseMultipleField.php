@@ -6,6 +6,21 @@ namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields;
  * Class BrowseMultipleField 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
  * @link https://backpackforlaravel.com/docs/3.6/crud-fields#browse_multiple Documentation
+ * 
+* 
+* Input preview: 
+* 
+* ![CRUD Field - browse](https://backpackforlaravel.com/uploads/docs-3-5/fields/browse.png)
+* 
+* Onclick preview:
+* 
+* ![CRUD Field - browse popup](https://backpackforlaravel.com/uploads/docs-3-5/fields/browse_popup.png)
+* 
+* <a name="browse-multiple"></a>
+* 
+* Open elFinder and select multiple file from there.
+* 
+* ```php
  */
 class BrowseMultipleField extends Field
 { 

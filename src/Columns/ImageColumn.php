@@ -6,6 +6,13 @@ namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Columns;
  * Class ImageColumn 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Columns
  * @link https://backpackforlaravel.com/docs/3.6/crud-columns#image Documentation
+ * 
+* <a name="image"></a>
+* 
+* 
+* Show a thumbnail image.
+* 
+* ```php
  */
 class ImageColumn extends Column
 { 

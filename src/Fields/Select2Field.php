@@ -6,6 +6,17 @@ namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields;
  * Class Select2Field 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
  * @link https://backpackforlaravel.com/docs/3.6/crud-fields#select2 (1-n relationship) Documentation
+ * 
+* Input preview:
+* 
+* ![CRUD Field - select_grouped](https://backpackforlaravel.com/uploads/docs-3-5/fields/select_grouped.png)
+* 
+* <a name="select2"></a>
+* 
+* Works just like the SELECT field, but prettier. Shows a Select2 with the names of the connected entity and let the user select one of them. 
+* Your relationships should already be defined on your models as hasOne() or belongsTo().
+* 
+* ```php
  */
 class Select2Field extends Field
 { 

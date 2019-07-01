@@ -6,6 +6,12 @@ namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields;
  * Class TinymceField 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
  * @link https://backpackforlaravel.com/docs/3.6/crud-fields#tinymce Documentation
+ * 
+* <a name="tinymce"></a>
+* 
+* Show a wysiwyg (TinyMCE) to the user.
+* 
+* ```php
  */
 class TinymceField extends Field
 { 

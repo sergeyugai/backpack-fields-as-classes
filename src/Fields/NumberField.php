@@ -6,6 +6,16 @@ namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields;
  * Class NumberField 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
  * @link https://backpackforlaravel.com/docs/3.6/crud-fields#number Documentation
+ * 
+* Input preview: 
+* 
+* ![CRUD Field - month](https://backpackforlaravel.com/uploads/docs-3-5/fields/month.png)
+* 
+* <a name="number"></a>
+* 
+* Shows an input type=number to the user, with optional prefix and suffix:
+* 
+* ```php
  */
 class NumberField extends Field
 { 

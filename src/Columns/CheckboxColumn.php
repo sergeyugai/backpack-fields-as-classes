@@ -6,6 +6,10 @@ namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Columns;
  * Class CheckboxColumn 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Columns
  * @link https://backpackforlaravel.com/docs/3.6/crud-columns#checkbox Documentation
+ * (will also add an empty custom_html column)
+* 
+* Verbose:
+* ```php
  */
 class CheckboxColumn extends Column
 { 

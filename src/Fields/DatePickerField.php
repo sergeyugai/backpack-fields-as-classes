@@ -6,6 +6,16 @@ namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields;
  * Class DatePickerField 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
  * @link https://backpackforlaravel.com/docs/3.6/crud-fields#date_picker Documentation
+ * 
+* Input preview: 
+* 
+* ![CRUD Field - date](https://backpackforlaravel.com/uploads/docs-3-5/fields/date.png)
+* 
+* <a name="date-picker"></a>
+* 
+* Show a pretty [Bootstrap Datepicker](http://bootstrap-datepicker.readthedocs.io/en/latest/).
+* 
+* ```php
  */
 class DatePickerField extends Field
 { 

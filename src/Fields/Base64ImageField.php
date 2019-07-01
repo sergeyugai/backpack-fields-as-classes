@@ -6,6 +6,20 @@ namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields;
  * Class Base64ImageField 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
  * @link https://backpackforlaravel.com/docs/3.6/crud-fields#base64_image Documentation
+ * 
+* We recommend you cast your attribute as ```array``` on your model.  That way, when you do ```$entry->files``` you get a nice array. The field will work even if you don't cast.
+* 
+* Input preview: 
+* 
+* ![CRUD Field - browse_multiple](https://backpackforlaravel.com/uploads/docs-3-5/fields/browse_multiple.png)
+* 
+* <a name="base64-image"></a>
+* 
+* Upload an image and store it in the database as Base64. Notes:
+* - make sure the column type is LONGBLOB;
+* - detailed [instructions and customizations here](https://github.com/Laravel-Backpack/CRUD/pull/56#issue-164712261); 
+* 
+* ```php
  */
 class Base64ImageField extends Field
 { 

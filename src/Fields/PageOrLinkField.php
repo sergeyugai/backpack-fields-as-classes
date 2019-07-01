@@ -6,6 +6,15 @@ namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields;
  * Class PageOrLinkField 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
  * @link https://backpackforlaravel.com/docs/3.6/crud-fields#page_or_link Documentation
+ * 
+* Input preview: 
+* 
+* ![CRUD Field - number](https://backpackforlaravel.com/uploads/docs-3-5/fields/number.png)
+* 
+* <a name="page-or-link"></a>
+* 
+* Select an existing page from PageManager or an internal or external link. It’s used in the MenuManager package, but can be used in any other model just as well. Its definition looks like this:
+* ```php
  */
 class PageOrLinkField extends Field
 { 

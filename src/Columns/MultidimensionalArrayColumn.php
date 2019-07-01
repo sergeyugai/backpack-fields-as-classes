@@ -6,6 +6,15 @@ namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Columns;
  * Class MultidimensionalArrayColumn 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Columns
  * @link https://backpackforlaravel.com/docs/3.6/crud-columns#multidimensional_array Documentation
+ * 
+* **Note:** When displaying this column's value, the text is not escaped. That is intentional. This way, you can use it to show labels, color text, italic, bold, links, etc. If you might have malicious JS or CSS in your values, you can create a new escaped field yourself. But it's probably better to treat the problem at the source, and prevent that JS and CSS from reaching your DB in the first place.
+* 
+* <a name="multidimensional_array"></a>
+* 
+* 
+* Enumerate the values in a multidimensional array, stored in the db as JSON.
+* 
+* ```php
  */
 class MultidimensionalArrayColumn extends Column
 { 

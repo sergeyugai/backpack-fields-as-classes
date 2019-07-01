@@ -6,6 +6,15 @@ namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields;
  * Class EmailField 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
  * @link https://backpackforlaravel.com/docs/3.6/crud-fields#email Documentation
+ * Otherwise the input's datetime-local formal will cause some errors. Remeber to change "datetime" with the name of your attribute (column name).
+* 
+* Input preview: 
+* 
+* ![CRUD Field - datetime_picker](https://backpackforlaravel.com/uploads/docs-3-5/fields/datetime_picker.png)
+* 
+* <a name="email"></a>
+* 
+* ```php
  */
 class EmailField extends Field
 { 

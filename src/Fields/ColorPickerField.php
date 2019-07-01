@@ -6,6 +6,16 @@ namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields;
  * Class ColorPickerField 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
  * @link https://backpackforlaravel.com/docs/3.6/crud-fields#color_picker Documentation
+ * 
+* Input preview: 
+* 
+* ![CRUD Field - color](https://backpackforlaravel.com/uploads/docs-3-5/fields/color.png)
+* 
+* <a name="color-picker"></a>
+* 
+* Show a pretty colour picker using [Bootstrap Colorpicker](https://itsjavi.com/bootstrap-colorpicker/).
+* 
+* ```php
  */
 class ColorPickerField extends Field
 { 

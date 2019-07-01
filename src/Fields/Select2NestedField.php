@@ -6,6 +6,18 @@ namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields;
  * Class Select2NestedField 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
  * @link https://backpackforlaravel.com/docs/3.6/crud-fields#select2_nested Documentation
+ * 
+* Input preview: 
+* 
+* ![CRUD Field - select2_multiple](https://backpackforlaravel.com/uploads/docs-3-5/fields/select2_multiple.png)
+* 
+* <a name="select2-nested"></a>
+* 
+* Display a select2 with the values ordered hierarchically and indented, for an entity where you use Reorder. Please mind that the connected model needs:
+* - a ```children()``` relationship pointing to itself;
+* - the usual ```lft```, ```rgt```, ```depth``` attributes;
+* 
+* ```php
  */
 class Select2NestedField extends Field
 { 

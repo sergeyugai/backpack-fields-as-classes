@@ -6,6 +6,13 @@ namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Columns;
  * Class VideoColumn 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Columns
  * @link https://backpackforlaravel.com/docs/3.6/crud-columns#video Documentation
+ * 
+* <a name="video"></a>
+* 
+* 
+* Display a small screenshot for a Youtube or Vimeo video, stored in the database as JSON using the "video" field type.
+* 
+* ```php
  */
 class VideoColumn extends Column
 { 

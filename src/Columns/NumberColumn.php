@@ -6,6 +6,12 @@ namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Columns;
  * Class NumberColumn 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Columns
  * @link https://backpackforlaravel.com/docs/3.6/crud-columns#number Documentation
+ * 
+* <a name="number"></a>
+* 
+* 
+* The text column will just output the number value of a db column (or model attribute). Its definition is:
+* ```php
  */
 class NumberColumn extends Column
 { 

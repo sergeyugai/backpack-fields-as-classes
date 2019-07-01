@@ -6,6 +6,16 @@ namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields;
  * Class CheckboxField 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
  * @link https://backpackforlaravel.com/docs/3.6/crud-fields#checkbox Documentation
+ * 
+* Input preview: 
+* 
+* ![CRUD Field - base64_image](https://backpackforlaravel.com/uploads/docs-3-5/fields/base64_image.png)
+* 
+* <a name="checkbox"></a>
+* 
+* Checkbox for true/false.
+* 
+* ```php
  */
 class CheckboxField extends Field
 { 

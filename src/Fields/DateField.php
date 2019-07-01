@@ -6,6 +6,10 @@ namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields;
  * Class DateField 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
  * @link https://backpackforlaravel.com/docs/3.6/crud-fields#date Documentation
+ * 
+* <a name="date"></a>
+* 
+* ```php
  */
 class DateField extends Field
 { 

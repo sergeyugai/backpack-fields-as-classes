@@ -6,6 +6,18 @@ namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields;
  * Class HiddenField 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
  * @link https://backpackforlaravel.com/docs/3.6/crud-fields#hidden Documentation
+ * 
+* PLEASE NOTE the enum field only works for MySQL databases.
+* 
+* Input preview: 
+* 
+* ![CRUD Field - enum](https://backpackforlaravel.com/uploads/docs-3-5/fields/enum.png)
+* 
+* <a name="hidden"></a>
+* 
+* Include an <input type="hidden"> in the form.
+* 
+* ```php
  */
 class HiddenField extends Field
 { 

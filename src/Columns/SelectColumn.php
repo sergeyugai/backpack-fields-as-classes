@@ -6,6 +6,11 @@ namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Columns;
  * Class SelectColumn 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Columns
  * @link https://backpackforlaravel.com/docs/3.6/crud-columns#select Documentation
+ * 
+* <a name="select"></a>
+* 
+* The select column will output its connected entity. Used for relationships like hasOne() and belongsTo(). Its name and definition is the same as for the select *field type*:
+* ```php
  */
 class SelectColumn extends Column
 { 

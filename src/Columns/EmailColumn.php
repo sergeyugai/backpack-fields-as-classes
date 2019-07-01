@@ -6,6 +6,11 @@ namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Columns;
  * Class EmailColumn 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Columns
  * @link https://backpackforlaravel.com/docs/3.6/crud-columns#email Documentation
+ * 
+* <a name="email"></a>
+* 
+* The email column will output the email address in the database (truncated to 254 characters if needed), with a ```mailto:``` link towards the full email. Its definition is:
+* ```php
  */
 class EmailColumn extends Column
 { 

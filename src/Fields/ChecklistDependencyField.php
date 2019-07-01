@@ -6,6 +6,14 @@ namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields;
  * Class ChecklistDependencyField 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
  * @link https://backpackforlaravel.com/docs/3.6/crud-fields#checklist_dependency Documentation
+ * 
+* Input preview: 
+* 
+* ![CRUD Field - checklist](https://backpackforlaravel.com/uploads/docs-3-5/fields/checklist.png)
+* 
+* <a name="checklist-dependency"></a>
+* 
+* ```php
  */
 class ChecklistDependencyField extends Field
 { 

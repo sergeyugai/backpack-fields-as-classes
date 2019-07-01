@@ -6,6 +6,13 @@ namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Columns;
  * Class ClosureColumn 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Columns
  * @link https://backpackforlaravel.com/docs/3.6/crud-columns#closure Documentation
+ * 
+* <a name="closure"></a>
+* 
+* 
+* Show custom HTML based on a closure you specify in your EntityCrudController. Please note this column does not escape HTML before rendering. You need to do that yourself, if you consider it necessary.
+* 
+* ```php
  */
 class ClosureColumn extends Column
 { 

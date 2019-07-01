@@ -6,6 +6,27 @@ namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields;
  * Class SelectAndOrderField 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
  * @link https://backpackforlaravel.com/docs/3.6/crud-fields#select_and_order Documentation
+ * 
+* Input preview:
+* 
+* ![CRUD Field - select2_grouped](https://backpackforlaravel.com/uploads/docs-3-5/fields/select2_grouped.png)
+* 
+* 
+* <a name="select_and_order"></a>
+* 
+* Display items on two columns and let the user drag&drop between them to choose which items are selected an which are not, and reorder the selected items with drag&drop.
+* 
+* Its definition is exactly as ```select_from_array```, but the value will be stored as JSON in the database: ```["3","5","7","6"]```, so it needs the attribute to be cast to array on the Model:
+* 
+* ```php
+* 
+* Definition:
+* 
+* ```php
+* 
+* Also possible:
+* 
+* ```php
  */
 class SelectAndOrderField extends Field
 { 
@@ -44,20 +65,5 @@ class SelectAndOrderField extends Field
         $this->offsetSet('options', $value);
         return $this;
     }
-    
-    
-    public function 0(string $value): SelectAndOrderField
-    {
-        $this->offsetSet('0', $value);
-        return $this;
-    }
-    
-    
-    public function 1(string $value): SelectAndOrderField
-    {
-        $this->offsetSet('1', $value);
-        return $this;
-    }
-    
-    
+
 }

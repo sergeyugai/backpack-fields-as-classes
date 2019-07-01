@@ -6,6 +6,14 @@ namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields;
  * Class TimeField 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
  * @link https://backpackforlaravel.com/docs/3.6/crud-fields#time Documentation
+ * 
+* Input preview: 
+* 
+* ![CRUD Field - textarea](https://backpackforlaravel.com/uploads/docs-3-5/fields/textarea.png)
+* 
+* <a name="time"></a>
+* 
+* ```php
  */
 class TimeField extends Field
 { 

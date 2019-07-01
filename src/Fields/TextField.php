@@ -6,6 +6,18 @@ namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields;
  * Class TextField 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
  * @link https://backpackforlaravel.com/docs/3.6/crud-fields#text Documentation
+ * 
+* >It's highly recommended that you use [attribute casting](https://mattstauffer.co/blog/laravel-5.0-eloquent-attribute-casting) on your model when working with JSON stored in database columns, and cast your this attribute to either ```object``` or ```array```.
+* 
+* Input preview: 
+* 
+* ![CRUD Field - table](https://backpackforlaravel.com/uploads/docs-3-5/fields/table.png)
+* 
+* <a name="text"></a>
+* 
+* The basic field type, all it needs is the two mandatory parameters: name and label.
+* 
+* ```php
  */
 class TextField extends Field
 { 

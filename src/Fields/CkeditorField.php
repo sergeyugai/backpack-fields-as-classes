@@ -6,6 +6,16 @@ namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields;
  * Class CkeditorField 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
  * @link https://backpackforlaravel.com/docs/3.6/crud-fields#ckeditor Documentation
+ * 
+* Input preview: 
+* 
+* ![CRUD Field - checklist_dependency](https://backpackforlaravel.com/uploads/docs-3-5/fields/checklist_dependency.png)
+* 
+* <a name="ckeditor"></a>
+* 
+* Show a wysiwyg CKEditor to the user.
+* 
+* ```php
  */
 class CkeditorField extends Field
 { 

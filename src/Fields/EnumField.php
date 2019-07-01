@@ -6,6 +6,17 @@ namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields;
  * Class EnumField 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
  * @link https://backpackforlaravel.com/docs/3.6/crud-fields#enum Documentation
+ * 
+* Input preview: 
+* 
+* ![CRUD Field - email](https://backpackforlaravel.com/uploads/docs-3-5/fields/email.png)
+* 
+* 
+* <a name="enum"></a>
+* 
+* Show a select with the values in the database for that ENUM field. Requires that the db column type is "enum". If the db column allows null, the " - " value will also show up in the select.
+* 
+* ```php
  */
 class EnumField extends Field
 { 

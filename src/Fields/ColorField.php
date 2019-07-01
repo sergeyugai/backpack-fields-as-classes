@@ -6,6 +6,14 @@ namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields;
  * Class ColorField 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
  * @link https://backpackforlaravel.com/docs/3.6/crud-fields#color Documentation
+ * 
+* Input preview: 
+* 
+* ![CRUD Field - ckeditor](https://backpackforlaravel.com/uploads/docs-3-5/fields/ckeditor.png)
+* 
+* <a name="color"></a>
+* 
+* ```php
  */
 class ColorField extends Field
 { 

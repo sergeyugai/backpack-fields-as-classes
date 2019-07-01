@@ -6,6 +6,17 @@ namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields;
  * Class SelectMultipleField 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
  * @link https://backpackforlaravel.com/docs/3.6/crud-fields#select_multiple (n-n relationship) Documentation
+ * 
+* Input preview: 
+* 
+* ![CRUD Field - select2](https://backpackforlaravel.com/uploads/docs-3-5/fields/select2_nested.png)
+* 
+* <a name="select-multiple"></a>
+* 
+* Show a Select with the names of the connected entity and let the user select any number of them.
+* Your relationships should already be defined on your models as hasMany() or belongsToMany().
+* 
+* ```php
  */
 class SelectMultipleField extends Field
 { 
