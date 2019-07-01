@@ -2,6 +2,11 @@
 
 namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields;
 
+/**
+ * Class ChecklistDependencyField 
+ * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
+ * @link https://backpackforlaravel.com/docs/3.6/crud-fields#checklist_dependency Documentation
+ */
 class ChecklistDependencyField extends Field
 { 
 

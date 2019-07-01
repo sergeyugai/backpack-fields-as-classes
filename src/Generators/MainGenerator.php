@@ -20,19 +20,19 @@ class MainGenerator
     private $fieldName;
     private $fieldNameToConsider;
 
-    public function generateFields($docPath): void {
-        $this->parseAndRun($docPath, function () {
+    public function generateFields($docPath, $basePath): void {
+        $this->parseAndRun($docPath, function () use ($basePath) {
             foreach ($this->fields as $fieldName => $fieldDescription) {
-                $this->generateClass($fieldName, $fieldDescription, '/../Fields/', 'Field');
+                $this->generateClass($fieldName, $fieldDescription, '/../Fields/', 'Field', $basePath);
             }
         }, '#### Split Fields into Tabs');
     }
 
-    public function generateColumns($docPath): void
+    public function generateColumns($docPath, $basePath): void
     {
-        $this->parseAndRun($docPath, function () {
+        $this->parseAndRun($docPath, function () use ($basePath) {
             foreach ($this->fields as $fieldName => $fieldDescription) {
-                $this->generateClass($fieldName, $fieldDescription, '/../Columns/', 'Column');
+                $this->generateClass($fieldName, $fieldDescription, '/../Columns/', 'Column', $basePath);
             }
         }, '## Default Column Types', '### Custom Search Logic for Columns');
     }
@@ -84,7 +84,7 @@ class MainGenerator
         }
     }
 
-    private function generateClass(string $fieldName, array $fieldDescription, $path, $prefix): void
+    private function generateClass(string $fieldName, array $fieldDescription, $path, $prefix, $docSiteBasePath): void
     {
         $className = $this->getClassNameForFieldName($fieldName).$prefix;
 
@@ -103,6 +103,11 @@ class MainGenerator
 
 namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\\{$prefix}s;
 
+/**
+ * Class {$className} 
+ * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\\{$prefix}s
+ * @link {$docSiteBasePath}$fieldName Documentation
+ */
 class {$className} extends {$prefix}
 { 
 

@@ -2,6 +2,11 @@
 
 namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields;
 
+/**
+ * Class UrlField 
+ * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
+ * @link https://backpackforlaravel.com/docs/3.6/crud-fields#url Documentation
+ */
 class UrlField extends Field
 { 
 

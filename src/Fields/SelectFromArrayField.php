@@ -2,6 +2,11 @@
 
 namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields;
 
+/**
+ * Class SelectFromArrayField 
+ * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
+ * @link https://backpackforlaravel.com/docs/3.6/crud-fields#select_from_array Documentation
+ */
 class SelectFromArrayField extends Field
 { 
 

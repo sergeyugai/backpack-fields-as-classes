@@ -2,6 +2,11 @@
 
 namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields;
 
+/**
+ * Class IconPickerField 
+ * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
+ * @link https://backpackforlaravel.com/docs/3.6/crud-fields#icon_picker Documentation
+ */
 class IconPickerField extends Field
 { 
 

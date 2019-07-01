@@ -2,6 +2,11 @@
 
 namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Columns;
 
+/**
+ * Class NumberColumn 
+ * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Columns
+ * @link https://backpackforlaravel.com/docs/3.6/crud-columns#number Documentation
+ */
 class NumberColumn extends Column
 { 
 

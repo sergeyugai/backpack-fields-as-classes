@@ -2,6 +2,11 @@
 
 namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields;
 
+/**
+ * Class HiddenField 
+ * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
+ * @link https://backpackforlaravel.com/docs/3.6/crud-fields#hidden Documentation
+ */
 class HiddenField extends Field
 { 
 

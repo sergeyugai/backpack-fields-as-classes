@@ -2,6 +2,11 @@
 
 namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Columns;
 
+/**
+ * Class MultidimensionalArrayColumn 
+ * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Columns
+ * @link https://backpackforlaravel.com/docs/3.6/crud-columns#multidimensional_array Documentation
+ */
 class MultidimensionalArrayColumn extends Column
 { 
 

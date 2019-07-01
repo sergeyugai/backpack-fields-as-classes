@@ -2,6 +2,11 @@
 
 namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Columns;
 
+/**
+ * Class SelectColumn 
+ * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Columns
+ * @link https://backpackforlaravel.com/docs/3.6/crud-columns#select Documentation
+ */
 class SelectColumn extends Column
 { 
 

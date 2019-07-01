@@ -2,6 +2,11 @@
 
 namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Columns;
 
+/**
+ * Class UploadMultipleColumn 
+ * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Columns
+ * @link https://backpackforlaravel.com/docs/3.6/crud-columns#upload_multiple Documentation
+ */
 class UploadMultipleColumn extends Column
 { 
 
