@@ -78,13 +78,7 @@ class DateRangeField extends Field
     
     
     public function date_range_options(array $value): DateRangeField
-    {            
-        // necessary conversion    
-        $arrayable = new Arrayable();
-        foreach ($value as $key => $val) {
-            $arrayable[$key] = $val;
-        }
-        $value = $arrayable;
+    {
         $this->offsetSet('date_range_options', $value);
         return $this;
     }
@@ -98,13 +92,7 @@ class DateRangeField extends Field
     
     
     public function locale(array $value): DateRangeField
-    {            
-        // necessary conversion    
-        $arrayable = new Arrayable();
-        foreach ($value as $key => $val) {
-            $arrayable[$key] = $val;
-        }
-        $value = $arrayable;
+    {
         $this->offsetSet('locale', $value);
         return $this;
     }

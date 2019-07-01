@@ -49,13 +49,7 @@ class DatetimePickerField extends Field
     
     
     public function datetime_picker_options(array $value): DatetimePickerField
-    {            
-        // necessary conversion    
-        $arrayable = new Arrayable();
-        foreach ($value as $key => $val) {
-            $arrayable[$key] = $val;
-        }
-        $value = $arrayable;
+    {
         $this->offsetSet('datetime_picker_options', $value);
         return $this;
     }

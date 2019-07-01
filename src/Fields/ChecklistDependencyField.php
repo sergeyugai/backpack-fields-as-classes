@@ -29,13 +29,7 @@ class ChecklistDependencyField extends Field
     }
     
     public function primary(array $value): ChecklistDependencyField
-    {            
-        // necessary conversion    
-        $arrayable = new Arrayable();
-        foreach ($value as $key => $val) {
-            $arrayable[$key] = $val;
-        }
-        $value = $arrayable;
+    {
         $this->offsetSet('primary', $value);
         return $this;
     }
@@ -98,13 +92,7 @@ class ChecklistDependencyField extends Field
     
     
     public function secondary(array $value): ChecklistDependencyField
-    {            
-        // necessary conversion    
-        $arrayable = new Arrayable();
-        foreach ($value as $key => $val) {
-            $arrayable[$key] = $val;
-        }
-        $value = $arrayable;
+    {
         $this->offsetSet('secondary', $value);
         return $this;
     }

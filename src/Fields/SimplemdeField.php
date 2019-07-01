@@ -180,13 +180,7 @@ class SimplemdeField extends Field
     
     
     public function simplemdeAttributes(array $value): SimplemdeField
-    {            
-        // necessary conversion    
-        $arrayable = new Arrayable();
-        foreach ($value as $key => $val) {
-            $arrayable[$key] = $val;
-        }
-        $value = $arrayable;
+    {
         $this->offsetSet('simplemdeAttributes', $value);
         return $this;
     }

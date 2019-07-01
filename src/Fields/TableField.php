@@ -52,13 +52,7 @@ class TableField extends Field
     
     
     public function columns(array $value): TableField
-    {            
-        // necessary conversion    
-        $arrayable = new Arrayable();
-        foreach ($value as $key => $val) {
-            $arrayable[$key] = $val;
-        }
-        $value = $arrayable;
+    {
         $this->offsetSet('columns', $value);
         return $this;
     }

@@ -139,6 +139,7 @@ TEMPLATE;
                 $defaultValue = $fieldType === 'bool' ? ' = true' : '';
                 $extra_code = '';
                 if ($fieldType === 'array') {
+                    /* TODO: review if this needed.
                     $extra_code=<<<EXTRA
             
         // necessary conversion    
@@ -147,7 +148,7 @@ TEMPLATE;
             \$arrayable[\$key] = \$val;
         }
         \$value = \$arrayable;
-EXTRA;
+EXTRA; */
                 }
                 $fieldType = $fieldType !== '' ? $fieldType.' ' : $fieldType;
                 $classTemplate .= <<<METHOD_TEMPLATE

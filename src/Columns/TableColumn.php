@@ -44,13 +44,7 @@ class TableColumn extends Column
     
     
     public function columns(array $value): TableColumn
-    {            
-        // necessary conversion    
-        $arrayable = new Arrayable();
-        foreach ($value as $key => $val) {
-            $arrayable[$key] = $val;
-        }
-        $value = $arrayable;
+    {
         $this->offsetSet('columns', $value);
         return $this;
     }

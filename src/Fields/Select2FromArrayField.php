@@ -45,13 +45,7 @@ class Select2FromArrayField extends Field
     
     
     public function options(array $value): Select2FromArrayField
-    {            
-        // necessary conversion    
-        $arrayable = new Arrayable();
-        foreach ($value as $key => $val) {
-            $arrayable[$key] = $val;
-        }
-        $value = $arrayable;
+    {
         $this->offsetSet('options', $value);
         return $this;
     }

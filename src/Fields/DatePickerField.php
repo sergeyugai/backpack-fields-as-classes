@@ -45,13 +45,7 @@ class DatePickerField extends Field
     
     
     public function date_picker_options(array $value): DatePickerField
-    {            
-        // necessary conversion    
-        $arrayable = new Arrayable();
-        foreach ($value as $key => $val) {
-            $arrayable[$key] = $val;
-        }
-        $value = $arrayable;
+    {
         $this->offsetSet('date_picker_options', $value);
         return $this;
     }

@@ -41,13 +41,7 @@ class SelectFromArrayColumn extends Column
     
     
     public function options(array $value): SelectFromArrayColumn
-    {            
-        // necessary conversion    
-        $arrayable = new Arrayable();
-        foreach ($value as $key => $val) {
-            $arrayable[$key] = $val;
-        }
-        $value = $arrayable;
+    {
         $this->offsetSet('options', $value);
         return $this;
     }

@@ -75,13 +75,7 @@ class TextField extends Field
     
     
     public function attributes(array $value): TextField
-    {            
-        // necessary conversion    
-        $arrayable = new Arrayable();
-        foreach ($value as $key => $val) {
-            $arrayable[$key] = $val;
-        }
-        $value = $arrayable;
+    {
         $this->offsetSet('attributes', $value);
         return $this;
     }
@@ -102,13 +96,7 @@ class TextField extends Field
     
     
     public function wrapperAttributes(array $value): TextField
-    {            
-        // necessary conversion    
-        $arrayable = new Arrayable();
-        foreach ($value as $key => $val) {
-            $arrayable[$key] = $val;
-        }
-        $value = $arrayable;
+    {
         $this->offsetSet('wrapperAttributes', $value);
         return $this;
     }

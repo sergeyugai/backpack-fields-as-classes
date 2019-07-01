@@ -45,26 +45,14 @@ class CkeditorField extends Field
     
     
     public function extra_plugins(array $value): CkeditorField
-    {            
-        // necessary conversion    
-        $arrayable = new Arrayable();
-        foreach ($value as $key => $val) {
-            $arrayable[$key] = $val;
-        }
-        $value = $arrayable;
+    {
         $this->offsetSet('extra_plugins', $value);
         return $this;
     }
     
     
     public function options(array $value): CkeditorField
-    {            
-        // necessary conversion    
-        $arrayable = new Arrayable();
-        foreach ($value as $key => $val) {
-            $arrayable[$key] = $val;
-        }
-        $value = $arrayable;
+    {
         $this->offsetSet('options', $value);
         return $this;
     }
