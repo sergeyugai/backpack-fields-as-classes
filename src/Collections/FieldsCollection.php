@@ -9,20 +9,24 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields\Field;
 
 class FieldsCollection extends Arrayable implements \Countable
 {
-    public function __construct($fields = null)
+    public function __construct($fields = null, $class = null)
     {
         if ($fields !== null) {
             foreach ($fields as $index => $f) {
                 if ($f instanceof Field) {
                     $this->addField($f);
                 } else if (is_string($index) && is_string($f)) {
-                    $this->addField(new Field($index, $f));
+                    if ($class !== null) {
+                        $this->addField(new Field($index, $f));
+                    } else {
+                        $this->addField(new $class($index, $f));
+                    }
                 }
             }
         }
     }
 
-    public static function make($fields = null): FieldsCollection
+    public static function make($fields = null)
     {
         return new FieldsCollection($fields);
     }

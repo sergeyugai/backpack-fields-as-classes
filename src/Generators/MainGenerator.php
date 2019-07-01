@@ -26,6 +26,7 @@ class MainGenerator
         $this->parseAndRun($docPath, function () use ($basePath) {
             foreach ($this->fields as $fieldName => $fieldDescription) {
                 $this->generateClass($fieldName, $fieldDescription, '/../Fields/', 'Field', $basePath);
+                $this->generateCollectionsForClass($fieldName, $fieldDescription, '/../Collections/', 'Collection');
             }
         }, '#### Split Fields into Tabs');
     }
@@ -88,6 +89,71 @@ class MainGenerator
                 $this->fieldDocumentation[] = $l;
             }
         }
+    }
+
+    private function generateCollectionsForClass(string $fieldName, array $fieldDescription, $path, $prefix): void
+    {
+        $className = $this->getClassNameForFieldName($fieldName).'Fields';
+        $fieldClassName = $this->getClassNameForFieldName($fieldName).'Field';
+
+        $posOfBracket = strpos($fieldName, '(');
+        $properFieldType = $fieldName;
+        if ($posOfBracket) {
+            $properFieldType = substr($fieldName, 0, $posOfBracket - 1);
+        }
+        $properFieldType = trim($properFieldType);
+
+
+        if ($className === $prefix) return;
+
+        $classTemplate =<<<TEMPLATE
+<?php
+
+namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\\{$prefix}s;
+
+use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
+use SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields\{$fieldClassName};
+
+/**
+ * Class {$className} 
+ * Represents collection of fields 
+ * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\\{$prefix}s
+ */
+class {$className} extends FieldsCollection 
+{ 
+    // We re-declare this so that IDE would pick up 
+    public static function make(\$fields) : {$className}
+    {
+        return new self(\$fields, {$fieldClassName}::class);
+    }
+    
+TEMPLATE;
+
+        foreach ($fieldDescription as $fName => $fieldType) {
+            if ($fName !== 'type') {
+
+                $defaultValue = $fieldType === 'bool' ? ' = true' : '';
+                $extra_code = '';
+                $fieldType = $fieldType !== '' ? $fieldType.' ' : $fieldType;
+                $classTemplate .= <<<METHOD_TEMPLATE
+
+    public function {$fName}({$fieldType}\$value{$defaultValue}): {$className}
+    {
+        foreach (\$this->result as \$f) {
+            \$f->{$fName}(\$value);
+        }
+        return \$this;
+    }
+    
+    
+METHOD_TEMPLATE;
+
+            }
+        }
+
+        $classTemplate .= "\n}";
+
+        file_put_contents(dirname(__FILE__).$path.$className.'.php', $classTemplate);
     }
 
     private function generateClass(string $fieldName, array $fieldDescription, $path, $prefix, $docSiteBasePath): void
@@ -182,6 +248,10 @@ METHOD_TEMPLATE;
         } else {
             return ucfirst($trimmed);
         }
+    }
+
+    private function getCollectionClassNameForFieldName(string $fieldName) {
+        return $this->getClassNameForFieldName($fieldName);
     }
 
     private function addFieldItemFromLine(string $l): void

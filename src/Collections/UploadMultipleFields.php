@@ -3,22 +3,22 @@
 namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Collections;
 
 use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
-use SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields\{NumberField};
+use SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields\{UploadMultipleField};
 
 /**
- * Class NumberFields 
+ * Class UploadMultipleFields 
  * Represents collection of fields 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Collections
  */
-class NumberFields extends FieldsCollection 
+class UploadMultipleFields extends FieldsCollection 
 { 
     // We re-declare this so that IDE would pick up 
-    public static function make($fields) : NumberFields
+    public static function make($fields) : UploadMultipleFields
     {
-        return new self($fields, NumberField::class);
+        return new self($fields, UploadMultipleField::class);
     }
     
-    public function name(string $value): NumberFields
+    public function name(string $value): UploadMultipleFields
     {
         foreach ($this->result as $f) {
             $f->name($value);
@@ -27,7 +27,7 @@ class NumberFields extends FieldsCollection
     }
     
     
-    public function label(string $value): NumberFields
+    public function label(string $value): UploadMultipleFields
     {
         foreach ($this->result as $f) {
             $f->label($value);
@@ -36,28 +36,28 @@ class NumberFields extends FieldsCollection
     }
     
     
-    public function attributes(array $value): NumberFields
+    public function upload(bool $value = true): UploadMultipleFields
     {
         foreach ($this->result as $f) {
-            $f->attributes($value);
+            $f->upload($value);
         }
         return $this;
     }
     
     
-    public function prefix(string $value): NumberFields
+    public function disk(string $value): UploadMultipleFields
     {
         foreach ($this->result as $f) {
-            $f->prefix($value);
+            $f->disk($value);
         }
         return $this;
     }
     
     
-    public function suffix(string $value): NumberFields
+    public function photos(string $value): UploadMultipleFields
     {
         foreach ($this->result as $f) {
-            $f->suffix($value);
+            $f->photos($value);
         }
         return $this;
     }

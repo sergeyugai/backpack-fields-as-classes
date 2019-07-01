@@ -3,22 +3,22 @@
 namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Collections;
 
 use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
-use SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields\{NumberField};
+use SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields\{Select2NestedField};
 
 /**
- * Class NumberFields 
+ * Class Select2NestedFields 
  * Represents collection of fields 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Collections
  */
-class NumberFields extends FieldsCollection 
+class Select2NestedFields extends FieldsCollection 
 { 
     // We re-declare this so that IDE would pick up 
-    public static function make($fields) : NumberFields
+    public static function make($fields) : Select2NestedFields
     {
-        return new self($fields, NumberField::class);
+        return new self($fields, Select2NestedField::class);
     }
     
-    public function name(string $value): NumberFields
+    public function name(string $value): Select2NestedFields
     {
         foreach ($this->result as $f) {
             $f->name($value);
@@ -27,7 +27,7 @@ class NumberFields extends FieldsCollection
     }
     
     
-    public function label(string $value): NumberFields
+    public function label(string $value): Select2NestedFields
     {
         foreach ($this->result as $f) {
             $f->label($value);
@@ -36,28 +36,28 @@ class NumberFields extends FieldsCollection
     }
     
     
-    public function attributes(array $value): NumberFields
+    public function entity(string $value): Select2NestedFields
     {
         foreach ($this->result as $f) {
-            $f->attributes($value);
+            $f->entity($value);
         }
         return $this;
     }
     
     
-    public function prefix(string $value): NumberFields
+    public function attribute(string $value): Select2NestedFields
     {
         foreach ($this->result as $f) {
-            $f->prefix($value);
+            $f->attribute($value);
         }
         return $this;
     }
     
     
-    public function suffix(string $value): NumberFields
+    public function model(string $value): Select2NestedFields
     {
         foreach ($this->result as $f) {
-            $f->suffix($value);
+            $f->model($value);
         }
         return $this;
     }

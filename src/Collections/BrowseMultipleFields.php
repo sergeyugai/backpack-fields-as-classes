@@ -3,22 +3,22 @@
 namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Collections;
 
 use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
-use SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields\{NumberField};
+use SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields\{BrowseMultipleField};
 
 /**
- * Class NumberFields 
+ * Class BrowseMultipleFields 
  * Represents collection of fields 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Collections
  */
-class NumberFields extends FieldsCollection 
+class BrowseMultipleFields extends FieldsCollection 
 { 
     // We re-declare this so that IDE would pick up 
-    public static function make($fields) : NumberFields
+    public static function make($fields) : BrowseMultipleFields
     {
-        return new self($fields, NumberField::class);
+        return new self($fields, BrowseMultipleField::class);
     }
     
-    public function name(string $value): NumberFields
+    public function name(string $value): BrowseMultipleFields
     {
         foreach ($this->result as $f) {
             $f->name($value);
@@ -27,7 +27,7 @@ class NumberFields extends FieldsCollection
     }
     
     
-    public function label(string $value): NumberFields
+    public function label(string $value): BrowseMultipleFields
     {
         foreach ($this->result as $f) {
             $f->label($value);
@@ -36,28 +36,19 @@ class NumberFields extends FieldsCollection
     }
     
     
-    public function attributes(array $value): NumberFields
+    public function multiple(bool $value = true): BrowseMultipleFields
     {
         foreach ($this->result as $f) {
-            $f->attributes($value);
+            $f->multiple($value);
         }
         return $this;
     }
     
     
-    public function prefix(string $value): NumberFields
+    public function mime_types(array $value): BrowseMultipleFields
     {
         foreach ($this->result as $f) {
-            $f->prefix($value);
-        }
-        return $this;
-    }
-    
-    
-    public function suffix(string $value): NumberFields
-    {
-        foreach ($this->result as $f) {
-            $f->suffix($value);
+            $f->mime_types($value);
         }
         return $this;
     }

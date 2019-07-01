@@ -3,22 +3,22 @@
 namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Collections;
 
 use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
-use SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields\{NumberField};
+use SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields\{RadioField};
 
 /**
- * Class NumberFields 
+ * Class RadioFields 
  * Represents collection of fields 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Collections
  */
-class NumberFields extends FieldsCollection 
+class RadioFields extends FieldsCollection 
 { 
     // We re-declare this so that IDE would pick up 
-    public static function make($fields) : NumberFields
+    public static function make($fields) : RadioFields
     {
-        return new self($fields, NumberField::class);
+        return new self($fields, RadioField::class);
     }
     
-    public function name(string $value): NumberFields
+    public function name(string $value): RadioFields
     {
         foreach ($this->result as $f) {
             $f->name($value);
@@ -27,7 +27,7 @@ class NumberFields extends FieldsCollection
     }
     
     
-    public function label(string $value): NumberFields
+    public function label(string $value): RadioFields
     {
         foreach ($this->result as $f) {
             $f->label($value);
@@ -36,28 +36,37 @@ class NumberFields extends FieldsCollection
     }
     
     
-    public function attributes(array $value): NumberFields
+    public function options(array $value): RadioFields
     {
         foreach ($this->result as $f) {
-            $f->attributes($value);
+            $f->options($value);
         }
         return $this;
     }
     
     
-    public function prefix(string $value): NumberFields
+    public function 0(string $value): RadioFields
     {
         foreach ($this->result as $f) {
-            $f->prefix($value);
+            $f->0($value);
         }
         return $this;
     }
     
     
-    public function suffix(string $value): NumberFields
+    public function 1(string $value): RadioFields
     {
         foreach ($this->result as $f) {
-            $f->suffix($value);
+            $f->1($value);
+        }
+        return $this;
+    }
+    
+    
+    public function inline(bool $value = true): RadioFields
+    {
+        foreach ($this->result as $f) {
+            $f->inline($value);
         }
         return $this;
     }
