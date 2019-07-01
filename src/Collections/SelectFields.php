@@ -13,7 +13,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields\{SelectField};
 class SelectFields extends FieldsCollection 
 { 
     // We re-declare this so that IDE would pick up 
-    public static function make($fields) : SelectFields
+    public static function make($fields = null) : SelectFields
     {
         return new self($fields, SelectField::class);
     }

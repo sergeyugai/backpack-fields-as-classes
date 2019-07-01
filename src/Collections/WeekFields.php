@@ -13,7 +13,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields\{WeekField};
 class WeekFields extends FieldsCollection 
 { 
     // We re-declare this so that IDE would pick up 
-    public static function make($fields) : WeekFields
+    public static function make($fields = null) : WeekFields
     {
         return new self($fields, WeekField::class);
     }

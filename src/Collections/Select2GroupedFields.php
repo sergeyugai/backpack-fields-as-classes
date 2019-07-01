@@ -13,7 +13,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields\{Select2GroupedField};
 class Select2GroupedFields extends FieldsCollection 
 { 
     // We re-declare this so that IDE would pick up 
-    public static function make($fields) : Select2GroupedFields
+    public static function make($fields = null) : Select2GroupedFields
     {
         return new self($fields, Select2GroupedField::class);
     }

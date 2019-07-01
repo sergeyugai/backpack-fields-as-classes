@@ -13,7 +13,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields\{EmailField};
 class EmailFields extends FieldsCollection 
 { 
     // We re-declare this so that IDE would pick up 
-    public static function make($fields) : EmailFields
+    public static function make($fields = null) : EmailFields
     {
         return new self($fields, EmailField::class);
     }

@@ -13,7 +13,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields\{MonthField};
 class MonthFields extends FieldsCollection 
 { 
     // We re-declare this so that IDE would pick up 
-    public static function make($fields) : MonthFields
+    public static function make($fields = null) : MonthFields
     {
         return new self($fields, MonthField::class);
     }

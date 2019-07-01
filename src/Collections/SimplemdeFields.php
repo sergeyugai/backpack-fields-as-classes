@@ -13,7 +13,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields\{SimplemdeField};
 class SimplemdeFields extends FieldsCollection 
 { 
     // We re-declare this so that IDE would pick up 
-    public static function make($fields) : SimplemdeFields
+    public static function make($fields = null) : SimplemdeFields
     {
         return new self($fields, SimplemdeField::class);
     }

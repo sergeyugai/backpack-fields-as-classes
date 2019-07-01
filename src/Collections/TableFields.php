@@ -13,7 +13,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields\{TableField};
 class TableFields extends FieldsCollection 
 { 
     // We re-declare this so that IDE would pick up 
-    public static function make($fields) : TableFields
+    public static function make($fields = null) : TableFields
     {
         return new self($fields, TableField::class);
     }

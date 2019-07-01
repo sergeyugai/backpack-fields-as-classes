@@ -13,7 +13,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields\{TimeField};
 class TimeFields extends FieldsCollection 
 { 
     // We re-declare this so that IDE would pick up 
-    public static function make($fields) : TimeFields
+    public static function make($fields = null) : TimeFields
     {
         return new self($fields, TimeField::class);
     }

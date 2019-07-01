@@ -13,7 +13,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields\{UploadField};
 class UploadFields extends FieldsCollection 
 { 
     // We re-declare this so that IDE would pick up 
-    public static function make($fields) : UploadFields
+    public static function make($fields = null) : UploadFields
     {
         return new self($fields, UploadField::class);
     }

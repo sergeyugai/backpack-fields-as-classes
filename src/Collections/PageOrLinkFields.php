@@ -13,7 +13,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields\{PageOrLinkField};
 class PageOrLinkFields extends FieldsCollection 
 { 
     // We re-declare this so that IDE would pick up 
-    public static function make($fields) : PageOrLinkFields
+    public static function make($fields = null) : PageOrLinkFields
     {
         return new self($fields, PageOrLinkField::class);
     }

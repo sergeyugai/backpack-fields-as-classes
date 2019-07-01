@@ -13,7 +13,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields\{ChecklistField};
 class ChecklistFields extends FieldsCollection 
 { 
     // We re-declare this so that IDE would pick up 
-    public static function make($fields) : ChecklistFields
+    public static function make($fields = null) : ChecklistFields
     {
         return new self($fields, ChecklistField::class);
     }

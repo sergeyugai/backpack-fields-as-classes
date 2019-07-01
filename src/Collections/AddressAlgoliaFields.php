@@ -13,7 +13,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields\{AddressAlgoliaField};
 class AddressAlgoliaFields extends FieldsCollection 
 { 
     // We re-declare this so that IDE would pick up 
-    public static function make($fields) : AddressAlgoliaFields
+    public static function make($fields = null) : AddressAlgoliaFields
     {
         return new self($fields, AddressAlgoliaField::class);
     }

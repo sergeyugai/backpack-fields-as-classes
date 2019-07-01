@@ -13,7 +13,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields\{ViewField};
 class ViewFields extends FieldsCollection 
 { 
     // We re-declare this so that IDE would pick up 
-    public static function make($fields) : ViewFields
+    public static function make($fields = null) : ViewFields
     {
         return new self($fields, ViewField::class);
     }

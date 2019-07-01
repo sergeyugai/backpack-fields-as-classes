@@ -122,7 +122,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields\{$fieldClassName};
 class {$className} extends FieldsCollection 
 { 
     // We re-declare this so that IDE would pick up 
-    public static function make(\$fields) : {$className}
+    public static function make(\$fields = null) : {$className}
     {
         return new self(\$fields, {$fieldClassName}::class);
     }

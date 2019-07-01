@@ -13,7 +13,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields\{SelectMultipleField};
 class SelectMultipleFields extends FieldsCollection 
 { 
     // We re-declare this so that IDE would pick up 
-    public static function make($fields) : SelectMultipleFields
+    public static function make($fields = null) : SelectMultipleFields
     {
         return new self($fields, SelectMultipleField::class);
     }

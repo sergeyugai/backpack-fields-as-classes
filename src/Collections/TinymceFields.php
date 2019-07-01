@@ -13,7 +13,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields\{TinymceField};
 class TinymceFields extends FieldsCollection 
 { 
     // We re-declare this so that IDE would pick up 
-    public static function make($fields) : TinymceFields
+    public static function make($fields = null) : TinymceFields
     {
         return new self($fields, TinymceField::class);
     }

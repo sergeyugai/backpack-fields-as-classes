@@ -13,7 +13,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields\{NumberField};
 class NumberFields extends FieldsCollection 
 { 
     // We re-declare this so that IDE would pick up 
-    public static function make($fields) : NumberFields
+    public static function make($fields = null) : NumberFields
     {
         return new self($fields, NumberField::class);
     }

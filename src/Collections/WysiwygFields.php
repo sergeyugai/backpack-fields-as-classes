@@ -13,7 +13,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields\{WysiwygField};
 class WysiwygFields extends FieldsCollection 
 { 
     // We re-declare this so that IDE would pick up 
-    public static function make($fields) : WysiwygFields
+    public static function make($fields = null) : WysiwygFields
     {
         return new self($fields, WysiwygField::class);
     }

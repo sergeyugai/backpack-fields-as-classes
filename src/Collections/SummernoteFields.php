@@ -13,7 +13,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields\{SummernoteField};
 class SummernoteFields extends FieldsCollection 
 { 
     // We re-declare this so that IDE would pick up 
-    public static function make($fields) : SummernoteFields
+    public static function make($fields = null) : SummernoteFields
     {
         return new self($fields, SummernoteField::class);
     }

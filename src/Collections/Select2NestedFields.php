@@ -13,7 +13,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields\{Select2NestedField};
 class Select2NestedFields extends FieldsCollection 
 { 
     // We re-declare this so that IDE would pick up 
-    public static function make($fields) : Select2NestedFields
+    public static function make($fields = null) : Select2NestedFields
     {
         return new self($fields, Select2NestedField::class);
     }

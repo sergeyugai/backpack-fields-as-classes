@@ -13,7 +13,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields\{HiddenField};
 class HiddenFields extends FieldsCollection 
 { 
     // We re-declare this so that IDE would pick up 
-    public static function make($fields) : HiddenFields
+    public static function make($fields = null) : HiddenFields
     {
         return new self($fields, HiddenField::class);
     }

@@ -13,7 +13,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields\{DatePickerField};
 class DatePickerFields extends FieldsCollection 
 { 
     // We re-declare this so that IDE would pick up 
-    public static function make($fields) : DatePickerFields
+    public static function make($fields = null) : DatePickerFields
     {
         return new self($fields, DatePickerField::class);
     }

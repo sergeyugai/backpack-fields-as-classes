@@ -13,7 +13,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields\{CustomHtmlField};
 class CustomHtmlFields extends FieldsCollection 
 { 
     // We re-declare this so that IDE would pick up 
-    public static function make($fields) : CustomHtmlFields
+    public static function make($fields = null) : CustomHtmlFields
     {
         return new self($fields, CustomHtmlField::class);
     }

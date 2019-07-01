@@ -13,7 +13,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields\{AddressGoogleField};
 class AddressGoogleFields extends FieldsCollection 
 { 
     // We re-declare this so that IDE would pick up 
-    public static function make($fields) : AddressGoogleFields
+    public static function make($fields = null) : AddressGoogleFields
     {
         return new self($fields, AddressGoogleField::class);
     }

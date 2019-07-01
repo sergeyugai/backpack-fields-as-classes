@@ -13,7 +13,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields\{RadioField};
 class RadioFields extends FieldsCollection 
 { 
     // We re-declare this so that IDE would pick up 
-    public static function make($fields) : RadioFields
+    public static function make($fields = null) : RadioFields
     {
         return new self($fields, RadioField::class);
     }

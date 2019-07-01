@@ -17,9 +17,9 @@ class FieldsCollection extends Arrayable implements \Countable
                     $this->addField($f);
                 } else if (is_string($index) && is_string($f)) {
                     if ($class !== null) {
-                        $this->addField(new Field($index, $f));
-                    } else {
                         $this->addField(new $class($index, $f));
+                    } else {
+                        $this->addField(new Field($index, $f));
                     }
                 }
             }

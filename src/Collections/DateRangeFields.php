@@ -13,7 +13,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields\{DateRangeField};
 class DateRangeFields extends FieldsCollection 
 { 
     // We re-declare this so that IDE would pick up 
-    public static function make($fields) : DateRangeFields
+    public static function make($fields = null) : DateRangeFields
     {
         return new self($fields, DateRangeField::class);
     }

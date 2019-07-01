@@ -13,7 +13,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields\{TextField};
 class TextFields extends FieldsCollection 
 { 
     // We re-declare this so that IDE would pick up 
-    public static function make($fields) : TextFields
+    public static function make($fields = null) : TextFields
     {
         return new self($fields, TextField::class);
     }

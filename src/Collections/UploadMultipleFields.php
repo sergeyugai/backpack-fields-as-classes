@@ -13,7 +13,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields\{UploadMultipleField};
 class UploadMultipleFields extends FieldsCollection 
 { 
     // We re-declare this so that IDE would pick up 
-    public static function make($fields) : UploadMultipleFields
+    public static function make($fields = null) : UploadMultipleFields
     {
         return new self($fields, UploadMultipleField::class);
     }

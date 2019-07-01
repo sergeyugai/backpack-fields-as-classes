@@ -13,7 +13,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields\{VideoField};
 class VideoFields extends FieldsCollection 
 { 
     // We re-declare this so that IDE would pick up 
-    public static function make($fields) : VideoFields
+    public static function make($fields = null) : VideoFields
     {
         return new self($fields, VideoField::class);
     }

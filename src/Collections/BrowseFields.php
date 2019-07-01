@@ -13,7 +13,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields\{BrowseField};
 class BrowseFields extends FieldsCollection 
 { 
     // We re-declare this so that IDE would pick up 
-    public static function make($fields) : BrowseFields
+    public static function make($fields = null) : BrowseFields
     {
         return new self($fields, BrowseField::class);
     }

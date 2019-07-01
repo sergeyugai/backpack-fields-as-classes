@@ -13,7 +13,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields\{RangeField};
 class RangeFields extends FieldsCollection 
 { 
     // We re-declare this so that IDE would pick up 
-    public static function make($fields) : RangeFields
+    public static function make($fields = null) : RangeFields
     {
         return new self($fields, RangeField::class);
     }

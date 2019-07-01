@@ -13,7 +13,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields\{EnumField};
 class EnumFields extends FieldsCollection 
 { 
     // We re-declare this so that IDE would pick up 
-    public static function make($fields) : EnumFields
+    public static function make($fields = null) : EnumFields
     {
         return new self($fields, EnumField::class);
     }

@@ -13,7 +13,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields\{Select2FromArrayField};
 class Select2FromArrayFields extends FieldsCollection 
 { 
     // We re-declare this so that IDE would pick up 
-    public static function make($fields) : Select2FromArrayFields
+    public static function make($fields = null) : Select2FromArrayFields
     {
         return new self($fields, Select2FromArrayField::class);
     }

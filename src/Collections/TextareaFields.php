@@ -13,7 +13,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields\{TextareaField};
 class TextareaFields extends FieldsCollection 
 { 
     // We re-declare this so that IDE would pick up 
-    public static function make($fields) : TextareaFields
+    public static function make($fields = null) : TextareaFields
     {
         return new self($fields, TextareaField::class);
     }

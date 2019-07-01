@@ -13,7 +13,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields\{ColorPickerField};
 class ColorPickerFields extends FieldsCollection 
 { 
     // We re-declare this so that IDE would pick up 
-    public static function make($fields) : ColorPickerFields
+    public static function make($fields = null) : ColorPickerFields
     {
         return new self($fields, ColorPickerField::class);
     }

@@ -13,7 +13,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields\{IconPickerField};
 class IconPickerFields extends FieldsCollection 
 { 
     // We re-declare this so that IDE would pick up 
-    public static function make($fields) : IconPickerFields
+    public static function make($fields = null) : IconPickerFields
     {
         return new self($fields, IconPickerField::class);
     }

@@ -13,7 +13,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields\{BrowseMultipleField};
 class BrowseMultipleFields extends FieldsCollection 
 { 
     // We re-declare this so that IDE would pick up 
-    public static function make($fields) : BrowseMultipleFields
+    public static function make($fields = null) : BrowseMultipleFields
     {
         return new self($fields, BrowseMultipleField::class);
     }

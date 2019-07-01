@@ -13,7 +13,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields\{Base64ImageField};
 class Base64ImageFields extends FieldsCollection 
 { 
     // We re-declare this so that IDE would pick up 
-    public static function make($fields) : Base64ImageFields
+    public static function make($fields = null) : Base64ImageFields
     {
         return new self($fields, Base64ImageField::class);
     }

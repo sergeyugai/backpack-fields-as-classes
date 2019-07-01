@@ -13,7 +13,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields\{UrlField};
 class UrlFields extends FieldsCollection 
 { 
     // We re-declare this so that IDE would pick up 
-    public static function make($fields) : UrlFields
+    public static function make($fields = null) : UrlFields
     {
         return new self($fields, UrlField::class);
     }

@@ -13,7 +13,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields\{PasswordField};
 class PasswordFields extends FieldsCollection 
 { 
     // We re-declare this so that IDE would pick up 
-    public static function make($fields) : PasswordFields
+    public static function make($fields = null) : PasswordFields
     {
         return new self($fields, PasswordField::class);
     }

@@ -13,7 +13,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields\{DatetimePickerField};
 class DatetimePickerFields extends FieldsCollection 
 { 
     // We re-declare this so that IDE would pick up 
-    public static function make($fields) : DatetimePickerFields
+    public static function make($fields = null) : DatetimePickerFields
     {
         return new self($fields, DatetimePickerField::class);
     }
