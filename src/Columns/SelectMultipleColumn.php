@@ -7,6 +7,12 @@ class SelectMultipleColumn extends Column
 
     protected $result = ['type' => 'select_multiple']; 
 
+    // We re-declare this so that IDE would pick up 
+    public static function make(string $name = null, string $label = null) : SelectMultipleColumn
+    {
+        return new self($name, $label);
+    }
+    
     public function label(string $value): SelectMultipleColumn
     {
         $this->offsetSet('label', $value);

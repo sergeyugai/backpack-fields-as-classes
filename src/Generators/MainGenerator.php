@@ -47,10 +47,9 @@ class MainGenerator
         $this->inFieldDefinition = false;
         $this->fieldName = $this->fieldNameToConsider = '';
         foreach ($lines as $l) {
-            if (! is_null($parseTillLine)) {
-                if (strpos($l, $parseTillLine) !== FALSE) {
-                    break;
-                }
+            $isThisTheFinalLine = ($parseTillLine !== null) && strpos($l, $parseTillLine) !== FALSE;
+            if ($isThisTheFinalLine) {
+                break;
             }
             if ($hasStarted) {
                 $this->parseLine($l);
@@ -67,12 +66,10 @@ class MainGenerator
         if ($this->inCode) {
             if ($this->inFieldDefinition) {
                 $this->addFieldItemFromLine($l);
-            } else {
-                if (strpos($l, '[') !== FALSE) {
-                    $this->inFieldDefinition = true;
-                    $this->fieldName = $this->fieldNameToConsider;
-                    $this->fieldItems = [];
-                }
+            } else if (strpos($l, '[') !== FALSE) {
+                $this->inFieldDefinition = true;
+                $this->fieldName = $this->fieldNameToConsider;
+                $this->fieldItems = [];
             }
             if (strpos($l, '```') !== FALSE) {
                 $this->inCode = false;
@@ -87,7 +84,7 @@ class MainGenerator
         }
     }
 
-    private function generateClass(string $fieldName, array $fieldDescription, $path, $prefix)
+    private function generateClass(string $fieldName, array $fieldDescription, $path, $prefix): void
     {
         $className = $this->getClassNameForFieldName($fieldName).$prefix;
 
@@ -111,14 +108,20 @@ class {$className} extends {$prefix}
 
     protected \$result = ['type' => '{$properFieldType}']; 
 
+    // We re-declare this so that IDE would pick up 
+    public static function make(string \$name = null, string \$label = null) : {$className}
+    {
+        return new self(\$name, \$label);
+    }
+    
 TEMPLATE;
 
-        foreach ($fieldDescription as $fieldName => $fieldType) {
-            if ($fieldName != 'type') {
+        foreach ($fieldDescription as $fName => $fieldType) {
+            if ($fName !== 'type') {
 
-                $defaultValue = $fieldType == 'bool' ? ' = true' : '';
+                $defaultValue = $fieldType === 'bool' ? ' = true' : '';
                 $extra_code = '';
-                if ($fieldType == 'array') {
+                if ($fieldType === 'array') {
                     $extra_code=<<<EXTRA
             
         // necessary conversion    
@@ -129,12 +132,12 @@ TEMPLATE;
         \$value = \$arrayable;
 EXTRA;
                 }
-                $fieldType = strlen($fieldType)? $fieldType.' ' : $fieldType;
+                $fieldType = $fieldType !== '' ? $fieldType.' ' : $fieldType;
                 $classTemplate .= <<<METHOD_TEMPLATE
 
-    public function {$fieldName}({$fieldType}\$value{$defaultValue}): {$className}
+    public function {$fName}({$fieldType}\$value{$defaultValue}): {$className}
     {{$extra_code}
-        \$this->offsetSet('{$fieldName}', \$value);
+        \$this->offsetSet('{$fName}', \$value);
         return \$this;
     }
     

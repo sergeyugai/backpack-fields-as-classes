@@ -7,6 +7,12 @@ class ColorPickerField extends Field
 
     protected $result = ['type' => 'color_picker']; 
 
+    // We re-declare this so that IDE would pick up 
+    public static function make(string $name = null, string $label = null) : ColorPickerField
+    {
+        return new self($name, $label);
+    }
+    
     public function label(string $value): ColorPickerField
     {
         $this->offsetSet('label', $value);

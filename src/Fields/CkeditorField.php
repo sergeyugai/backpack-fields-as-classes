@@ -7,6 +7,12 @@ class CkeditorField extends Field
 
     protected $result = ['type' => 'ckeditor']; 
 
+    // We re-declare this so that IDE would pick up 
+    public static function make(string $name = null, string $label = null) : CkeditorField
+    {
+        return new self($name, $label);
+    }
+    
     public function name(string $value): CkeditorField
     {
         $this->offsetSet('name', $value);

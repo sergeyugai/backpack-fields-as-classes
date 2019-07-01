@@ -7,6 +7,12 @@ class DateField extends Field
 
     protected $result = ['type' => 'date']; 
 
+    // We re-declare this so that IDE would pick up 
+    public static function make(string $name = null, string $label = null) : DateField
+    {
+        return new self($name, $label);
+    }
+    
     public function name(string $value): DateField
     {
         $this->offsetSet('name', $value);

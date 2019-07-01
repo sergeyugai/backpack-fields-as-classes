@@ -7,6 +7,12 @@ class ChecklistField extends Field
 
     protected $result = ['type' => 'checklist']; 
 
+    // We re-declare this so that IDE would pick up 
+    public static function make(string $name = null, string $label = null) : ChecklistField
+    {
+        return new self($name, $label);
+    }
+    
     public function label(string $value): ChecklistField
     {
         $this->offsetSet('label', $value);

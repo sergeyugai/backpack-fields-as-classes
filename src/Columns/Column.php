@@ -25,13 +25,13 @@ class Column implements \ArrayAccess
      */
     public function __construct(string $name = null, string $label = null)
     {
-        if (! is_null($name)) {
+        if ($name !== null) {
             $this->offsetSet('name', $name);
-            if (is_null($label)) {
+            if ($label === null) {
                 $this->offsetSet('label', ucfirst($name));
             }
         }
-        if (! is_null($label)) {
+        if ($label !== null) {
             $this->offsetSet('label', ucfirst($label));
         }
     }

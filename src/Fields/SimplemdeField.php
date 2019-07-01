@@ -7,6 +7,12 @@ class SimplemdeField extends Field
 
     protected $result = ['type' => 'simplemde']; 
 
+    // We re-declare this so that IDE would pick up 
+    public static function make(string $name = null, string $label = null) : SimplemdeField
+    {
+        return new self($name, $label);
+    }
+    
     public function name(string $value): SimplemdeField
     {
         $this->offsetSet('name', $value);

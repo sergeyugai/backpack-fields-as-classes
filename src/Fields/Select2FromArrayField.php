@@ -7,6 +7,12 @@ class Select2FromArrayField extends Field
 
     protected $result = ['type' => 'select2_from_array']; 
 
+    // We re-declare this so that IDE would pick up 
+    public static function make(string $name = null, string $label = null) : Select2FromArrayField
+    {
+        return new self($name, $label);
+    }
+    
     public function name(string $value): Select2FromArrayField
     {
         $this->offsetSet('name', $value);

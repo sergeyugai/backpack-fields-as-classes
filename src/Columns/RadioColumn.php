@@ -7,6 +7,12 @@ class RadioColumn extends Column
 
     protected $result = ['type' => 'radio']; 
 
+    // We re-declare this so that IDE would pick up 
+    public static function make(string $name = null, string $label = null) : RadioColumn
+    {
+        return new self($name, $label);
+    }
+    
     public function name(string $value): RadioColumn
     {
         $this->offsetSet('name', $value);
@@ -30,6 +36,13 @@ class RadioColumn extends Column
         }
         $value = $arrayable;
         $this->offsetSet('options', $value);
+        return $this;
+    }
+    
+    
+    public function 0(string $value): RadioColumn
+    {
+        $this->offsetSet('0', $value);
         return $this;
     }
     

@@ -7,6 +7,12 @@ class TextColumn extends Column
 
     protected $result = ['type' => 'text']; 
 
+    // We re-declare this so that IDE would pick up 
+    public static function make(string $name = null, string $label = null) : TextColumn
+    {
+        return new self($name, $label);
+    }
+    
     public function name(string $value): TextColumn
     {
         $this->offsetSet('name', $value);

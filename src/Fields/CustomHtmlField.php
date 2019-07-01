@@ -7,6 +7,12 @@ class CustomHtmlField extends Field
 
     protected $result = ['type' => 'custom_html']; 
 
+    // We re-declare this so that IDE would pick up 
+    public static function make(string $name = null, string $label = null) : CustomHtmlField
+    {
+        return new self($name, $label);
+    }
+    
     public function name(string $value): CustomHtmlField
     {
         $this->offsetSet('name', $value);

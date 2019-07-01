@@ -7,6 +7,12 @@ class SelectFromArrayColumn extends Column
 
     protected $result = ['type' => 'select_from_array']; 
 
+    // We re-declare this so that IDE would pick up 
+    public static function make(string $name = null, string $label = null) : SelectFromArrayColumn
+    {
+        return new self($name, $label);
+    }
+    
     public function name(string $value): SelectFromArrayColumn
     {
         $this->offsetSet('name', $value);

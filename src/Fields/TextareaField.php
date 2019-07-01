@@ -7,6 +7,12 @@ class TextareaField extends Field
 
     protected $result = ['type' => 'textarea']; 
 
+    // We re-declare this so that IDE would pick up 
+    public static function make(string $name = null, string $label = null) : TextareaField
+    {
+        return new self($name, $label);
+    }
+    
     public function name(string $value): TextareaField
     {
         $this->offsetSet('name', $value);

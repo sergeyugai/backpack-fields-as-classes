@@ -7,6 +7,12 @@ class TableField extends Field
 
     protected $result = ['type' => 'table']; 
 
+    // We re-declare this so that IDE would pick up 
+    public static function make(string $name = null, string $label = null) : TableField
+    {
+        return new self($name, $label);
+    }
+    
     public function name($value): TableField
     {
         $this->offsetSet('name', $value);

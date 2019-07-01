@@ -7,6 +7,12 @@ class Select2NestedField extends Field
 
     protected $result = ['type' => 'select2_nested']; 
 
+    // We re-declare this so that IDE would pick up 
+    public static function make(string $name = null, string $label = null) : Select2NestedField
+    {
+        return new self($name, $label);
+    }
+    
     public function name(string $value): Select2NestedField
     {
         $this->offsetSet('name', $value);

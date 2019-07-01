@@ -7,6 +7,12 @@ class ClosureColumn extends Column
 
     protected $result = ['type' => 'closure']; 
 
+    // We re-declare this so that IDE would pick up 
+    public static function make(string $name = null, string $label = null) : ClosureColumn
+    {
+        return new self($name, $label);
+    }
+    
     public function name(string $value): ClosureColumn
     {
         $this->offsetSet('name', $value);

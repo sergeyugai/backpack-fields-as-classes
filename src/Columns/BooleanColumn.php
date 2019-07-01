@@ -7,6 +7,12 @@ class BooleanColumn extends Column
 
     protected $result = ['type' => 'boolean']; 
 
+    // We re-declare this so that IDE would pick up 
+    public static function make(string $name = null, string $label = null) : BooleanColumn
+    {
+        return new self($name, $label);
+    }
+    
     public function name(string $value): BooleanColumn
     {
         $this->offsetSet('name', $value);

@@ -7,6 +7,12 @@ class SelectMultipleField extends Field
 
     protected $result = ['type' => 'select_multiple']; 
 
+    // We re-declare this so that IDE would pick up 
+    public static function make(string $name = null, string $label = null) : SelectMultipleField
+    {
+        return new self($name, $label);
+    }
+    
     public function label(string $value): SelectMultipleField
     {
         $this->offsetSet('label', $value);

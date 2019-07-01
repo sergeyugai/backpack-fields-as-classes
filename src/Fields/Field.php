@@ -26,15 +26,20 @@ class Field extends Arrayable
     public function __construct(string $name = null, string $label = null)
     {
         $this->offsetSet('wrapperAttributes', new Arrayable());
-        if (! is_null($name)) {
+        if ($name !== null) {
             $this->offsetSet('name', $name);
-            if (is_null($label)) {
+            if ($label === null) {
                 $this->offsetSet('label', ucfirst($name));
             }
         }
-        if (! is_null($label)) {
+        if ($label !== null) {
             $this->offsetSet('label', ucfirst($label));
         }
+    }
+
+    public static function make(string $name = null, string $label = null): Field
+    {
+        return new self($name, $label);
     }
 
     /**

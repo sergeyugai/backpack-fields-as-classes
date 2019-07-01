@@ -7,6 +7,12 @@ class AddressGoogleField extends Field
 
     protected $result = ['type' => 'address_google']; 
 
+    // We re-declare this so that IDE would pick up 
+    public static function make(string $name = null, string $label = null) : AddressGoogleField
+    {
+        return new self($name, $label);
+    }
+    
     public function name(string $value): AddressGoogleField
     {
         $this->offsetSet('name', $value);

@@ -7,6 +7,12 @@ class ImageColumn extends Column
 
     protected $result = ['type' => 'image']; 
 
+    // We re-declare this so that IDE would pick up 
+    public static function make(string $name = null, string $label = null) : ImageColumn
+    {
+        return new self($name, $label);
+    }
+    
     public function name(string $value): ImageColumn
     {
         $this->offsetSet('name', $value);

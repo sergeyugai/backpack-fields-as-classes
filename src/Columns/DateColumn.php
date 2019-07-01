@@ -7,6 +7,12 @@ class DateColumn extends Column
 
     protected $result = ['type' => 'date']; 
 
+    // We re-declare this so that IDE would pick up 
+    public static function make(string $name = null, string $label = null) : DateColumn
+    {
+        return new self($name, $label);
+    }
+    
     public function name(string $value): DateColumn
     {
         $this->offsetSet('name', $value);

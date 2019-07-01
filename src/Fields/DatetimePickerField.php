@@ -7,6 +7,12 @@ class DatetimePickerField extends Field
 
     protected $result = ['type' => 'datetime_picker']; 
 
+    // We re-declare this so that IDE would pick up 
+    public static function make(string $name = null, string $label = null) : DatetimePickerField
+    {
+        return new self($name, $label);
+    }
+    
     public function name(string $value): DatetimePickerField
     {
         $this->offsetSet('name', $value);

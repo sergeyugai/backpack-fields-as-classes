@@ -7,6 +7,12 @@ class PageOrLinkField extends Field
 
     protected $result = ['type' => 'page_or_link']; 
 
+    // We re-declare this so that IDE would pick up 
+    public static function make(string $name = null, string $label = null) : PageOrLinkField
+    {
+        return new self($name, $label);
+    }
+    
     public function name(string $value): PageOrLinkField
     {
         $this->offsetSet('name', $value);

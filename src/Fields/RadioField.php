@@ -7,6 +7,12 @@ class RadioField extends Field
 
     protected $result = ['type' => 'radio']; 
 
+    // We re-declare this so that IDE would pick up 
+    public static function make(string $name = null, string $label = null) : RadioField
+    {
+        return new self($name, $label);
+    }
+    
     public function name(string $value): RadioField
     {
         $this->offsetSet('name', $value);
@@ -30,6 +36,13 @@ class RadioField extends Field
         }
         $value = $arrayable;
         $this->offsetSet('options', $value);
+        return $this;
+    }
+    
+    
+    public function 0(string $value): RadioField
+    {
+        $this->offsetSet('0', $value);
         return $this;
     }
     

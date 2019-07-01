@@ -7,6 +7,12 @@ class SummernoteField extends Field
 
     protected $result = ['type' => 'summernote']; 
 
+    // We re-declare this so that IDE would pick up 
+    public static function make(string $name = null, string $label = null) : SummernoteField
+    {
+        return new self($name, $label);
+    }
+    
     public function name(string $value): SummernoteField
     {
         $this->offsetSet('name', $value);
