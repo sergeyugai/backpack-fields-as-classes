@@ -75,4 +75,8 @@ class FieldsCollection extends Arrayable implements \Countable
     {
         return count($this->result);
     }
+
+    public function toArray(): array {
+        return $this->result;
+    }
 }

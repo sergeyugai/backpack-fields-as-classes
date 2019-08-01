@@ -22,7 +22,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 class RadioField extends Field
 { 
 
-    protected $result = ['type' => 'radio']; 
+    protected $result = ['type' => 'radio', 'attributes' => ['class' => 'radio']];
 
     // We re-declare this so that IDE would pick up 
     public static function make(string $name = null, string $label = null) : RadioField
@@ -46,24 +46,14 @@ class RadioField extends Field
     
     public function options(array $value): RadioField
     {
+        $arrayable = new Arrayable();
+        foreach ($value as $key => $val) {
+            $arrayable[$key] = $val;
+        }
+        $value = $arrayable;
         $this->offsetSet('options', $value);
         return $this;
     }
-    
-    
-    public function 0(string $value): RadioField
-    {
-        $this->offsetSet('0', $value);
-        return $this;
-    }
-    
-    
-    public function 1(string $value): RadioField
-    {
-        $this->offsetSet('1', $value);
-        return $this;
-    }
-    
     
     public function inline(bool $value = true): RadioField
     {

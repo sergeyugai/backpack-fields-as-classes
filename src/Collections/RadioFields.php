@@ -44,25 +44,6 @@ class RadioFields extends FieldsCollection
         return $this;
     }
     
-    
-    public function 0(string $value): RadioFields
-    {
-        foreach ($this->result as $f) {
-            $f->0($value);
-        }
-        return $this;
-    }
-    
-    
-    public function 1(string $value): RadioFields
-    {
-        foreach ($this->result as $f) {
-            $f->1($value);
-        }
-        return $this;
-    }
-    
-    
     public function inline(bool $value = true): RadioFields
     {
         foreach ($this->result as $f) {
