@@ -40,4 +40,11 @@ class TinymceField extends Field
     }
     
     
+    public function options(array $value): TinymceField
+    {
+        $this->offsetSet('options', $value);
+        return $this;
+    }
+    
+    
 }

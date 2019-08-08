@@ -36,4 +36,13 @@ class TinymceFields extends FieldsCollection
     }
     
     
+    public function options(array $value): TinymceFields
+    {
+        foreach ($this->result as $f) {
+            $f->options($value);
+        }
+        return $this;
+    }
+    
+    
 }
