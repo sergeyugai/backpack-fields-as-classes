@@ -28,6 +28,7 @@ class Field extends Arrayable
     public function __construct(string $name = null, string $label = null)
     {
         $this->offsetSet('wrapperAttributes', new Arrayable());
+        $this->offsetSet('attributes', new Arrayable());
         if ($name !== null) {
             $this->offsetSet('name', $name);
             if ($label === null) {

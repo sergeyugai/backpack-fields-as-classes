@@ -3,6 +3,9 @@
 This is a **drop-in** solution for [Laravel backpack](https://backpackforlaravel.com) to replace column/fields
 declarations-via-array with object-oriented approach. Allows your IDE to help you write that stuff.
 
+**This version is compatible with Backpack up to 4.1** and probably will be compatible with future versions, unless
+backpack itself introduces breaking changes to field declarations.
+
 **Requires no changes to existing code** and can be used alongside existing definitions.
 
 Also you can make your code more DRY by using **field collections** which also work as drop-in with current Backpack.
