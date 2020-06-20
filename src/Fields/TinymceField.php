@@ -7,8 +7,10 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 /**
  * Class TinymceField 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
- * @link https://backpackforlaravel.com/docs/3.6/crud-fields#tinymce Documentation
+ * @link https://backpackforlaravel.com/docs/4.1/crud-fields#tinymce Documentation
  * 
+* <hr>
+* 
 * <a name="tinymce"></a>
 * 
 * Show a wysiwyg (TinyMCE) to the user.

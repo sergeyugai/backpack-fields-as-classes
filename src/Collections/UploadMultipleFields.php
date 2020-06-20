@@ -54,6 +54,15 @@ class UploadMultipleFields extends FieldsCollection
     }
     
     
+    public function temporary(string $value): UploadMultipleFields
+    {
+        foreach ($this->result as $f) {
+            $f->temporary($value);
+        }
+        return $this;
+    }
+    
+    
     public function photos(string $value): UploadMultipleFields
     {
         foreach ($this->result as $f) {

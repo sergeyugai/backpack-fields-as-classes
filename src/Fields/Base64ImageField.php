@@ -7,13 +7,15 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 /**
  * Class Base64ImageField 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
- * @link https://backpackforlaravel.com/docs/3.6/crud-fields#base64_image Documentation
+ * @link https://backpackforlaravel.com/docs/4.1/crud-fields#base64_image Documentation
  * 
-* We recommend you cast your attribute as ```array``` on your model.  That way, when you do ```$entry->files``` you get a nice array. The field will work even if you don't cast.
+* The field assumes you've cast your attribute as ```array``` on your model.  That way, when you do ```$entry->files``` you get a nice array.
 * 
 * Input preview: 
 * 
-* ![CRUD Field - browse_multiple](https://backpackforlaravel.com/uploads/docs-3-5/fields/browse_multiple.png)
+* ![CRUD Field - browse_multiple](https://backpackforlaravel.com/uploads/docs-4-1/fields/browse_multiple.png)
+* 
+* <hr>
 * 
 * <a name="base64-image"></a>
 * 

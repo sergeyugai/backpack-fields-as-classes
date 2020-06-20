@@ -7,12 +7,13 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 /**
  * Class Select2GroupedField 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
- * @link https://backpackforlaravel.com/docs/3.6/crud-fields#select2_grouped Documentation
+ * @link https://backpackforlaravel.com/docs/4.1/crud-fields#select2_grouped Documentation
  * 
 * Input preview:
 * 
-* ![CRUD Field - select2_nested](https://backpackforlaravel.com/uploads/docs-3-5/fields/select2_nested.png)
+* ![CRUD Field - select2_nested](https://backpackforlaravel.com/uploads/docs-4-1/fields/select2_nested.png)
 * 
+* <hr>
 * 
 * <a name="select2-grouped"></a>
 * 

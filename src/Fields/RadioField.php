@@ -7,7 +7,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 /**
  * Class RadioField 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
- * @link https://backpackforlaravel.com/docs/3.6/crud-fields#radio Documentation
+ * @link https://backpackforlaravel.com/docs/4.1/crud-fields#radio Documentation
  * 
 * Input preview: 
 * 

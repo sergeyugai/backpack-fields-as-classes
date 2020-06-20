@@ -7,11 +7,10 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 /**
  * Class SelectField 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
- * @link https://backpackforlaravel.com/docs/3.6/crud-fields#select (1-n relationship) Documentation
+ * @link https://backpackforlaravel.com/docs/4.1/crud-fields#select (1-n relationship) Documentation
  * 
-* Input preview: 
 * 
-* ![CRUD Field - range](https://backpackforlaravel.com/uploads/docs-3-5/fields/range.png)
+* <hr>
 * 
 * <a name="select"></a>
 * 

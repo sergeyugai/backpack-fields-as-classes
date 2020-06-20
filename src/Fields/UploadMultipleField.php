@@ -7,15 +7,19 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 /**
  * Class UploadMultipleField 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
- * @link https://backpackforlaravel.com/docs/3.6/crud-fields#upload_multiple Documentation
+ * @link https://backpackforlaravel.com/docs/4.1/crud-fields#upload_multiple Documentation
  * 
 * Input preview: 
 * 
-* ![CRUD Field - upload](https://backpackforlaravel.com/uploads/docs-3-5/fields/upload.png)
+* ![CRUD Field - upload](https://backpackforlaravel.com/uploads/docs-4-1/fields/upload.png)
+* 
+* <hr>
 * 
 * <a name="upload-multiple"></a>
 * 
 * Shows a multiple file input to the user and stores the values as a JSON array in the database.
+* 
+* **Step 0.** Make sure the db column can hold the amount of text this field will have. For example, for MySQL, VARCHAR(255) might not be enough all the time (for 3+ files), so it's better to go with TEXT. Make sure you're using a big column type in your migration or db.
 * 
 * **Step 1.** Show a multiple file input to the user:
 * ```php
@@ -48,7 +52,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 * 
 * If you wish to have a different functionality, you can delete the method call from your mutator and do your own thing.
 * 
-* >**The uploaded files are not deleted for you.** When you delete an entry (wether through CRUD or the application), the uploaded files will not be deleted.
+* >**The uploaded files are not deleted for you.** When you delete an entry (whether through CRUD or the application), the uploaded files will not be deleted.
 * 
 * If you're NOT using soft deletes on that Model and want the files to be deleted at the same time the entry is, just specify that in your Model's ```deleting``` event:
 * ```php
@@ -88,6 +92,13 @@ class UploadMultipleField extends Field
     public function disk(string $value): UploadMultipleField
     {
         $this->offsetSet('disk', $value);
+        return $this;
+    }
+    
+    
+    public function temporary(string $value): UploadMultipleField
+    {
+        $this->offsetSet('temporary', $value);
         return $this;
     }
     

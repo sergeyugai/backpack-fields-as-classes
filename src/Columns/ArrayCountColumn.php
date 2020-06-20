@@ -7,8 +7,10 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 /**
  * Class ArrayCountColumn 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Columns
- * @link https://backpackforlaravel.com/docs/3.6/crud-columns#array_count Documentation
+ * @link https://backpackforlaravel.com/docs/4.1/crud-columns#array_count Documentation
  * 
+* <hr>
+* 
 * <a name="array_count"></a>
 * 
 * Count the items in an array stored in the db column as JSON.

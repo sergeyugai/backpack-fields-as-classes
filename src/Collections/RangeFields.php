@@ -36,4 +36,31 @@ class RangeFields extends FieldsCollection
     }
     
     
+    public function attributes(array $value): RangeFields
+    {
+        foreach ($this->result as $f) {
+            $f->attributes($value);
+        }
+        return $this;
+    }
+    
+    
+    public function min($value): RangeFields
+    {
+        foreach ($this->result as $f) {
+            $f->min($value);
+        }
+        return $this;
+    }
+    
+    
+    public function max($value): RangeFields
+    {
+        foreach ($this->result as $f) {
+            $f->max($value);
+        }
+        return $this;
+    }
+    
+    
 }

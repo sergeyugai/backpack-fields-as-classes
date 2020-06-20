@@ -7,8 +7,10 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 /**
  * Class ClosureColumn 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Columns
- * @link https://backpackforlaravel.com/docs/3.6/crud-columns#closure Documentation
+ * @link https://backpackforlaravel.com/docs/4.1/crud-columns#closure Documentation
  * 
+* <hr>
+* 
 * <a name="closure"></a>
 * 
 * 

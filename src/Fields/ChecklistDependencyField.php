@@ -7,11 +7,13 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 /**
  * Class ChecklistDependencyField 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
- * @link https://backpackforlaravel.com/docs/3.6/crud-fields#checklist_dependency Documentation
+ * @link https://backpackforlaravel.com/docs/4.1/crud-fields#checklist_dependency Documentation
  * 
 * Input preview: 
 * 
-* ![CRUD Field - checklist](https://backpackforlaravel.com/uploads/docs-3-5/fields/checklist.png)
+* ![CRUD Field - checklist](https://backpackforlaravel.com/uploads/docs-4-1/fields/checklist.png)
+* 
+* <hr>
 * 
 * <a name="checklist-dependency"></a>
 * 
@@ -28,13 +30,6 @@ class ChecklistDependencyField extends Field
         return new self($name, $label);
     }
     
-    public function primary(array $value): ChecklistDependencyField
-    {
-        $this->offsetSet('primary', $value);
-        return $this;
-    }
-    
-    
     public function label($value): ChecklistDependencyField
     {
         $this->offsetSet('label', $value);
@@ -42,9 +37,30 @@ class ChecklistDependencyField extends Field
     }
     
     
+    public function field_unique_name(string $value): ChecklistDependencyField
+    {
+        $this->offsetSet('field_unique_name', $value);
+        return $this;
+    }
+    
+    
     public function name($value): ChecklistDependencyField
     {
         $this->offsetSet('name', $value);
+        return $this;
+    }
+    
+    
+    public function subfields(array $value): ChecklistDependencyField
+    {
+        $this->offsetSet('subfields', $value);
+        return $this;
+    }
+    
+    
+    public function primary(array $value): ChecklistDependencyField
+    {
+        $this->offsetSet('primary', $value);
         return $this;
     }
     

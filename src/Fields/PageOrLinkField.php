@@ -7,15 +7,17 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 /**
  * Class PageOrLinkField 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
- * @link https://backpackforlaravel.com/docs/3.6/crud-fields#page_or_link Documentation
+ * @link https://backpackforlaravel.com/docs/4.1/crud-fields#page_or_link Documentation
  * 
 * Input preview: 
 * 
-* ![CRUD Field - number](https://backpackforlaravel.com/uploads/docs-3-5/fields/number.png)
+* ![CRUD Field - number](https://backpackforlaravel.com/uploads/docs-4-1/fields/number.png)
+* 
+* <hr>
 * 
 * <a name="page-or-link"></a>
 * 
-* Select an existing page from PageManager or an internal or external link. It’s used in the MenuManager package, but can be used in any other model just as well. Its definition looks like this:
+* Select an existing page from PageManager or an internal or external link. It's used in the MenuManager package, but can be used in any other model just as well. Its definition looks like this:
 * ```php
  */
 class PageOrLinkField extends Field
@@ -29,7 +31,7 @@ class PageOrLinkField extends Field
         return new self($name, $label);
     }
     
-    public function name(string $value): PageOrLinkField
+    public function name(array $value): PageOrLinkField
     {
         $this->offsetSet('name', $value);
         return $this;

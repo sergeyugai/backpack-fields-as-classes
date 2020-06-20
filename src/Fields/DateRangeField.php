@@ -7,14 +7,16 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 /**
  * Class DateRangeField 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
- * @link https://backpackforlaravel.com/docs/3.6/crud-fields#date_range Documentation
+ * @link https://backpackforlaravel.com/docs/4.1/crud-fields#date_range Documentation
  * 
 * Please note it is recommended that you use [attribute casting](https://laravel.com/docs/5.3/eloquent-mutators#attribute-casting) on your model (cast to date).
 * 
 * 
 * Input preview: 
 * 
-* ![CRUD Field - date_picker](https://backpackforlaravel.com/uploads/docs-3-5/fields/date_picker.png)
+* ![CRUD Field - date_picker](https://backpackforlaravel.com/uploads/docs-4-1/fields/date_picker.png)
+* 
+* <hr>
 * 
 * <a name="date-range"></a>
 * 
@@ -35,23 +37,9 @@ class DateRangeField extends Field
         return new self($name, $label);
     }
     
-    public function name(string $value): DateRangeField
+    public function name(array $value): DateRangeField
     {
         $this->offsetSet('name', $value);
-        return $this;
-    }
-    
-    
-    public function start_name(string $value): DateRangeField
-    {
-        $this->offsetSet('start_name', $value);
-        return $this;
-    }
-    
-    
-    public function end_name(string $value): DateRangeField
-    {
-        $this->offsetSet('end_name', $value);
         return $this;
     }
     
@@ -63,16 +51,9 @@ class DateRangeField extends Field
     }
     
     
-    public function start_default(string $value): DateRangeField
+    public function default(array $value): DateRangeField
     {
-        $this->offsetSet('start_default', $value);
-        return $this;
-    }
-    
-    
-    public function end_default(string $value): DateRangeField
-    {
-        $this->offsetSet('end_default', $value);
+        $this->offsetSet('default', $value);
         return $this;
     }
     

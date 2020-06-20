@@ -54,4 +54,13 @@ class UploadFields extends FieldsCollection
     }
     
     
+    public function temporary(string $value): UploadFields
+    {
+        foreach ($this->result as $f) {
+            $f->temporary($value);
+        }
+        return $this;
+    }
+    
+    
 }

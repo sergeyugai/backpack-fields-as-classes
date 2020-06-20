@@ -54,15 +54,6 @@ class Select2MultipleFields extends FieldsCollection
     }
     
     
-    public function model(string $value): Select2MultipleFields
-    {
-        foreach ($this->result as $f) {
-            $f->model($value);
-        }
-        return $this;
-    }
-    
-    
     public function pivot(bool $value = true): Select2MultipleFields
     {
         foreach ($this->result as $f) {
@@ -76,6 +67,15 @@ class Select2MultipleFields extends FieldsCollection
     {
         foreach ($this->result as $f) {
             $f->select_all($value);
+        }
+        return $this;
+    }
+    
+    
+    public function model(string $value): Select2MultipleFields
+    {
+        foreach ($this->result as $f) {
+            $f->model($value);
         }
         return $this;
     }

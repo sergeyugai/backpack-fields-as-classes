@@ -7,10 +7,8 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 /**
  * Class AddressAlgoliaField 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
- * @link https://backpackforlaravel.com/docs/3.6/crud-fields#address_algolia Documentation
+ * @link https://backpackforlaravel.com/docs/4.1/crud-fields#address_algolia Documentation
  * 
-* If you forget to specify a tab name for a field, Backpack will place it above all tabs.
-* 
 * 
 * <a name="default-field-types"></a>
 * ## Default Field Types

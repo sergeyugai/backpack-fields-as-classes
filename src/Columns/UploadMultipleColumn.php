@@ -7,8 +7,10 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 /**
  * Class UploadMultipleColumn 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Columns
- * @link https://backpackforlaravel.com/docs/3.6/crud-columns#upload_multiple Documentation
+ * @link https://backpackforlaravel.com/docs/4.1/crud-columns#upload_multiple Documentation
  * 
+* <hr>
+* 
 * <a name="upload_multiple"></a>
 * 
 * 

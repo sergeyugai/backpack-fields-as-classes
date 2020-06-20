@@ -7,11 +7,13 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 /**
  * Class Select2Field 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
- * @link https://backpackforlaravel.com/docs/3.6/crud-fields#select2 (1-n relationship) Documentation
+ * @link https://backpackforlaravel.com/docs/4.1/crud-fields#select2 (1-n relationship) Documentation
  * 
 * Input preview:
 * 
-* ![CRUD Field - select_grouped](https://backpackforlaravel.com/uploads/docs-3-5/fields/select_grouped.png)
+* ![CRUD Field - select_grouped](https://backpackforlaravel.com/uploads/docs-4-1/fields/select_grouped.png)
+* 
+* <hr>
 * 
 * <a name="select2"></a>
 * 

@@ -7,11 +7,13 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 /**
  * Class SummernoteField 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
- * @link https://backpackforlaravel.com/docs/3.6/crud-fields#summernote Documentation
+ * @link https://backpackforlaravel.com/docs/4.1/crud-fields#summernote Documentation
  * 
 * Input preview: 
 * 
-* ![CRUD Field - simplemde](https://backpackforlaravel.com/uploads/docs-3-5/fields/simplemde.png)
+* ![CRUD Field - simplemde](https://backpackforlaravel.com/uploads/docs-4-1/fields/simplemde.png)
+* 
+* <hr>
 * 
 * <a name="summernote"></a>
 * 

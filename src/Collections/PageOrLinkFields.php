@@ -18,7 +18,7 @@ class PageOrLinkFields extends FieldsCollection
         return new self($fields, PageOrLinkField::class);
     }
     
-    public function name(string $value): PageOrLinkFields
+    public function name(array $value): PageOrLinkFields
     {
         foreach ($this->result as $f) {
             $f->name($value);

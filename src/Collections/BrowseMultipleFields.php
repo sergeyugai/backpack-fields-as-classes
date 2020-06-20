@@ -45,6 +45,15 @@ class BrowseMultipleFields extends FieldsCollection
     }
     
     
+    public function sortable(bool $value = true): BrowseMultipleFields
+    {
+        foreach ($this->result as $f) {
+            $f->sortable($value);
+        }
+        return $this;
+    }
+    
+    
     public function mime_types(array $value): BrowseMultipleFields
     {
         foreach ($this->result as $f) {

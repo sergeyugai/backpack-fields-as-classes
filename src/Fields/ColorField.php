@@ -7,11 +7,15 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 /**
  * Class ColorField 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
- * @link https://backpackforlaravel.com/docs/3.6/crud-fields#color Documentation
+ * @link https://backpackforlaravel.com/docs/4.1/crud-fields#color Documentation
  * 
+* If you'd like to be able to select files from elFinder, you need to also run ```composer require backpack/filemanager``` to install elFinder.
+* 
 * Input preview: 
 * 
-* ![CRUD Field - ckeditor](https://backpackforlaravel.com/uploads/docs-3-5/fields/ckeditor.png)
+* ![CRUD Field - ckeditor](https://backpackforlaravel.com/uploads/docs-4-1/fields/ckeditor.png)
+* 
+* <hr>
 * 
 * <a name="color"></a>
 * 
@@ -38,6 +42,13 @@ class ColorField extends Field
     public function label(string $value): ColorField
     {
         $this->offsetSet('label', $value);
+        return $this;
+    }
+    
+    
+    public function default(string $value): ColorField
+    {
+        $this->offsetSet('default', $value);
         return $this;
     }
     

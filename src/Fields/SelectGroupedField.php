@@ -7,11 +7,14 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 /**
  * Class SelectGroupedField 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
- * @link https://backpackforlaravel.com/docs/3.6/crud-fields#select_grouped Documentation
+ * @link https://backpackforlaravel.com/docs/4.1/crud-fields#select_grouped Documentation
  * 
 * Input preview: 
 * 
-* ![CRUD Field - select](https://backpackforlaravel.com/uploads/docs-3-5/fields/select.png)
+* ![CRUD Field - select](https://backpackforlaravel.com/uploads/docs-4-1/fields/select.png)
+* 
+* 
+* <hr>
 * 
 * 
 * <a name="select-grouped"></a>

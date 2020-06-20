@@ -36,4 +36,13 @@ class VideoFields extends FieldsCollection
     }
     
     
+    public function youtube_api_key(string $value): VideoFields
+    {
+        foreach ($this->result as $f) {
+            $f->youtube_api_key($value);
+        }
+        return $this;
+    }
+    
+    
 }

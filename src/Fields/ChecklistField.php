@@ -7,11 +7,13 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 /**
  * Class ChecklistField 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
- * @link https://backpackforlaravel.com/docs/3.6/crud-fields#checklist Documentation
+ * @link https://backpackforlaravel.com/docs/4.1/crud-fields#checklist Documentation
  * 
 * Input preview: 
 * 
-* ![CRUD Field - checkbox](https://backpackforlaravel.com/uploads/docs-3-5/fields/checkbox.png)
+* ![CRUD Field - checkbox](https://backpackforlaravel.com/uploads/docs-4-1/fields/checkbox.png)
+* 
+* <hr>
 * 
 * <a name="checklist"></a>
 * 

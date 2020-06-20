@@ -7,7 +7,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 /**
  * Class CheckboxColumn 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Columns
- * @link https://backpackforlaravel.com/docs/3.6/crud-columns#checkbox Documentation
+ * @link https://backpackforlaravel.com/docs/4.1/crud-columns#checkbox Documentation
  * (will also add an empty custom_html column)
 * 
 * Verbose:

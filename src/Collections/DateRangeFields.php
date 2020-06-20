@@ -18,28 +18,10 @@ class DateRangeFields extends FieldsCollection
         return new self($fields, DateRangeField::class);
     }
     
-    public function name(string $value): DateRangeFields
+    public function name(array $value): DateRangeFields
     {
         foreach ($this->result as $f) {
             $f->name($value);
-        }
-        return $this;
-    }
-    
-    
-    public function start_name(string $value): DateRangeFields
-    {
-        foreach ($this->result as $f) {
-            $f->start_name($value);
-        }
-        return $this;
-    }
-    
-    
-    public function end_name(string $value): DateRangeFields
-    {
-        foreach ($this->result as $f) {
-            $f->end_name($value);
         }
         return $this;
     }
@@ -54,19 +36,10 @@ class DateRangeFields extends FieldsCollection
     }
     
     
-    public function start_default(string $value): DateRangeFields
+    public function default(array $value): DateRangeFields
     {
         foreach ($this->result as $f) {
-            $f->start_default($value);
-        }
-        return $this;
-    }
-    
-    
-    public function end_default(string $value): DateRangeFields
-    {
-        foreach ($this->result as $f) {
-            $f->end_default($value);
+            $f->default($value);
         }
         return $this;
     }

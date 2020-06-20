@@ -7,7 +7,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 /**
  * Class ArrayColumn 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Columns
- * @link https://backpackforlaravel.com/docs/3.6/crud-columns#array Documentation
+ * @link https://backpackforlaravel.com/docs/4.1/crud-columns#array Documentation
  * 
 * <a name="array"></a>
 * 

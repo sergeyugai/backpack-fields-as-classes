@@ -7,13 +7,15 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 /**
  * Class HiddenField 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
- * @link https://backpackforlaravel.com/docs/3.6/crud-fields#hidden Documentation
+ * @link https://backpackforlaravel.com/docs/4.1/crud-fields#hidden Documentation
  * 
 * PLEASE NOTE the enum field only works for MySQL databases.
 * 
 * Input preview: 
 * 
-* ![CRUD Field - enum](https://backpackforlaravel.com/uploads/docs-3-5/fields/enum.png)
+* ![CRUD Field - enum](https://backpackforlaravel.com/uploads/docs-4-1/fields/enum.png)
+* 
+* <hr>
 * 
 * <a name="hidden"></a>
 * 
@@ -35,6 +37,13 @@ class HiddenField extends Field
     public function name(string $value): HiddenField
     {
         $this->offsetSet('name', $value);
+        return $this;
+    }
+    
+    
+    public function value(string $value): HiddenField
+    {
+        $this->offsetSet('value', $value);
         return $this;
     }
     

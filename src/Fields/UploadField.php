@@ -7,11 +7,13 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 /**
  * Class UploadField 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
- * @link https://backpackforlaravel.com/docs/3.6/crud-fields#upload Documentation
+ * @link https://backpackforlaravel.com/docs/4.1/crud-fields#upload Documentation
  * 
 * Input preview: 
 * 
-* ![CRUD Field - tinymce](https://backpackforlaravel.com/uploads/docs-3-5/fields/tinymce.png)
+* ![CRUD Field - tinymce](https://backpackforlaravel.com/uploads/docs-4-1/fields/tinymce.png)
+* 
+* <hr>
 * 
 * <a name="upload"></a>
 * 
@@ -25,13 +27,15 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 * 
 * The field sends the file, through a Request, to the Controller. The Controller then tries to create/update the Model. That's when the mutator on your model will run. That also means we can do any [file validation](https://laravel.com/docs/5.3/validation#rule-file) (```file```, ```image```, ```mimetypes```, ```mimes```) in the Request, before the file is stored on the disk.
 * 
+* >NOTE: If this field is mandatory (required in validation) please use the [sometimes laravel validation rule](https://laravel.com/docs/5.8/validation#conditionally-adding-rules) together with **required** in your validation. (sometimes|required|file etc... )
+* 
 * [The ```uploadFileToDisk()``` method](https://github.com/Laravel-Backpack/CRUD/blob/master/src/CrudTrait.php#L108-L129) will take care of everything for most use cases:
 * 
 * ```php
 * 
 * If you wish to have a different functionality, you can delete the method call from your mutator and do your own thing.
 * 
-* >**The uploaded files are not deleted for you.** When you delete an entry (wether through CRUD or the application), the uploaded files will not be deleted.
+* >**The uploaded files are not deleted for you.** When you delete an entry (whether through CRUD or the application), the uploaded files will not be deleted.
 * 
 * If you're NOT using soft deletes on that Model and want the file to be deleted at the same time the entry is, just specify that in your Model's ```deleting``` event:
 * ```php
@@ -71,6 +75,13 @@ class UploadField extends Field
     public function disk(string $value): UploadField
     {
         $this->offsetSet('disk', $value);
+        return $this;
+    }
+    
+    
+    public function temporary(string $value): UploadField
+    {
+        $this->offsetSet('temporary', $value);
         return $this;
     }
     

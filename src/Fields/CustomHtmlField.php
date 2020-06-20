@@ -7,11 +7,13 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 /**
  * Class CustomHtmlField 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
- * @link https://backpackforlaravel.com/docs/3.6/crud-fields#custom_html Documentation
+ * @link https://backpackforlaravel.com/docs/4.1/crud-fields#custom_html Documentation
  * 
 * Input preview: 
 * 
-* ![CRUD Field - color_picker](https://backpackforlaravel.com/uploads/docs-3-5/fields/color_picker.png)
+* ![CRUD Field - color_picker](https://backpackforlaravel.com/uploads/docs-4-1/fields/color_picker.png)
+* 
+* <hr>
 * 
 * <a name="custom-html"></a>
 * 

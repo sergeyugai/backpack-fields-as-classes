@@ -7,8 +7,10 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 /**
  * Class ImageColumn 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Columns
- * @link https://backpackforlaravel.com/docs/3.6/crud-columns#image Documentation
+ * @link https://backpackforlaravel.com/docs/4.1/crud-columns#image Documentation
  * 
+* <hr>
+* 
 * <a name="image"></a>
 * 
 * 
@@ -44,6 +46,13 @@ class ImageColumn extends Column
     public function prefix(string $value): ImageColumn
     {
         $this->offsetSet('prefix', $value);
+        return $this;
+    }
+    
+    
+    public function disk(string $value): ImageColumn
+    {
+        $this->offsetSet('disk', $value);
         return $this;
     }
     

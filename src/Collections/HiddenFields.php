@@ -27,4 +27,13 @@ class HiddenFields extends FieldsCollection
     }
     
     
+    public function value(string $value): HiddenFields
+    {
+        foreach ($this->result as $f) {
+            $f->value($value);
+        }
+        return $this;
+    }
+    
+    
 }

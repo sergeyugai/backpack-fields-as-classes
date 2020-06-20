@@ -36,6 +36,15 @@ class ColorPickerFields extends FieldsCollection
     }
     
     
+    public function default(string $value): ColorPickerFields
+    {
+        foreach ($this->result as $f) {
+            $f->default($value);
+        }
+        return $this;
+    }
+    
+    
     public function color_picker_options(array $value): ColorPickerFields
     {
         foreach ($this->result as $f) {

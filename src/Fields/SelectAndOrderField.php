@@ -7,12 +7,14 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 /**
  * Class SelectAndOrderField 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
- * @link https://backpackforlaravel.com/docs/3.6/crud-fields#select_and_order Documentation
+ * @link https://backpackforlaravel.com/docs/4.1/crud-fields#select_and_order Documentation
  * 
 * Input preview:
 * 
-* ![CRUD Field - select2_grouped](https://backpackforlaravel.com/uploads/docs-3-5/fields/select2_grouped.png)
+* ![CRUD Field - select2_grouped](https://backpackforlaravel.com/uploads/docs-4-1/fields/select2_grouped.png)
 * 
+* 
+* <hr>
 * 
 * <a name="select_and_order"></a>
 * 
@@ -67,5 +69,4 @@ class SelectAndOrderField extends Field
         $this->offsetSet('options', $value);
         return $this;
     }
-
 }

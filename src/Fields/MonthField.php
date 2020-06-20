@@ -7,7 +7,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 /**
  * Class MonthField 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
- * @link https://backpackforlaravel.com/docs/3.6/crud-fields#month Documentation
+ * @link https://backpackforlaravel.com/docs/4.1/crud-fields#month Documentation
  * 
 * **A note about aspect_ratio**
 * The value for aspect ratio is a float that represents the ratio of the cropping rectangle height and width. By way of example,
@@ -20,8 +20,9 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 * 
 * Input preview: 
 * 
-* ![CRUD Field - image](https://backpackforlaravel.com/uploads/docs-3-5/fields/image.png)
+* ![CRUD Field - image](https://backpackforlaravel.com/uploads/docs-4-1/fields/image.png)
 * 
+* <hr>
 * 
 * <a name="month"></a>
 * 

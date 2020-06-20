@@ -7,11 +7,13 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 /**
  * Class CkeditorField 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
- * @link https://backpackforlaravel.com/docs/3.6/crud-fields#ckeditor Documentation
+ * @link https://backpackforlaravel.com/docs/4.1/crud-fields#ckeditor Documentation
  * 
 * Input preview: 
 * 
-* ![CRUD Field - checklist_dependency](https://backpackforlaravel.com/uploads/docs-3-5/fields/checklist_dependency.png)
+* ![CRUD Field - checklist_dependency](https://backpackforlaravel.com/uploads/docs-4-1/fields/checklist_dependency.png)
+* 
+* <hr>
 * 
 * <a name="ckeditor"></a>
 * 

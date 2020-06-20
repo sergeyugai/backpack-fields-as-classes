@@ -7,8 +7,10 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 /**
  * Class BooleanColumn 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Columns
- * @link https://backpackforlaravel.com/docs/3.6/crud-columns#boolean Documentation
+ * @link https://backpackforlaravel.com/docs/4.1/crud-columns#boolean Documentation
  * 
+* <hr>
+* 
 * <a name="boolean"></a>
 * 
 * Show Yes/No (or custom text) instead of 1/0.

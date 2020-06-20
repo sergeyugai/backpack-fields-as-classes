@@ -18,15 +18,6 @@ class ChecklistDependencyFields extends FieldsCollection
         return new self($fields, ChecklistDependencyField::class);
     }
     
-    public function primary(array $value): ChecklistDependencyFields
-    {
-        foreach ($this->result as $f) {
-            $f->primary($value);
-        }
-        return $this;
-    }
-    
-    
     public function label($value): ChecklistDependencyFields
     {
         foreach ($this->result as $f) {
@@ -36,10 +27,37 @@ class ChecklistDependencyFields extends FieldsCollection
     }
     
     
+    public function field_unique_name(string $value): ChecklistDependencyFields
+    {
+        foreach ($this->result as $f) {
+            $f->field_unique_name($value);
+        }
+        return $this;
+    }
+    
+    
     public function name($value): ChecklistDependencyFields
     {
         foreach ($this->result as $f) {
             $f->name($value);
+        }
+        return $this;
+    }
+    
+    
+    public function subfields(array $value): ChecklistDependencyFields
+    {
+        foreach ($this->result as $f) {
+            $f->subfields($value);
+        }
+        return $this;
+    }
+    
+    
+    public function primary(array $value): ChecklistDependencyFields
+    {
+        foreach ($this->result as $f) {
+            $f->primary($value);
         }
         return $this;
     }

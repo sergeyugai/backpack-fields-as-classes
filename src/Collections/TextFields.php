@@ -99,10 +99,10 @@ class TextFields extends FieldsCollection
     }
     
     
-    public function wrapperAttributes(array $value): TextFields
+    public function wrapper(array $value): TextFields
     {
         foreach ($this->result as $f) {
-            $f->wrapperAttributes($value);
+            $f->wrapper($value);
         }
         return $this;
     }

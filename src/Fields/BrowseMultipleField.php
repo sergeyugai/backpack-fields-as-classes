@@ -7,20 +7,22 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 /**
  * Class BrowseMultipleField 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
- * @link https://backpackforlaravel.com/docs/3.6/crud-fields#browse_multiple Documentation
+ * @link https://backpackforlaravel.com/docs/4.1/crud-fields#browse_multiple Documentation
  * 
 * 
 * Input preview: 
 * 
-* ![CRUD Field - browse](https://backpackforlaravel.com/uploads/docs-3-5/fields/browse.png)
+* ![CRUD Field - browse](https://backpackforlaravel.com/uploads/docs-4-1/fields/browse.png)
 * 
 * Onclick preview:
 * 
-* ![CRUD Field - browse popup](https://backpackforlaravel.com/uploads/docs-3-5/fields/browse_popup.png)
+* ![CRUD Field - browse popup](https://backpackforlaravel.com/uploads/docs-4-1/fields/browse_popup.png)
+* 
+* <hr>
 * 
 * <a name="browse-multiple"></a>
 * 
-* Open elFinder and select multiple file from there.
+* Open elFinder and select multiple file from there. Run ```composer require backpack/filemanager``` to install elFinder, then you can use the field:
 * 
 * ```php
  */
@@ -52,6 +54,13 @@ class BrowseMultipleField extends Field
     public function multiple(bool $value = true): BrowseMultipleField
     {
         $this->offsetSet('multiple', $value);
+        return $this;
+    }
+    
+    
+    public function sortable(bool $value = true): BrowseMultipleField
+    {
+        $this->offsetSet('sortable', $value);
         return $this;
     }
     

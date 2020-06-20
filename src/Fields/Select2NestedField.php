@@ -7,11 +7,13 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 /**
  * Class Select2NestedField 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
- * @link https://backpackforlaravel.com/docs/3.6/crud-fields#select2_nested Documentation
+ * @link https://backpackforlaravel.com/docs/4.1/crud-fields#select2_nested Documentation
  * 
 * Input preview: 
 * 
-* ![CRUD Field - select2_multiple](https://backpackforlaravel.com/uploads/docs-3-5/fields/select2_multiple.png)
+* ![CRUD Field - select2_multiple](https://backpackforlaravel.com/uploads/docs-4-1/fields/select2_multiple.png)
+* 
+* <hr>
 * 
 * <a name="select2-nested"></a>
 * 

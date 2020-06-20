@@ -7,11 +7,13 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 /**
  * Class ColorPickerField 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
- * @link https://backpackforlaravel.com/docs/3.6/crud-fields#color_picker Documentation
+ * @link https://backpackforlaravel.com/docs/4.1/crud-fields#color_picker Documentation
  * 
 * Input preview: 
 * 
-* ![CRUD Field - color](https://backpackforlaravel.com/uploads/docs-3-5/fields/color.png)
+* ![CRUD Field - color](https://backpackforlaravel.com/uploads/docs-4-1/fields/color.png)
+* 
+* <hr>
 * 
 * <a name="color-picker"></a>
 * 
@@ -40,6 +42,13 @@ class ColorPickerField extends Field
     public function name(string $value): ColorPickerField
     {
         $this->offsetSet('name', $value);
+        return $this;
+    }
+    
+    
+    public function default(string $value): ColorPickerField
+    {
+        $this->offsetSet('default', $value);
         return $this;
     }
     

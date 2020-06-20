@@ -7,13 +7,15 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 /**
  * Class TextareaField 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
- * @link https://backpackforlaravel.com/docs/3.6/crud-fields#textarea Documentation
+ * @link https://backpackforlaravel.com/docs/4.1/crud-fields#textarea Documentation
  * 
 * You can use the optional 'prefix' and 'suffix' attributes to display something before and after the input, like icons, path prefix, etc:
 * 
 * Input preview: 
 * 
-* ![CRUD Field - text](https://backpackforlaravel.com/uploads/docs-3-5/fields/text.png)
+* ![CRUD Field - text](https://backpackforlaravel.com/uploads/docs-4-1/fields/text.png)
+* 
+* <hr>
 * 
 * <a name="textarea"></a>
 * 

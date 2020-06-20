@@ -7,8 +7,10 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 /**
  * Class RadioColumn 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Columns
- * @link https://backpackforlaravel.com/docs/3.6/crud-columns#radio Documentation
+ * @link https://backpackforlaravel.com/docs/4.1/crud-columns#radio Documentation
  * 
+* <hr>
+* 
 * <a name="radio"></a>
 * 
 * 

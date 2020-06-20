@@ -7,13 +7,15 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 /**
  * Class TextField 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
- * @link https://backpackforlaravel.com/docs/3.6/crud-fields#text Documentation
+ * @link https://backpackforlaravel.com/docs/4.1/crud-fields#text Documentation
  * 
 * >It's highly recommended that you use [attribute casting](https://mattstauffer.co/blog/laravel-5.0-eloquent-attribute-casting) on your model when working with JSON stored in database columns, and cast your this attribute to either ```object``` or ```array```.
 * 
 * Input preview: 
 * 
-* ![CRUD Field - table](https://backpackforlaravel.com/uploads/docs-3-5/fields/table.png)
+* ![CRUD Field - table](https://backpackforlaravel.com/uploads/docs-4-1/fields/table.png)
+* 
+* <hr>
 * 
 * <a name="text"></a>
 * 
@@ -95,9 +97,9 @@ class TextField extends Field
     }
     
     
-    public function wrapperAttributes(array $value): TextField
+    public function wrapper(array $value): TextField
     {
-        $this->offsetSet('wrapperAttributes', $value);
+        $this->offsetSet('wrapper', $value);
         return $this;
     }
     

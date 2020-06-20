@@ -7,14 +7,16 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 /**
  * Class AddressGoogleField 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
- * @link https://backpackforlaravel.com/docs/3.6/crud-fields#address_google Documentation
+ * @link https://backpackforlaravel.com/docs/4.1/crud-fields#address_google Documentation
  * 
 * > **Use attribute casting.** For information stored as JSON in the database, it's recommended that you use [attribute casting](https://mattstauffer.co/blog/laravel-5.0-eloquent-attribute-casting) to ```array``` or ```object```. That way, every time you get the info from the database you'd get it in a usable format.
 * 
 * 
 * Input preview: 
 * 
-* ![CRUD Field - address](https://backpackforlaravel.com/uploads/docs-3-5/fields/address.png)
+* ![CRUD Field - address](https://backpackforlaravel.com/uploads/docs-4-1/fields/address.png)
+* 
+* <hr>
 * 
 * <a name="address_google"></a>
 * 
@@ -22,7 +24,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 * 
 * ```php
 * 
-* Using Google Places API is dependant on using an API Key. Please [get an API key](https://console.cloud.google.com/apis/credentials) - you do have to configure billing, but you qualify for $200/mo free usage, which covers most use cases. Then copy-paste that key as your ```services.google_places.key``` value. So inside your ```config/services.php``` please add the items below:
+* Using Google Places API is dependent on using an API Key. Please [get an API key](https://console.cloud.google.com/apis/credentials) - you do have to configure billing, but you qualify for $200/mo free usage, which covers most use cases. Then copy-paste that key as your ```services.google_places.key``` value. So inside your ```config/services.php``` please add the items below:
 * 
 * ```php
  */

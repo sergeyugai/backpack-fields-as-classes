@@ -7,11 +7,13 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 /**
  * Class NumberField 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
- * @link https://backpackforlaravel.com/docs/3.6/crud-fields#number Documentation
+ * @link https://backpackforlaravel.com/docs/4.1/crud-fields#number Documentation
  * 
 * Input preview: 
 * 
-* ![CRUD Field - month](https://backpackforlaravel.com/uploads/docs-3-5/fields/month.png)
+* ![CRUD Field - month](https://backpackforlaravel.com/uploads/docs-4-1/fields/month.png)
+* 
+* <hr>
 * 
 * <a name="number"></a>
 * 

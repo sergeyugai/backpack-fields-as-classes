@@ -7,13 +7,14 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 /**
  * Class Select2MultipleField 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
- * @link https://backpackforlaravel.com/docs/3.6/crud-fields#select2_multiple (n-n relationship) Documentation
+ * @link https://backpackforlaravel.com/docs/4.1/crud-fields#select2_multiple (n-n relationship) Documentation
  * 
 * Input preview: 
 * 
-* ![CRUD Field - select_multiple](https://backpackforlaravel.com/uploads/docs-3-5/fields/select_multiple.png)
+* ![CRUD Field - select_multiple](https://backpackforlaravel.com/uploads/docs-4-1/fields/select_multiple.png)
 * 
 * 
+* <hr>
 * 
 * <a name="select2-multiple"></a>
 * 
@@ -63,13 +64,6 @@ class Select2MultipleField extends Field
     }
     
     
-    public function model(string $value): Select2MultipleField
-    {
-        $this->offsetSet('model', $value);
-        return $this;
-    }
-    
-    
     public function pivot(bool $value = true): Select2MultipleField
     {
         $this->offsetSet('pivot', $value);
@@ -80,6 +74,13 @@ class Select2MultipleField extends Field
     public function select_all(bool $value = true): Select2MultipleField
     {
         $this->offsetSet('select_all', $value);
+        return $this;
+    }
+    
+    
+    public function model(string $value): Select2MultipleField
+    {
+        $this->offsetSet('model', $value);
         return $this;
     }
     

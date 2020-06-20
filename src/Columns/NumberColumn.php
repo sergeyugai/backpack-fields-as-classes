@@ -7,8 +7,10 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 /**
  * Class NumberColumn 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Columns
- * @link https://backpackforlaravel.com/docs/3.6/crud-columns#number Documentation
+ * @link https://backpackforlaravel.com/docs/4.1/crud-columns#number Documentation
  * 
+* <hr>
+* 
 * <a name="number"></a>
 * 
 * 

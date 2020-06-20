@@ -36,4 +36,13 @@ class ColorFields extends FieldsCollection
     }
     
     
+    public function default(string $value): ColorFields
+    {
+        foreach ($this->result as $f) {
+            $f->default($value);
+        }
+        return $this;
+    }
+    
+    
 }

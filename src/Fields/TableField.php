@@ -7,11 +7,13 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 /**
  * Class TableField 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
- * @link https://backpackforlaravel.com/docs/3.6/crud-fields#table Documentation
+ * @link https://backpackforlaravel.com/docs/4.1/crud-fields#table Documentation
  * 
 * Input preview: 
 * 
-* ![CRUD Field - summernote](https://backpackforlaravel.com/uploads/docs-3-5/fields/summernote.png)
+* ![CRUD Field - summernote](https://backpackforlaravel.com/uploads/docs-4-1/fields/summernote.png)
+* 
+* <hr>
 * 
 * <a name="table"></a>
 * 

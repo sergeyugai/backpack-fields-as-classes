@@ -7,12 +7,14 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 /**
  * Class EnumField 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
- * @link https://backpackforlaravel.com/docs/3.6/crud-fields#enum Documentation
+ * @link https://backpackforlaravel.com/docs/4.1/crud-fields#enum Documentation
  * 
 * Input preview: 
 * 
-* ![CRUD Field - email](https://backpackforlaravel.com/uploads/docs-3-5/fields/email.png)
+* ![CRUD Field - email](https://backpackforlaravel.com/uploads/docs-4-1/fields/email.png)
 * 
+* 
+* <hr>
 * 
 * <a name="enum"></a>
 * 

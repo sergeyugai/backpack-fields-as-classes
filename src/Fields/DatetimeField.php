@@ -7,7 +7,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 /**
  * Class DatetimeField 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
- * @link https://backpackforlaravel.com/docs/3.6/crud-fields#datetime Documentation
+ * @link https://backpackforlaravel.com/docs/4.1/crud-fields#datetime Documentation
  * 
 * Please note it is recommended that you use [attribute casting](https://laravel.com/docs/5.3/eloquent-mutators#attribute-casting) on your model (cast to date).
 * 
@@ -15,7 +15,9 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 * 
 * Input preview: 
 * 
-* ![CRUD Field - date_range](https://backpackforlaravel.com/uploads/docs-3-5/fields/date_range.png)
+* ![CRUD Field - date_range](https://backpackforlaravel.com/uploads/docs-4-1/fields/date_range.png)
+* 
+* <hr>
 * 
 * <a name="datetime"></a>
 * 

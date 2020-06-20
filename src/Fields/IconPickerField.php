@@ -7,11 +7,12 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 /**
  * Class IconPickerField 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
- * @link https://backpackforlaravel.com/docs/3.6/crud-fields#icon_picker Documentation
+ * @link https://backpackforlaravel.com/docs/4.1/crud-fields#icon_picker Documentation
  * 
+* <hr>
+* 
 * <a name="icon-picker"></a>
 * 
-* [/block]
 * Show an icon picker. Supported icon sets are fontawesome, glyphicon, ionicon, weathericon, mapicon, octicon, typicon, elusiveicon, materialdesign as per the jQuery plugin, [bootstrap-iconpicker](http://victor-valencia.github.io/bootstrap-iconpicker/).
 * 
 * The stored value will be the class name (ex: fa-home).

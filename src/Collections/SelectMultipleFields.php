@@ -54,19 +54,19 @@ class SelectMultipleFields extends FieldsCollection
     }
     
     
-    public function model(string $value): SelectMultipleFields
+    public function pivot(bool $value = true): SelectMultipleFields
     {
         foreach ($this->result as $f) {
-            $f->model($value);
+            $f->pivot($value);
         }
         return $this;
     }
     
     
-    public function pivot(bool $value = true): SelectMultipleFields
+    public function model(string $value): SelectMultipleFields
     {
         foreach ($this->result as $f) {
-            $f->pivot($value);
+            $f->model($value);
         }
         return $this;
     }

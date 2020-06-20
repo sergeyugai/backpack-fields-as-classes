@@ -7,7 +7,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 /**
  * Class DateField 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
- * @link https://backpackforlaravel.com/docs/3.6/crud-fields#date Documentation
+ * @link https://backpackforlaravel.com/docs/4.1/crud-fields#date Documentation
  * 
 * <a name="date"></a>
 * 

@@ -7,11 +7,13 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 /**
  * Class TimeField 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
- * @link https://backpackforlaravel.com/docs/3.6/crud-fields#time Documentation
+ * @link https://backpackforlaravel.com/docs/4.1/crud-fields#time Documentation
  * 
 * Input preview: 
 * 
-* ![CRUD Field - textarea](https://backpackforlaravel.com/uploads/docs-3-5/fields/textarea.png)
+* ![CRUD Field - textarea](https://backpackforlaravel.com/uploads/docs-4-1/fields/textarea.png)
+* 
+* <hr>
 * 
 * <a name="time"></a>
 * 

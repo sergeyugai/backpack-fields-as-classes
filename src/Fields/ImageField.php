@@ -7,13 +7,15 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 /**
  * Class ImageField 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
- * @link https://backpackforlaravel.com/docs/3.6/crud-fields#image Documentation
+ * @link https://backpackforlaravel.com/docs/4.1/crud-fields#image Documentation
  * 
 * Your input will look like button, with a dropdown where the user can search or pick an icon:
 * 
 * Input preview: 
 * 
-* ![CRUD Field - icon_picker](https://backpackforlaravel.com/uploads/docs-3-5/fields/icon_picker.png)
+* ![CRUD Field - icon_picker](https://backpackforlaravel.com/uploads/docs-4-1/fields/icon_picker.png)
+* 
+* <hr>
 * 
 * <a name="image"></a>
 * 
@@ -22,7 +24,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 * **Step 1.** Show the field. 
 * ```php
 * 
-* **Step 2.** Set a mutator on your Model, so that the file can be stored. You can use this boilerplate code and modify it to match your use case:
+* **Step 2.** Add a [mutator](https://laravel.com/docs/7.x/eloquent-mutators#defining-a-mutator) to your Model, where you pick up the uploaded file and store it wherever you want. You can use this boilerplate code and modify it to match your use case. The code below requires that you have ```intervention/image``` installed. If you don't, please do ```composer require intervention/image``` first.
 * 
 * ```php
 * > **The uploaded images are not deleted for you.** If you delete an entry (using the CRUD or anywhere inside your app), the image file won't be deleted from the disk.

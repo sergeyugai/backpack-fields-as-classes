@@ -7,8 +7,10 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 /**
  * Class TableColumn 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Columns
- * @link https://backpackforlaravel.com/docs/3.6/crud-columns#table Documentation
+ * @link https://backpackforlaravel.com/docs/4.1/crud-columns#table Documentation
  * 
+* <hr>
+* 
 * <a name="table"></a>
 * 
 * 

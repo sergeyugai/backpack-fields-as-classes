@@ -7,12 +7,13 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 /**
  * Class EmailField 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
- * @link https://backpackforlaravel.com/docs/3.6/crud-fields#email Documentation
- * Otherwise the input's datetime-local formal will cause some errors. Remeber to change "datetime" with the name of your attribute (column name).
-* 
+ * @link https://backpackforlaravel.com/docs/4.1/crud-fields#email Documentation
+ * 
 * Input preview: 
 * 
-* ![CRUD Field - datetime_picker](https://backpackforlaravel.com/uploads/docs-3-5/fields/datetime_picker.png)
+* ![CRUD Field - easymde](https://backpackforlaravel.com/uploads/docs-4-1/fields/easymde.png)
+* 
+* <hr>
 * 
 * <a name="email"></a>
 * 

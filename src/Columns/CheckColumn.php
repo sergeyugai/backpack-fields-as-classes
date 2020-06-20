@@ -7,13 +7,16 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 /**
  * Class CheckColumn 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Columns
- * @link https://backpackforlaravel.com/docs/3.6/crud-columns#check Documentation
+ * @link https://backpackforlaravel.com/docs/4.1/crud-columns#check Documentation
  * 
+* <hr>
+* 
 * <a name="check"></a>
 * 
 * Show a favicon with a checked or unchecked box, depending on the given boolean.
 * ```php
 * 
+* <hr>
 * 
 * <a name="checkbox"></a>
 * 

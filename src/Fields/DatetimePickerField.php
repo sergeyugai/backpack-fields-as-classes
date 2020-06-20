@@ -7,12 +7,14 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 /**
  * Class DatetimePickerField 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
- * @link https://backpackforlaravel.com/docs/3.6/crud-fields#datetime_picker Documentation
- * Otherwise the input's datetime-local formal will cause some errors.
+ * @link https://backpackforlaravel.com/docs/4.1/crud-fields#datetime_picker Documentation
+ * Otherwise the input's datetime-local format will cause some errors.
 * 
 * Input preview: 
 * 
-* ![CRUD Field - datetime](https://backpackforlaravel.com/uploads/docs-3-5/fields/datetime.png)
+* ![CRUD Field - datetime](https://backpackforlaravel.com/uploads/docs-4-1/fields/datetime.png)
+* 
+* <hr>
 * 
 * <a name="datetime-picker"></a>
 * 

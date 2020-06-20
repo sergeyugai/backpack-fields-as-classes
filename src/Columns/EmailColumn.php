@@ -7,8 +7,10 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 /**
  * Class EmailColumn 
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Columns
- * @link https://backpackforlaravel.com/docs/3.6/crud-columns#email Documentation
+ * @link https://backpackforlaravel.com/docs/4.1/crud-columns#email Documentation
  * 
+* <hr>
+* 
 * <a name="email"></a>
 * 
 * The email column will output the email address in the database (truncated to 254 characters if needed), with a ```mailto:``` link towards the full email. Its definition is:
