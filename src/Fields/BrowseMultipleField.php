@@ -37,13 +37,6 @@ class BrowseMultipleField extends Field
         return new self($name, $label);
     }
     
-    public function name(string $value): BrowseMultipleField
-    {
-        $this->offsetSet('name', $value);
-        return $this;
-    }
-    
-    
     public function label(string $value): BrowseMultipleField
     {
         $this->offsetSet('label', $value);

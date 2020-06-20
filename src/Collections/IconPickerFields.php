@@ -27,15 +27,6 @@ class IconPickerFields extends FieldsCollection
     }
     
     
-    public function name(string $value): IconPickerFields
-    {
-        foreach ($this->result as $f) {
-            $f->name($value);
-        }
-        return $this;
-    }
-    
-    
     public function iconset(string $value): IconPickerFields
     {
         foreach ($this->result as $f) {

@@ -34,13 +34,6 @@ class SelectMultipleColumn extends Column
     }
     
     
-    public function name(string $value): SelectMultipleColumn
-    {
-        $this->offsetSet('name', $value);
-        return $this;
-    }
-    
-    
     public function entity(string $value): SelectMultipleColumn
     {
         $this->offsetSet('entity', $value);

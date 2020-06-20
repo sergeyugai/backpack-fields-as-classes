@@ -32,13 +32,6 @@ class ColorField extends Field
         return new self($name, $label);
     }
     
-    public function name(string $value): ColorField
-    {
-        $this->offsetSet('name', $value);
-        return $this;
-    }
-    
-    
     public function label(string $value): ColorField
     {
         $this->offsetSet('label', $value);

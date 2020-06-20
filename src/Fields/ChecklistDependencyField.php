@@ -44,13 +44,6 @@ class ChecklistDependencyField extends Field
     }
     
     
-    public function name($value): ChecklistDependencyField
-    {
-        $this->offsetSet('name', $value);
-        return $this;
-    }
-    
-    
     public function subfields(array $value): ChecklistDependencyField
     {
         $this->offsetSet('subfields', $value);

@@ -39,13 +39,6 @@ class AddressGoogleField extends Field
         return new self($name, $label);
     }
     
-    public function name(string $value): AddressGoogleField
-    {
-        $this->offsetSet('name', $value);
-        return $this;
-    }
-    
-    
     public function label(string $value): AddressGoogleField
     {
         $this->offsetSet('label', $value);

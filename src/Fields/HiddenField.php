@@ -34,13 +34,6 @@ class HiddenField extends Field
         return new self($name, $label);
     }
     
-    public function name(string $value): HiddenField
-    {
-        $this->offsetSet('name', $value);
-        return $this;
-    }
-    
-    
     public function value(string $value): HiddenField
     {
         $this->offsetSet('value', $value);

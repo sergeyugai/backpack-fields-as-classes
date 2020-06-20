@@ -130,7 +130,7 @@ class {$className} extends FieldsCollection
 TEMPLATE;
 
         foreach ($fieldDescription as $fName => $fieldType) {
-            if ($fName !== 'type') {
+            if ($fName !== 'type' && $fName !== 'name') {
 
                 $defaultValue = $fieldType === 'bool' ? ' = true' : '';
                 $extra_code = '';
@@ -200,7 +200,7 @@ class {$className} extends {$prefix}
 TEMPLATE;
 
         foreach ($fieldDescription as $fName => $fieldType) {
-            if ($fName !== 'type') {
+            if ($fName !== 'type' && $fName !== 'name') {
 
                 $defaultValue = $fieldType === 'bool' ? ' = true' : '';
                 $extra_code = '';

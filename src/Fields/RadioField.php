@@ -9,9 +9,8 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields
  * @link https://backpackforlaravel.com/docs/4.1/crud-fields#radio Documentation
  * 
-* Input preview: 
 * 
-* ![CRUD Field - password](https://backpackforlaravel.com/uploads/docs-3-5/fields/password.png)
+* <hr>
 * 
 * <a name="radio"></a>
 * 
@@ -22,20 +21,13 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 class RadioField extends Field
 { 
 
-    protected $result = ['type' => 'radio', 'attributes' => ['class' => 'radio']];
+    protected $result = ['type' => 'radio']; 
 
     // We re-declare this so that IDE would pick up 
     public static function make(string $name = null, string $label = null) : RadioField
     {
         return new self($name, $label);
     }
-    
-    public function name(string $value): RadioField
-    {
-        $this->offsetSet('name', $value);
-        return $this;
-    }
-    
     
     public function label(string $value): RadioField
     {
@@ -46,11 +38,6 @@ class RadioField extends Field
     
     public function options(array $value): RadioField
     {
-        $arrayable = new Arrayable();
-        foreach ($value as $key => $val) {
-            $arrayable[$key] = $val;
-        }
-        $value = $arrayable;
         $this->offsetSet('options', $value);
         return $this;
     }

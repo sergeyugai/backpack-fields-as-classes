@@ -61,13 +61,6 @@ class RelationshipField extends Field
         return new self($name, $label);
     }
     
-    public function name($value): RelationshipField
-    {
-        $this->offsetSet('name', $value);
-        return $this;
-    }
-    
-    
     public function label(string $value): RelationshipField
     {
         $this->offsetSet('label', $value);

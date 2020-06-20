@@ -18,15 +18,6 @@ class HiddenFields extends FieldsCollection
         return new self($fields, HiddenField::class);
     }
     
-    public function name(string $value): HiddenFields
-    {
-        foreach ($this->result as $f) {
-            $f->name($value);
-        }
-        return $this;
-    }
-    
-    
     public function value(string $value): HiddenFields
     {
         foreach ($this->result as $f) {

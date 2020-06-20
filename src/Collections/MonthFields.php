@@ -18,15 +18,6 @@ class MonthFields extends FieldsCollection
         return new self($fields, MonthField::class);
     }
     
-    public function name(string $value): MonthFields
-    {
-        foreach ($this->result as $f) {
-            $f->name($value);
-        }
-        return $this;
-    }
-    
-    
     public function label(string $value): MonthFields
     {
         foreach ($this->result as $f) {

@@ -31,13 +31,6 @@ class SimplemdeField extends Field
         return new self($name, $label);
     }
     
-    public function name(string $value): SimplemdeField
-    {
-        $this->offsetSet('name', $value);
-        return $this;
-    }
-    
-    
     public function label(string $value): SimplemdeField
     {
         $this->offsetSet('label', $value);

@@ -27,15 +27,6 @@ class SelectFields extends FieldsCollection
     }
     
     
-    public function name(string $value): SelectFields
-    {
-        foreach ($this->result as $f) {
-            $f->name($value);
-        }
-        return $this;
-    }
-    
-    
     public function entity(string $value): SelectFields
     {
         foreach ($this->result as $f) {

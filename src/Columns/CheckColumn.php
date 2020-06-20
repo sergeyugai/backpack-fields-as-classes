@@ -36,13 +36,6 @@ class CheckColumn extends Column
         return new self($name, $label);
     }
     
-    public function name(string $value): CheckColumn
-    {
-        $this->offsetSet('name', $value);
-        return $this;
-    }
-    
-    
     public function label(string $value): CheckColumn
     {
         $this->offsetSet('label', $value);

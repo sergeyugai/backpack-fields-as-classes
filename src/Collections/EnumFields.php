@@ -18,15 +18,6 @@ class EnumFields extends FieldsCollection
         return new self($fields, EnumField::class);
     }
     
-    public function name(string $value): EnumFields
-    {
-        foreach ($this->result as $f) {
-            $f->name($value);
-        }
-        return $this;
-    }
-    
-    
     public function label(string $value): EnumFields
     {
         foreach ($this->result as $f) {

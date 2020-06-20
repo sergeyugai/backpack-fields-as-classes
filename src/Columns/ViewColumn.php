@@ -39,13 +39,6 @@ class ViewColumn extends Column
         return new self($name, $label);
     }
     
-    public function name(string $value): ViewColumn
-    {
-        $this->offsetSet('name', $value);
-        return $this;
-    }
-    
-    
     public function label(string $value): ViewColumn
     {
         $this->offsetSet('label', $value);

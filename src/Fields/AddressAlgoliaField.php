@@ -30,13 +30,6 @@ class AddressAlgoliaField extends Field
         return new self($name, $label);
     }
     
-    public function name(string $value): AddressAlgoliaField
-    {
-        $this->offsetSet('name', $value);
-        return $this;
-    }
-    
-    
     public function label(string $value): AddressAlgoliaField
     {
         $this->offsetSet('label', $value);

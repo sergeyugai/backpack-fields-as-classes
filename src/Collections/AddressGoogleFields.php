@@ -18,15 +18,6 @@ class AddressGoogleFields extends FieldsCollection
         return new self($fields, AddressGoogleField::class);
     }
     
-    public function name(string $value): AddressGoogleFields
-    {
-        foreach ($this->result as $f) {
-            $f->name($value);
-        }
-        return $this;
-    }
-    
-    
     public function label(string $value): AddressGoogleFields
     {
         foreach ($this->result as $f) {

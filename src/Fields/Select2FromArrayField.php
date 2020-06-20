@@ -32,13 +32,6 @@ class Select2FromArrayField extends Field
         return new self($name, $label);
     }
     
-    public function name(string $value): Select2FromArrayField
-    {
-        $this->offsetSet('name', $value);
-        return $this;
-    }
-    
-    
     public function label(string $value): Select2FromArrayField
     {
         $this->offsetSet('label', $value);

@@ -18,15 +18,6 @@ class RepeatableFields extends FieldsCollection
         return new self($fields, RepeatableField::class);
     }
     
-    public function name($value): RepeatableFields
-    {
-        foreach ($this->result as $f) {
-            $f->name($value);
-        }
-        return $this;
-    }
-    
-    
     public function label($value): RepeatableFields
     {
         foreach ($this->result as $f) {

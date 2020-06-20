@@ -18,15 +18,6 @@ class DatetimePickerFields extends FieldsCollection
         return new self($fields, DatetimePickerField::class);
     }
     
-    public function name(string $value): DatetimePickerFields
-    {
-        foreach ($this->result as $f) {
-            $f->name($value);
-        }
-        return $this;
-    }
-    
-    
     public function label(string $value): DatetimePickerFields
     {
         foreach ($this->result as $f) {

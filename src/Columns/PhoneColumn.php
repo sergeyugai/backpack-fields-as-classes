@@ -27,13 +27,6 @@ class PhoneColumn extends Column
         return new self($name, $label);
     }
     
-    public function name(string $value): PhoneColumn
-    {
-        $this->offsetSet('name', $value);
-        return $this;
-    }
-    
-    
     public function label(string $value): PhoneColumn
     {
         $this->offsetSet('label', $value);

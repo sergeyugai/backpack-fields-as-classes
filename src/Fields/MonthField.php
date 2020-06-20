@@ -39,13 +39,6 @@ class MonthField extends Field
         return new self($name, $label);
     }
     
-    public function name(string $value): MonthField
-    {
-        $this->offsetSet('name', $value);
-        return $this;
-    }
-    
-    
     public function label(string $value): MonthField
     {
         $this->offsetSet('label', $value);

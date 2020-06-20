@@ -18,15 +18,6 @@ class WysiwygFields extends FieldsCollection
         return new self($fields, WysiwygField::class);
     }
     
-    public function name(string $value): WysiwygFields
-    {
-        foreach ($this->result as $f) {
-            $f->name($value);
-        }
-        return $this;
-    }
-    
-    
     public function label(string $value): WysiwygFields
     {
         foreach ($this->result as $f) {

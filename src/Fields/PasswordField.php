@@ -45,13 +45,6 @@ class PasswordField extends Field
         return new self($name, $label);
     }
     
-    public function name(string $value): PasswordField
-    {
-        $this->offsetSet('name', $value);
-        return $this;
-    }
-    
-    
     public function label(string $value): PasswordField
     {
         $this->offsetSet('label', $value);

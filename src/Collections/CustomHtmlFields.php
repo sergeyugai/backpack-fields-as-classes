@@ -18,15 +18,6 @@ class CustomHtmlFields extends FieldsCollection
         return new self($fields, CustomHtmlField::class);
     }
     
-    public function name(string $value): CustomHtmlFields
-    {
-        foreach ($this->result as $f) {
-            $f->name($value);
-        }
-        return $this;
-    }
-    
-    
     public function value(string $value): CustomHtmlFields
     {
         foreach ($this->result as $f) {

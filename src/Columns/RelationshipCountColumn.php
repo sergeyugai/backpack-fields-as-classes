@@ -30,13 +30,6 @@ class RelationshipCountColumn extends Column
         return new self($name, $label);
     }
     
-    public function name(string $value): RelationshipCountColumn
-    {
-        $this->offsetSet('name', $value);
-        return $this;
-    }
-    
-    
     public function label(string $value): RelationshipCountColumn
     {
         $this->offsetSet('label', $value);

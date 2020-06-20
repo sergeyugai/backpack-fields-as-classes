@@ -18,15 +18,6 @@ class SimplemdeFields extends FieldsCollection
         return new self($fields, SimplemdeField::class);
     }
     
-    public function name(string $value): SimplemdeFields
-    {
-        foreach ($this->result as $f) {
-            $f->name($value);
-        }
-        return $this;
-    }
-    
-    
     public function label(string $value): SimplemdeFields
     {
         foreach ($this->result as $f) {

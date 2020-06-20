@@ -40,13 +40,6 @@ class Select2Field extends Field
     }
     
     
-    public function name(string $value): Select2Field
-    {
-        $this->offsetSet('name', $value);
-        return $this;
-    }
-    
-    
     public function entity(string $value): Select2Field
     {
         $this->offsetSet('entity', $value);

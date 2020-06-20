@@ -32,13 +32,6 @@ class DatetimeColumn extends Column
         return new self($name, $label);
     }
     
-    public function name(string $value): DatetimeColumn
-    {
-        $this->offsetSet('name', $value);
-        return $this;
-    }
-    
-    
     public function label(string $value): DatetimeColumn
     {
         $this->offsetSet('label', $value);

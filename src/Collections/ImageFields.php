@@ -27,15 +27,6 @@ class ImageFields extends FieldsCollection
     }
     
     
-    public function name(string $value): ImageFields
-    {
-        foreach ($this->result as $f) {
-            $f->name($value);
-        }
-        return $this;
-    }
-    
-    
     public function upload(bool $value = true): ImageFields
     {
         foreach ($this->result as $f) {

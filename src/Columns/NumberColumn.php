@@ -28,13 +28,6 @@ class NumberColumn extends Column
         return new self($name, $label);
     }
     
-    public function name(string $value): NumberColumn
-    {
-        $this->offsetSet('name', $value);
-        return $this;
-    }
-    
-    
     public function label(string $value): NumberColumn
     {
         $this->offsetSet('label', $value);

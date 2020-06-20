@@ -27,15 +27,6 @@ class SelectAndOrderFields extends FieldsCollection
     }
     
     
-    public function name(string $value): SelectAndOrderFields
-    {
-        foreach ($this->result as $f) {
-            $f->name($value);
-        }
-        return $this;
-    }
-    
-    
     public function label(string $value): SelectAndOrderFields
     {
         foreach ($this->result as $f) {

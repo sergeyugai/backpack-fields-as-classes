@@ -18,15 +18,6 @@ class EmailFields extends FieldsCollection
         return new self($fields, EmailField::class);
     }
     
-    public function name(string $value): EmailFields
-    {
-        foreach ($this->result as $f) {
-            $f->name($value);
-        }
-        return $this;
-    }
-    
-    
     public function label(string $value): EmailFields
     {
         foreach ($this->result as $f) {

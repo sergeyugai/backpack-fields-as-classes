@@ -2,13 +2,14 @@
 
 namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Common;
 
-class Arrayable implements \ArrayAccess, \Iterator
+use Backpack\CRUD\app\Library\CrudPanel\CrudField;
+
+class Arrayable extends CrudField implements \ArrayAccess, \Iterator
 {
     /**
      * Internal array, which is basically what we are going to provide to whoever accesses us
      * @var array
      */
-    protected $result = [];
     protected $index = 0;
 
     /**
@@ -25,7 +26,7 @@ class Arrayable implements \ArrayAccess, \Iterator
      */
     public function offsetExists($offset)
     {
-        return array_key_exists($offset, $this->result);
+        return array_key_exists($offset, $this->attributes);
     }
 
     /**
@@ -39,7 +40,7 @@ class Arrayable implements \ArrayAccess, \Iterator
      */
     public function &offsetGet($offset)
     {
-        return $this->result[$offset];
+        return $this->attributes[$offset];
     }
 
     /**
@@ -56,7 +57,22 @@ class Arrayable implements \ArrayAccess, \Iterator
      */
     public function offsetSet($offset, $value)
     {
-        $this->result[$offset] = $value;
+        $this->attributes[$offset] = $value;
+        $this->store();
+    }
+
+    public function store(): void
+    {
+        // TODO: remove this method. its supposed to be the same as CrudField->save(), but that one is private.
+        // so workaround was obv to copy it.
+
+        $key = $this->attributes['name'];
+
+        if ($this->crud()->hasFieldWhere('name', $key)) {
+            $this->crud()->modifyField($key, $this->attributes);
+        } else {
+            $this->crud()->addField($this->attributes);
+        }
     }
 
     /**
@@ -70,7 +86,7 @@ class Arrayable implements \ArrayAccess, \Iterator
      */
     public function offsetUnset($offset)
     {
-        unset($this->result[$offset]);
+        unset($this->attributes[$offset]);
     }
 
     /**
@@ -81,8 +97,8 @@ class Arrayable implements \ArrayAccess, \Iterator
      */
     public function current()
     {
-        $k = array_keys($this->result);
-        $var = $this->result[$k[$this->index]];
+        $k = array_keys($this->attributes);
+        $var = $this->attributes[$k[$this->index]];
         return $var;
     }
 
@@ -94,9 +110,9 @@ class Arrayable implements \ArrayAccess, \Iterator
      */
     public function next()
     {
-        $k = array_keys($this->result);
+        $k = array_keys($this->attributes);
         if (isset($k[++$this->index])) {
-            $var = $this->result[$k[$this->index]];
+            $var = $this->attributes[$k[$this->index]];
             return $var;
         }
         else
@@ -113,7 +129,7 @@ class Arrayable implements \ArrayAccess, \Iterator
      */
     public function key()
     {
-        $k = array_keys($this->result);
+        $k = array_keys($this->attributes);
         $var = $k[$this->index];
         return $var;
     }
@@ -127,7 +143,7 @@ class Arrayable implements \ArrayAccess, \Iterator
      */
     public function valid()
     {
-        $k = array_keys($this->result);
+        $k = array_keys($this->attributes);
         $var = isset($k[$this->index]);
         return $var;
     }

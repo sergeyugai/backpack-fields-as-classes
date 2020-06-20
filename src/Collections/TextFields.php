@@ -18,15 +18,6 @@ class TextFields extends FieldsCollection
         return new self($fields, TextField::class);
     }
     
-    public function name(string $value): TextFields
-    {
-        foreach ($this->result as $f) {
-            $f->name($value);
-        }
-        return $this;
-    }
-    
-    
     public function label(string $value): TextFields
     {
         foreach ($this->result as $f) {

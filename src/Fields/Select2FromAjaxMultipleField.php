@@ -53,13 +53,6 @@ class Select2FromAjaxMultipleField extends Field
     }
     
     
-    public function name(string $value): Select2FromAjaxMultipleField
-    {
-        $this->offsetSet('name', $value);
-        return $this;
-    }
-    
-    
     public function entity(string $value): Select2FromAjaxMultipleField
     {
         $this->offsetSet('entity', $value);

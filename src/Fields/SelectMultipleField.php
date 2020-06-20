@@ -40,13 +40,6 @@ class SelectMultipleField extends Field
     }
     
     
-    public function name(string $value): SelectMultipleField
-    {
-        $this->offsetSet('name', $value);
-        return $this;
-    }
-    
-    
     public function entity(string $value): SelectMultipleField
     {
         $this->offsetSet('entity', $value);

@@ -18,15 +18,6 @@ class TableFields extends FieldsCollection
         return new self($fields, TableField::class);
     }
     
-    public function name($value): TableFields
-    {
-        foreach ($this->result as $f) {
-            $f->name($value);
-        }
-        return $this;
-    }
-    
-    
     public function label(string $value): TableFields
     {
         foreach ($this->result as $f) {

@@ -22,11 +22,21 @@
     "php": "^7.1.3"
   },
   "require-dev": {
-
+    "backpack/crud": "4.1.*",
+    "phpunit/phpunit": "^8",
+    "orchestra/testbench": "^5.3"
   },
   "autoload": {
     "psr-4": {
       "SergeYugai\\Laravel\\Backpack\\FieldsAsClasses\\": "src"
     }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "SergeYugai\\Laravel\\Backpack\\FieldsAsClasses\\": "src",
+      "Backpack\\CRUD\\Tests\\": "vendor/backpack/crud/tests",
+      "Tests\\": "tests"
+    },
+    "files": ["vendor/backpack/crud/src/helpers.php"]
   }
 }

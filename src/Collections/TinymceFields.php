@@ -18,15 +18,6 @@ class TinymceFields extends FieldsCollection
         return new self($fields, TinymceField::class);
     }
     
-    public function name(string $value): TinymceFields
-    {
-        foreach ($this->result as $f) {
-            $f->name($value);
-        }
-        return $this;
-    }
-    
-    
     public function label(string $value): TinymceFields
     {
         foreach ($this->result as $f) {

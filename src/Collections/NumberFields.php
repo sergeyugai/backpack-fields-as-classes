@@ -18,15 +18,6 @@ class NumberFields extends FieldsCollection
         return new self($fields, NumberField::class);
     }
     
-    public function name(string $value): NumberFields
-    {
-        foreach ($this->result as $f) {
-            $f->name($value);
-        }
-        return $this;
-    }
-    
-    
     public function label(string $value): NumberFields
     {
         foreach ($this->result as $f) {

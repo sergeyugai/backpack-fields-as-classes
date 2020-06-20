@@ -41,13 +41,6 @@ class SelectGroupedField extends Field
     }
     
     
-    public function name(string $value): SelectGroupedField
-    {
-        $this->offsetSet('name', $value);
-        return $this;
-    }
-    
-    
     public function entity(string $value): SelectGroupedField
     {
         $this->offsetSet('entity', $value);

@@ -31,13 +31,6 @@ class TableColumn extends Column
         return new self($name, $label);
     }
     
-    public function name($value): TableColumn
-    {
-        $this->offsetSet('name', $value);
-        return $this;
-    }
-    
-    
     public function label(string $value): TableColumn
     {
         $this->offsetSet('label', $value);

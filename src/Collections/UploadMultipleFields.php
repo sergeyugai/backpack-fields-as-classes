@@ -18,15 +18,6 @@ class UploadMultipleFields extends FieldsCollection
         return new self($fields, UploadMultipleField::class);
     }
     
-    public function name(string $value): UploadMultipleFields
-    {
-        foreach ($this->result as $f) {
-            $f->name($value);
-        }
-        return $this;
-    }
-    
-    
     public function label(string $value): UploadMultipleFields
     {
         foreach ($this->result as $f) {

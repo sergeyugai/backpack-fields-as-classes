@@ -18,15 +18,6 @@ class Select2FromArrayFields extends FieldsCollection
         return new self($fields, Select2FromArrayField::class);
     }
     
-    public function name(string $value): Select2FromArrayFields
-    {
-        foreach ($this->result as $f) {
-            $f->name($value);
-        }
-        return $this;
-    }
-    
-    
     public function label(string $value): Select2FromArrayFields
     {
         foreach ($this->result as $f) {

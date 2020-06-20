@@ -18,15 +18,6 @@ class RadioFields extends FieldsCollection
         return new self($fields, RadioField::class);
     }
     
-    public function name(string $value): RadioFields
-    {
-        foreach ($this->result as $f) {
-            $f->name($value);
-        }
-        return $this;
-    }
-    
-    
     public function label(string $value): RadioFields
     {
         foreach ($this->result as $f) {

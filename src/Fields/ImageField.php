@@ -49,13 +49,6 @@ class ImageField extends Field
     }
     
     
-    public function name(string $value): ImageField
-    {
-        $this->offsetSet('name', $value);
-        return $this;
-    }
-    
-    
     public function upload(bool $value = true): ImageField
     {
         $this->offsetSet('upload', $value);

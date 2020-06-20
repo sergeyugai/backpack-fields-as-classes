@@ -29,13 +29,6 @@ class RowNumberColumn extends Column
         return new self($name, $label);
     }
     
-    public function name(string $value): RowNumberColumn
-    {
-        $this->offsetSet('name', $value);
-        return $this;
-    }
-    
-    
     public function label(string $value): RowNumberColumn
     {
         $this->offsetSet('label', $value);

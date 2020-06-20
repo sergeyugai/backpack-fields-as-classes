@@ -29,13 +29,6 @@ class ClosureColumn extends Column
         return new self($name, $label);
     }
     
-    public function name(string $value): ClosureColumn
-    {
-        $this->offsetSet('name', $value);
-        return $this;
-    }
-    
-    
     public function label(string $value): ClosureColumn
     {
         $this->offsetSet('label', $value);

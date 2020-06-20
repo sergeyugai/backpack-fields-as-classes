@@ -32,13 +32,6 @@ class CustomHtmlField extends Field
         return new self($name, $label);
     }
     
-    public function name(string $value): CustomHtmlField
-    {
-        $this->offsetSet('name', $value);
-        return $this;
-    }
-    
-    
     public function value(string $value): CustomHtmlField
     {
         $this->offsetSet('value', $value);

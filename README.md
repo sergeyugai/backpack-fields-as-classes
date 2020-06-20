@@ -3,14 +3,44 @@
 This is a **drop-in** solution for [Laravel backpack](https://backpackforlaravel.com) to replace column/fields
 declarations-via-array with object-oriented approach. Allows your IDE to help you write that stuff.
 
-**This version is compatible with Backpack up to 4.1** and probably will be compatible with future versions, unless
-backpack itself introduces breaking changes to field declarations.
+**This version is compatible with Backpack 4.1 and above**; for older Backpack versions, use 0.3.* versions of this package.
 
-**Requires no changes to existing code** and can be used alongside existing definitions.
+Package TLDR: 
+```php
 
-Also you can make your code more DRY by using **field collections** which also work as drop-in with current Backpack.
+// Changes this
+public function setupOperation() 
+{
 
-* Quick demo 
+    $this->crud->addField(
+        [ // Text
+            'name' => 'title',
+            'label' => "Title",
+            'type' => 'text',
+
+            // optional
+            //'prefix' => '',
+        ]);
+}
+
+// To this
+public function setupOperation() 
+{
+    TextField::name('title')->prefix('1.');
+}
+
+```
+
+## Benefits:
+
+*  **Requires no changes to existing code** and can be used alongside existing definitions.
+* Fully compatible with **Fluent syntax** (read more about it [here](https://backpackforlaravel.com/docs/4.1/crud-fluent-syntax))
+* Provides many different ways to declare your fields and columns - pick the one you like
+* you can make your code more DRY by using **field collections** which also work as drop-in with current Backpack.
+
+## In this document: 
+
+* Quick syntax demo 
 * Installation
 * How to use (fields, columns, field collections)
 * Extra perks that you get
@@ -54,6 +84,21 @@ or, if you prefer:
 $this->crud->addField(
     TextField::make('title')->prefix('1.')
 );
+```
+
+or:
+```php
+$this->crud->addField(
+    TextField::name('title')->prefix('1.')
+);
+```
+
+or even without **$this->crud** reference: 
+```php
+public function setupOperation() 
+{
+    TextField::name('title')->prefix('1.');
+}
 ```
 
 If you have repeatable code, you could use something cool like this:
@@ -109,6 +154,9 @@ keys you call object methods and pass in values, like so:
 $this->crud->addField(
     TextField::make()->name('title')->label('Title')->prefix('whatever')
 );
+
+// OR just directly without any CRUD calls:
+TextField::make()->name('title')->label('Title')->prefix('whatever')
 ```
 So we have 1 class per field type and per column type.
 
@@ -132,16 +180,16 @@ class SomeCrudController extends CrudController
 }
 ```
 
-Via **make()** 
+Via **make()**  or **name()**
 ```php
 class SomeCrudController extends CrudController
 {
     public function setup()
     {
         //...
-        $this->crud->addField( TextField::make()->...)
-        $this->crud->addField( TextField::make('field name can be passed')->...)
-        $this->crud->addField( TextField::make('field name can be passed', 'field label can be passed')->...)
+        TextField::name('field name must be passed')->
+        TextField::make('field name must passed')->...
+        TextField::make('field name must be passed', 'field label can be passed')->...
         //...
     }
 }
@@ -151,29 +199,22 @@ After that, you can chain various method calls. For instance, you know that text
 chain that like so:
 
 ```php
-$this->crud->addField(
-    TextField::make('title', 'Title')->prefix('whatever')
-);
+TextField::make('title', 'Title')->prefix('whatever')
 ```
 
 In this example you can omit 'Title' because backpack is going to provide this label automatically based on name:
 ```php
-$this->crud->addField(
-    TextField::make('title')->prefix('whatever')
-);
+TextField::make('title')->prefix('whatever')
 ```
 
 Or, if you want more clarity, feel free to not pass anything to constructor at all and instead pass name separately:
 ```php
-$this->crud->addField(
-    TextField::make()->name('title')->prefix('whatever')
-);
+TextField::make()->name('title')->prefix('whatever')
 ```
 
 You can call ANY method, even methods not stated in documentation, even if method does not exist in my classes. 
 The reason for it is that if you decide to use custom field, you can create your own declaration like so:
 ```php
-$this->crud->addField(
     Field::make()
             ->name('my_custom_field')
             ->label('My field:')
@@ -181,19 +222,16 @@ $this->crud->addField(
             ->value('whatever')
             ->someBoolParam(true)
             ->someConfig(['extra' => function() { echo "hi"; }])
-)
 ```
 and that is going to be translated to array format understandable by backpack:
 
 ```php
-$this->crud->addField(
             'name' => 'my_custom_field',
             'label' => 'My field:',
             'type' => 'my_field_type',
             'value' => 'whatever',
             'someBoolParam' => true,
             'someConfig' => ['extra' => function() { echo "hi"; }]
-)
 ```
 
 However, if you write your custom field, feel free to create new class and declare
@@ -208,14 +246,18 @@ class MyCustomField extends Field
 
 ### Columns
 
-Columns behave exactly the same way as fields, but there is one issue with them - in order to use them in current
-version of backpack, you have to (unlike fields) manuall call method to transform them to array:
+Columns behave exactly the same way as fields: 
 ```php
-$this->crud->addColumns([
    ...
-    TextColumn::make('title')->limit(60)->asArray(),
+    TextColumn::make('title')->limit(60)
    ...
-]);
+```
+
+If you use **$this->crud** reference, you have to add asArray() in the end:
+```php
+$this->crud->addColumn(
+    TextColumn::make('title')->limit(60)->asArray()
+)
 ```
 
 If this package gets popular, I'll submit a PR to Backpack to fix this so that there would not be "asArray()", but for
@@ -325,6 +367,8 @@ you can implement your own helper methods here.
 4. Auto generation of fields - yeah, we auto generate all the field/column classes, I did not write actual fields manually.
 About that - below.
 
+More discussion is here - https://github.com/Laravel-Backpack/CRUD/issues/2604
+
 ## Code generation? 
 
 Yes, that's quite **important** - pretty much all the fields and columns are automatically generated from backpack's docs.
@@ -350,12 +394,8 @@ Currently we support **fields** and **columns**. As list grows, I'll add more st
 
 ## Tests?
 
-There are no tests yet because code is autogenerated and I'd probably have to autogenerate tests as well - and with
-current state of backpack documentation (and output code that I get for my fields/columns) I'd rather focus on something
-else.
-
-If this package gets traction, then I'll surely find a way how to make sure its stable, for now you can just try and
-use it - I do it in my projects and it seems to be stable enough. 
+There is very little testing; if this gets popular and backpack documentation is updated to better structure, then I'll
+add some tests, which would probably be autogenerated as well (at least partially) for all those fields and columns.
 
 ## Contributing
 

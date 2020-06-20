@@ -37,13 +37,6 @@ class ChecklistField extends Field
     }
     
     
-    public function name(string $value): ChecklistField
-    {
-        $this->offsetSet('name', $value);
-        return $this;
-    }
-    
-    
     public function entity(string $value): ChecklistField
     {
         $this->offsetSet('entity', $value);

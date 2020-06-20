@@ -18,15 +18,6 @@ class PageOrLinkFields extends FieldsCollection
         return new self($fields, PageOrLinkField::class);
     }
     
-    public function name(array $value): PageOrLinkFields
-    {
-        foreach ($this->result as $f) {
-            $f->name($value);
-        }
-        return $this;
-    }
-    
-    
     public function label(string $value): PageOrLinkFields
     {
         foreach ($this->result as $f) {

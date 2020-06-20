@@ -18,15 +18,6 @@ class CheckboxFields extends FieldsCollection
         return new self($fields, CheckboxField::class);
     }
     
-    public function name(string $value): CheckboxFields
-    {
-        foreach ($this->result as $f) {
-            $f->name($value);
-        }
-        return $this;
-    }
-    
-    
     public function label(string $value): CheckboxFields
     {
         foreach ($this->result as $f) {

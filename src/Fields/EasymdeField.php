@@ -33,13 +33,6 @@ class EasymdeField extends Field
         return new self($name, $label);
     }
     
-    public function name(string $value): EasymdeField
-    {
-        $this->offsetSet('name', $value);
-        return $this;
-    }
-    
-    
     public function label(string $value): EasymdeField
     {
         $this->offsetSet('label', $value);

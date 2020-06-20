@@ -27,13 +27,6 @@ class EmailColumn extends Column
         return new self($name, $label);
     }
     
-    public function name(string $value): EmailColumn
-    {
-        $this->offsetSet('name', $value);
-        return $this;
-    }
-    
-    
     public function label(string $value): EmailColumn
     {
         $this->offsetSet('label', $value);

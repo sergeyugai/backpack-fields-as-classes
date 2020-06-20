@@ -18,15 +18,6 @@ class AddressAlgoliaFields extends FieldsCollection
         return new self($fields, AddressAlgoliaField::class);
     }
     
-    public function name(string $value): AddressAlgoliaFields
-    {
-        foreach ($this->result as $f) {
-            $f->name($value);
-        }
-        return $this;
-    }
-    
-    
     public function label(string $value): AddressAlgoliaFields
     {
         foreach ($this->result as $f) {

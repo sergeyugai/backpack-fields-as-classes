@@ -18,15 +18,6 @@ class VideoFields extends FieldsCollection
         return new self($fields, VideoField::class);
     }
     
-    public function name(string $value): VideoFields
-    {
-        foreach ($this->result as $f) {
-            $f->name($value);
-        }
-        return $this;
-    }
-    
-    
     public function label(string $value): VideoFields
     {
         foreach ($this->result as $f) {

@@ -34,13 +34,6 @@ class BrowseField extends Field
         return new self($name, $label);
     }
     
-    public function name(string $value): BrowseField
-    {
-        $this->offsetSet('name', $value);
-        return $this;
-    }
-    
-    
     public function label(string $value): BrowseField
     {
         $this->offsetSet('label', $value);

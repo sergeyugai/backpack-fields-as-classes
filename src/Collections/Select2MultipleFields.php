@@ -27,15 +27,6 @@ class Select2MultipleFields extends FieldsCollection
     }
     
     
-    public function name(string $value): Select2MultipleFields
-    {
-        foreach ($this->result as $f) {
-            $f->name($value);
-        }
-        return $this;
-    }
-    
-    
     public function entity(string $value): Select2MultipleFields
     {
         foreach ($this->result as $f) {

@@ -18,15 +18,6 @@ class RangeFields extends FieldsCollection
         return new self($fields, RangeField::class);
     }
     
-    public function name(string $value): RangeFields
-    {
-        foreach ($this->result as $f) {
-            $f->name($value);
-        }
-        return $this;
-    }
-    
-    
     public function label(string $value): RangeFields
     {
         foreach ($this->result as $f) {

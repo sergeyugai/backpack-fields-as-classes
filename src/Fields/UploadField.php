@@ -51,13 +51,6 @@ class UploadField extends Field
         return new self($name, $label);
     }
     
-    public function name(string $value): UploadField
-    {
-        $this->offsetSet('name', $value);
-        return $this;
-    }
-    
-    
     public function label(string $value): UploadField
     {
         $this->offsetSet('label', $value);

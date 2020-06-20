@@ -29,13 +29,6 @@ class RadioColumn extends Column
         return new self($name, $label);
     }
     
-    public function name(string $value): RadioColumn
-    {
-        $this->offsetSet('name', $value);
-        return $this;
-    }
-    
-    
     public function label(string $value): RadioColumn
     {
         $this->offsetSet('label', $value);

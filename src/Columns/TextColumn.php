@@ -37,13 +37,6 @@ class TextColumn extends Column
         return new self($name, $label);
     }
     
-    public function name(string $value): TextColumn
-    {
-        $this->offsetSet('name', $value);
-        return $this;
-    }
-    
-    
     public function label(string $value): TextColumn
     {
         $this->offsetSet('label', $value);

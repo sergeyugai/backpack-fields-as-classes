@@ -18,15 +18,6 @@ class BrowseFields extends FieldsCollection
         return new self($fields, BrowseField::class);
     }
     
-    public function name(string $value): BrowseFields
-    {
-        foreach ($this->result as $f) {
-            $f->name($value);
-        }
-        return $this;
-    }
-    
-    
     public function label(string $value): BrowseFields
     {
         foreach ($this->result as $f) {

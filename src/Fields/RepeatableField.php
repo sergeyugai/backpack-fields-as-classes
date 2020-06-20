@@ -42,13 +42,6 @@ class RepeatableField extends Field
         return new self($name, $label);
     }
     
-    public function name($value): RepeatableField
-    {
-        $this->offsetSet('name', $value);
-        return $this;
-    }
-    
-    
     public function label($value): RepeatableField
     {
         $this->offsetSet('label', $value);

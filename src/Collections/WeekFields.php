@@ -18,15 +18,6 @@ class WeekFields extends FieldsCollection
         return new self($fields, WeekField::class);
     }
     
-    public function name(string $value): WeekFields
-    {
-        foreach ($this->result as $f) {
-            $f->name($value);
-        }
-        return $this;
-    }
-    
-    
     public function label(string $value): WeekFields
     {
         foreach ($this->result as $f) {

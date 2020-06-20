@@ -18,15 +18,6 @@ class DateFields extends FieldsCollection
         return new self($fields, DateField::class);
     }
     
-    public function name(string $value): DateFields
-    {
-        foreach ($this->result as $f) {
-            $f->name($value);
-        }
-        return $this;
-    }
-    
-    
     public function label(string $value): DateFields
     {
         foreach ($this->result as $f) {

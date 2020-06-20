@@ -43,13 +43,6 @@ class Base64ImageField extends Field
     }
     
     
-    public function name(string $value): Base64ImageField
-    {
-        $this->offsetSet('name', $value);
-        return $this;
-    }
-    
-    
     public function filename(string $value): Base64ImageField
     {
         $this->offsetSet('filename', $value);

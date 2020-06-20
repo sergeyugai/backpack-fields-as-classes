@@ -27,15 +27,6 @@ class Base64ImageFields extends FieldsCollection
     }
     
     
-    public function name(string $value): Base64ImageFields
-    {
-        foreach ($this->result as $f) {
-            $f->name($value);
-        }
-        return $this;
-    }
-    
-    
     public function filename(string $value): Base64ImageFields
     {
         foreach ($this->result as $f) {

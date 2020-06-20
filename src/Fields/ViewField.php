@@ -44,13 +44,6 @@ class ViewField extends Field
         return new self($name, $label);
     }
     
-    public function name(string $value): ViewField
-    {
-        $this->offsetSet('name', $value);
-        return $this;
-    }
-    
-    
     public function view(string $value): ViewField
     {
         $this->offsetSet('view', $value);

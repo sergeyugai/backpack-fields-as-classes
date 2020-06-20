@@ -18,15 +18,6 @@ class TimeFields extends FieldsCollection
         return new self($fields, TimeField::class);
     }
     
-    public function name(string $value): TimeFields
-    {
-        foreach ($this->result as $f) {
-            $f->name($value);
-        }
-        return $this;
-    }
-    
-    
     public function label(string $value): TimeFields
     {
         foreach ($this->result as $f) {

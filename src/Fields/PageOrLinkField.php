@@ -31,13 +31,6 @@ class PageOrLinkField extends Field
         return new self($name, $label);
     }
     
-    public function name(array $value): PageOrLinkField
-    {
-        $this->offsetSet('name', $value);
-        return $this;
-    }
-    
-    
     public function label(string $value): PageOrLinkField
     {
         $this->offsetSet('label', $value);

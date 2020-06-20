@@ -37,13 +37,6 @@ class DatetimeField extends Field
         return new self($name, $label);
     }
     
-    public function name(string $value): DatetimeField
-    {
-        $this->offsetSet('name', $value);
-        return $this;
-    }
-    
-    
     public function label(string $value): DatetimeField
     {
         $this->offsetSet('label', $value);

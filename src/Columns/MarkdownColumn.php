@@ -29,13 +29,6 @@ class MarkdownColumn extends Column
         return new self($name, $label);
     }
     
-    public function name(string $value): MarkdownColumn
-    {
-        $this->offsetSet('name', $value);
-        return $this;
-    }
-    
-    
     public function label(string $value): MarkdownColumn
     {
         $this->offsetSet('label', $value);

@@ -32,13 +32,6 @@ class NumberField extends Field
         return new self($name, $label);
     }
     
-    public function name(string $value): NumberField
-    {
-        $this->offsetSet('name', $value);
-        return $this;
-    }
-    
-    
     public function label(string $value): NumberField
     {
         $this->offsetSet('label', $value);

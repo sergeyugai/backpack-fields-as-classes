@@ -18,15 +18,6 @@ class Select2NestedFields extends FieldsCollection
         return new self($fields, Select2NestedField::class);
     }
     
-    public function name(string $value): Select2NestedFields
-    {
-        foreach ($this->result as $f) {
-            $f->name($value);
-        }
-        return $this;
-    }
-    
-    
     public function label(string $value): Select2NestedFields
     {
         foreach ($this->result as $f) {

@@ -34,13 +34,6 @@ class TextField extends Field
         return new self($name, $label);
     }
     
-    public function name(string $value): TextField
-    {
-        $this->offsetSet('name', $value);
-        return $this;
-    }
-    
-    
     public function label(string $value): TextField
     {
         $this->offsetSet('label', $value);

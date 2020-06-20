@@ -30,13 +30,6 @@ class EmailField extends Field
         return new self($name, $label);
     }
     
-    public function name(string $value): EmailField
-    {
-        $this->offsetSet('name', $value);
-        return $this;
-    }
-    
-    
     public function label(string $value): EmailField
     {
         $this->offsetSet('label', $value);

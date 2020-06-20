@@ -46,13 +46,6 @@ class WysiwygField extends Field
         return new self($name, $label);
     }
     
-    public function name(string $value): WysiwygField
-    {
-        $this->offsetSet('name', $value);
-        return $this;
-    }
-    
-    
     public function label(string $value): WysiwygField
     {
         $this->offsetSet('label', $value);

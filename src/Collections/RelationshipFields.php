@@ -18,15 +18,6 @@ class RelationshipFields extends FieldsCollection
         return new self($fields, RelationshipField::class);
     }
     
-    public function name($value): RelationshipFields
-    {
-        foreach ($this->result as $f) {
-            $f->name($value);
-        }
-        return $this;
-    }
-    
-    
     public function label(string $value): RelationshipFields
     {
         foreach ($this->result as $f) {

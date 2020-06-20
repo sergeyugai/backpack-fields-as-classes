@@ -2,6 +2,9 @@
 
 namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Columns;
 
+use Backpack\CRUD\app\Library\CrudPanel\CrudColumn;
+use SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields\Field;
+
 /**
  * Class Column
  * This is the base class. It can be used separately to represent ANY column.
@@ -9,14 +12,8 @@ namespace SergeYugai\Laravel\Backpack\FieldsAsClasses\Columns;
  * @package SergeYugai\Laravel\Backpack\FieldsAsClasses\Columns
  */
 
-class Column implements \ArrayAccess
+class Column extends CrudColumn implements \ArrayAccess
 {
-    /**
-     * Internal array, which is basically what we are going to provide to whoever accesses us
-     * @var array
-     */
-    protected $result = ['type' => 'text'];
-
     /**
      * Column constructor.
      *
@@ -25,6 +22,8 @@ class Column implements \ArrayAccess
      */
     public function __construct(string $name = null, string $label = null)
     {
+        $this->attributes = ['type' => 'text']; // default type.
+        parent::__construct($name?:'');
         if ($name !== null) {
             $this->offsetSet('name', $name);
             if ($label === null) {
@@ -34,6 +33,16 @@ class Column implements \ArrayAccess
         if ($label !== null) {
             $this->offsetSet('label', ucfirst($label));
         }
+    }
+
+    public static function name($name): self
+    {
+        return self::make($name);
+    }
+
+    public static function make(string $name, string $label = null): self
+    {
+        return new self($name, $label);
     }
 
     /**
@@ -63,7 +72,7 @@ class Column implements \ArrayAccess
      */
     public function offsetExists($offset)
     {
-        return array_key_exists($offset, $this->result);
+        return array_key_exists($offset, $this->attributes);
     }
 
     /**
@@ -77,7 +86,7 @@ class Column implements \ArrayAccess
      */
     public function offsetGet($offset)
     {
-        return $this->result[$offset];
+        return $this->attributes[$offset];
     }
 
     /**
@@ -94,7 +103,7 @@ class Column implements \ArrayAccess
      */
     public function offsetSet($offset, $value)
     {
-        $this->result[$offset] = $value;
+        $this->attributes[$offset] = $value;
     }
 
     /**
@@ -108,10 +117,10 @@ class Column implements \ArrayAccess
      */
     public function offsetUnset($offset)
     {
-        unset($this->result[$offset]);
+        unset($this->attributes[$offset]);
     }
 
     public function asArray(): array {
-        return $this->result;
+        return $this->attributes;
     }
 }

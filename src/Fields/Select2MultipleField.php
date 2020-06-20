@@ -43,13 +43,6 @@ class Select2MultipleField extends Field
     }
     
     
-    public function name(string $value): Select2MultipleField
-    {
-        $this->offsetSet('name', $value);
-        return $this;
-    }
-    
-    
     public function entity(string $value): Select2MultipleField
     {
         $this->offsetSet('entity', $value);

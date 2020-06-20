@@ -18,15 +18,6 @@ class UrlFields extends FieldsCollection
         return new self($fields, UrlField::class);
     }
     
-    public function name(string $value): UrlFields
-    {
-        foreach ($this->result as $f) {
-            $f->name($value);
-        }
-        return $this;
-    }
-    
-    
     public function label(string $value): UrlFields
     {
         foreach ($this->result as $f) {

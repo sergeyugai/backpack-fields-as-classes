@@ -14,21 +14,18 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 class Field extends Arrayable
 {
     /**
-     * Internal array, which is basically what we are going to provide to whoever accesses us
-     * @var array
-     */
-    protected $result = ['type' => 'text'];
-
-    /**
      * Field constructor.
      *
      * @param string $name
      * @param string $label
      */
-    public function __construct(string $name = null, string $label = null)
+    public function __construct(string $name, string $label = null)
     {
-        $this->offsetSet('wrapperAttributes', new Arrayable());
-        $this->offsetSet('attributes', new Arrayable());
+        $this->attributes = ['type' => 'text']; // default type.
+        parent::__construct($name);
+
+        $this->offsetSet('wrapperAttributes', []);
+        $this->offsetSet('attributes', []);
         if ($name !== null) {
             $this->offsetSet('name', $name);
             if ($label === null) {
@@ -40,7 +37,12 @@ class Field extends Arrayable
         }
     }
 
-    public static function make(string $name = null, string $label = null)
+    public static function name($name): self
+    {
+        return self::make($name);
+    }
+
+    public static function make(string $name, string $label = null): self
     {
         return new self($name, $label);
     }
@@ -53,6 +55,18 @@ class Field extends Arrayable
      */
     public function tab(string $value): self {
         $this->offsetSet('tab', $value);
+        return $this;
+    }
+
+    public function label(string $label): self
+    {
+        $this->offsetSet('label', $label);
+        return $this;
+    }
+
+    public function type(string $type): self
+    {
+        $this->offsetSet('type', $type);
         return $this;
     }
 

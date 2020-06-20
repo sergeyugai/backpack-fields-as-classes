@@ -29,13 +29,6 @@ class ImageColumn extends Column
         return new self($name, $label);
     }
     
-    public function name(string $value): ImageColumn
-    {
-        $this->offsetSet('name', $value);
-        return $this;
-    }
-    
-    
     public function label(string $value): ImageColumn
     {
         $this->offsetSet('label', $value);

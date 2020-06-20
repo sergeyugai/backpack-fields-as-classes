@@ -36,15 +36,6 @@ class ChecklistDependencyFields extends FieldsCollection
     }
     
     
-    public function name($value): ChecklistDependencyFields
-    {
-        foreach ($this->result as $f) {
-            $f->name($value);
-        }
-        return $this;
-    }
-    
-    
     public function subfields(array $value): ChecklistDependencyFields
     {
         foreach ($this->result as $f) {

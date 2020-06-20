@@ -37,13 +37,6 @@ class SelectField extends Field
     }
     
     
-    public function name(string $value): SelectField
-    {
-        $this->offsetSet('name', $value);
-        return $this;
-    }
-    
-    
     public function entity(string $value): SelectField
     {
         $this->offsetSet('entity', $value);

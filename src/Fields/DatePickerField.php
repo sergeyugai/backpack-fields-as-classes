@@ -32,13 +32,6 @@ class DatePickerField extends Field
         return new self($name, $label);
     }
     
-    public function name(string $value): DatePickerField
-    {
-        $this->offsetSet('name', $value);
-        return $this;
-    }
-    
-    
     public function label(string $value): DatePickerField
     {
         $this->offsetSet('label', $value);

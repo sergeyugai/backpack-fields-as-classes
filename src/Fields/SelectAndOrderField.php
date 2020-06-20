@@ -50,13 +50,6 @@ class SelectAndOrderField extends Field
     }
     
     
-    public function name(string $value): SelectAndOrderField
-    {
-        $this->offsetSet('name', $value);
-        return $this;
-    }
-    
-    
     public function label(string $value): SelectAndOrderField
     {
         $this->offsetSet('label', $value);

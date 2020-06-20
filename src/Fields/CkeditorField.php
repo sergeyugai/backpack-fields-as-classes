@@ -32,13 +32,6 @@ class CkeditorField extends Field
         return new self($name, $label);
     }
     
-    public function name(string $value): CkeditorField
-    {
-        $this->offsetSet('name', $value);
-        return $this;
-    }
-    
-    
     public function label(string $value): CkeditorField
     {
         $this->offsetSet('label', $value);

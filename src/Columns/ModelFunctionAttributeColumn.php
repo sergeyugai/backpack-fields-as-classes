@@ -30,13 +30,6 @@ class ModelFunctionAttributeColumn extends Column
         return new self($name, $label);
     }
     
-    public function name(string $value): ModelFunctionAttributeColumn
-    {
-        $this->offsetSet('name', $value);
-        return $this;
-    }
-    
-    
     public function label(string $value): ModelFunctionAttributeColumn
     {
         $this->offsetSet('label', $value);

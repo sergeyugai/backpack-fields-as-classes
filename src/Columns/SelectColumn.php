@@ -34,13 +34,6 @@ class SelectColumn extends Column
     }
     
     
-    public function name(string $value): SelectColumn
-    {
-        $this->offsetSet('name', $value);
-        return $this;
-    }
-    
-    
     public function entity(string $value): SelectColumn
     {
         $this->offsetSet('entity', $value);

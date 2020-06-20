@@ -28,13 +28,6 @@ class BooleanColumn extends Column
         return new self($name, $label);
     }
     
-    public function name(string $value): BooleanColumn
-    {
-        $this->offsetSet('name', $value);
-        return $this;
-    }
-    
-    
     public function label(string $value): BooleanColumn
     {
         $this->offsetSet('label', $value);

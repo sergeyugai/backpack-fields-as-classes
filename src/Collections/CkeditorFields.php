@@ -18,15 +18,6 @@ class CkeditorFields extends FieldsCollection
         return new self($fields, CkeditorField::class);
     }
     
-    public function name(string $value): CkeditorFields
-    {
-        foreach ($this->result as $f) {
-            $f->name($value);
-        }
-        return $this;
-    }
-    
-    
     public function label(string $value): CkeditorFields
     {
         foreach ($this->result as $f) {

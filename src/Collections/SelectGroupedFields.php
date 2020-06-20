@@ -27,15 +27,6 @@ class SelectGroupedFields extends FieldsCollection
     }
     
     
-    public function name(string $value): SelectGroupedFields
-    {
-        foreach ($this->result as $f) {
-            $f->name($value);
-        }
-        return $this;
-    }
-    
-    
     public function entity(string $value): SelectGroupedFields
     {
         foreach ($this->result as $f) {

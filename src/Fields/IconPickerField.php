@@ -37,13 +37,6 @@ class IconPickerField extends Field
     }
     
     
-    public function name(string $value): IconPickerField
-    {
-        $this->offsetSet('name', $value);
-        return $this;
-    }
-    
-    
     public function iconset(string $value): IconPickerField
     {
         $this->offsetSet('iconset', $value);

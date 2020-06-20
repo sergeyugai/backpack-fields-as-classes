@@ -29,13 +29,6 @@ class VideoField extends Field
         return new self($name, $label);
     }
     
-    public function name(string $value): VideoField
-    {
-        $this->offsetSet('name', $value);
-        return $this;
-    }
-    
-    
     public function label(string $value): VideoField
     {
         $this->offsetSet('label', $value);

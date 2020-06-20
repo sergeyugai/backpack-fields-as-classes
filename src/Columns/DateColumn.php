@@ -31,13 +31,6 @@ class DateColumn extends Column
         return new self($name, $label);
     }
     
-    public function name(string $value): DateColumn
-    {
-        $this->offsetSet('name', $value);
-        return $this;
-    }
-    
-    
     public function label(string $value): DateColumn
     {
         $this->offsetSet('label', $value);

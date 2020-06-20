@@ -18,15 +18,6 @@ class ColorFields extends FieldsCollection
         return new self($fields, ColorField::class);
     }
     
-    public function name(string $value): ColorFields
-    {
-        foreach ($this->result as $f) {
-            $f->name($value);
-        }
-        return $this;
-    }
-    
-    
     public function label(string $value): ColorFields
     {
         foreach ($this->result as $f) {

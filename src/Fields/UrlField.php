@@ -30,13 +30,6 @@ class UrlField extends Field
         return new self($name, $label);
     }
     
-    public function name(string $value): UrlField
-    {
-        $this->offsetSet('name', $value);
-        return $this;
-    }
-    
-    
     public function label(string $value): UrlField
     {
         $this->offsetSet('label', $value);

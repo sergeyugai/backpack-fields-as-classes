@@ -18,15 +18,6 @@ class ViewFields extends FieldsCollection
         return new self($fields, ViewField::class);
     }
     
-    public function name(string $value): ViewFields
-    {
-        foreach ($this->result as $f) {
-            $f->name($value);
-        }
-        return $this;
-    }
-    
-    
     public function view(string $value): ViewFields
     {
         foreach ($this->result as $f) {

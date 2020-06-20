@@ -27,15 +27,6 @@ class ColorPickerFields extends FieldsCollection
     }
     
     
-    public function name(string $value): ColorPickerFields
-    {
-        foreach ($this->result as $f) {
-            $f->name($value);
-        }
-        return $this;
-    }
-    
-    
     public function default(string $value): ColorPickerFields
     {
         foreach ($this->result as $f) {

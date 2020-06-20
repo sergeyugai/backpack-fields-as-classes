@@ -35,13 +35,6 @@ class RelationshipColumn extends Column
         return new self($name, $label);
     }
     
-    public function name(string $value): RelationshipColumn
-    {
-        $this->offsetSet('name', $value);
-        return $this;
-    }
-    
-    
     public function label(string $value): RelationshipColumn
     {
         $this->offsetSet('label', $value);

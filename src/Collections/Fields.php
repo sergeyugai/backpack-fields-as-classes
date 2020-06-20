@@ -18,15 +18,6 @@ class Fields extends FieldsCollection
         return new self($fields, Field::class);
     }
     
-    public function name(string $value): Fields
-    {
-        foreach ($this->result as $f) {
-            $f->name($value);
-        }
-        return $this;
-    }
-    
-    
     public function label(string $value): Fields
     {
         foreach ($this->result as $f) {

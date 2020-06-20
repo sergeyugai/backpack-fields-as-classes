@@ -39,13 +39,6 @@ class ColorPickerField extends Field
     }
     
     
-    public function name(string $value): ColorPickerField
-    {
-        $this->offsetSet('name', $value);
-        return $this;
-    }
-    
-    
     public function default(string $value): ColorPickerField
     {
         $this->offsetSet('default', $value);

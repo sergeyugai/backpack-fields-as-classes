@@ -32,13 +32,6 @@ class SummernoteField extends Field
         return new self($name, $label);
     }
     
-    public function name(string $value): SummernoteField
-    {
-        $this->offsetSet('name', $value);
-        return $this;
-    }
-    
-    
     public function label(string $value): SummernoteField
     {
         $this->offsetSet('label', $value);
