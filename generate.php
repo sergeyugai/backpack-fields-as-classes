@@ -13,3 +13,5 @@ $backpackColumnsDocBasePath = 'https://backpackforlaravel.com/docs/4.1/crud-colu
 $generator = new \SergeYugai\Laravel\Backpack\FieldsAsClasses\Generators\MainGenerator();
 $generator->generateFields($backpackFieldsDoc, $backpackFieldsDocBasePath);
 $generator->generateColumns($backpackColumnsDoc, $backpackColumnsDocBasePath);
+$generator->generateCrudMacroable();
+$generator->generateIdeHelper();

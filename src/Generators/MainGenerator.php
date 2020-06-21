@@ -8,6 +8,8 @@ class MainGenerator
      * @var array
      */
     private $fields;
+    private $macroable = [];
+
     /**
      * @var bool
      */
@@ -27,6 +29,7 @@ class MainGenerator
             foreach ($this->fields as $fieldName => $fieldDescription) {
                 $this->generateClass($fieldName, $fieldDescription, '/../Fields/', 'Field', $basePath);
                 $this->generateCollectionsForClass($fieldName, $fieldDescription, '/../Collections/', 'Collection');
+                $this->macroable['Field'] = $this->fields;
             }
         }, '#### Split Fields into Tabs');
     }
@@ -37,6 +40,7 @@ class MainGenerator
             foreach ($this->fields as $fieldName => $fieldDescription) {
                 $this->generateClass($fieldName, $fieldDescription, '/../Columns/', 'Column', $basePath);
             }
+            $this->macroable['Column'] = $this->fields;
         }, '## Default Column Types', '### Custom Search Logic for Columns');
     }
 
@@ -248,6 +252,99 @@ METHOD_TEMPLATE;
         } else {
             return ucfirst($trimmed);
         }
+    }
+
+    public function generateCrudMacroable(): void
+    {
+        $template = <<<SERVICE_PROVIDER
+<?php
+
+
+namespace SergeYugai\Laravel\Backpack\FieldsAsClasses;
+
+
+use Backpack\CRUD\app\Library\CrudPanel\CrudPanel;
+@USAGES@
+
+class FieldsClassesServiceProvider
+{
+    public function boot(): void
+    {
+@MACROABLE_CODE@
+    }
+}
+
+SERVICE_PROVIDER;
+        $macroCode = '';
+        $usages = '';
+        foreach ($this->macroable as $suffix => $fields) {
+            foreach ($fields as $fieldName => $fieldDescription) {
+                if ($fieldName === null || $fieldName === '') {
+                    continue;
+                }
+                $className = $this->getClassNameForFieldName($fieldName);
+                $macroMethodName = lcfirst($className);
+                $usages .= "use SergeYugai\Laravel\Backpack\FieldsAsClasses\\{$suffix}s\\{$className}{$suffix};\n";
+                $macroCode .= <<<MACRO
+        CrudPanel::macro('{$macroMethodName}{$suffix}', function (string \$name) {
+            return {$className}{$suffix}::name(\$name);
+        });
+
+MACRO;
+
+            }
+        }
+
+        $code = str_replace(array('@MACROABLE_CODE@', '@USAGES@'), array($macroCode, $usages), $template);
+        file_put_contents(__DIR__.'/../FieldsClassesServiceProvider.php', $code);
+
+    }
+
+    public function generateIdeHelper()
+    {
+        $template = <<<IDE_HELPER
+<?php
+
+
+namespace Backpack\CRUD\app\Library\CrudPanel {
+
+    @USAGES@
+
+    if (false) {
+        /**
+         * Class CrudPanel
+         * @package Backpack\CRUD\app\Library\CrudPanel
+         *
+         */
+        class CrudPanel {
+@MACROABLE_CODE@
+        }
+    }
+}
+IDE_HELPER;
+        $macroCode = '';
+        $usages = '';
+        foreach ($this->macroable as $suffix => $fields) {
+            foreach ($fields as $fieldName => $fieldDescription) {
+                if ($fieldName === null || $fieldName === '') {
+                    continue;
+                }
+                $className = $this->getClassNameForFieldName($fieldName);
+                $macroMethodName = lcfirst($className);
+                $usages .= "use SergeYugai\Laravel\Backpack\FieldsAsClasses\\{$suffix}s\\{$className}{$suffix};\n";
+                $macroCode .= <<<MACRO
+            public static function {$macroMethodName}{$suffix}(string \$name): {$className}{$suffix} 
+            {
+                return {$className}{$suffix}::make(\$name);
+            }
+
+MACRO;
+
+            }
+        }
+
+        $code = str_replace(array('@MACROABLE_CODE@', '@USAGES@'), array($macroCode, $usages), $template);
+        file_put_contents(__DIR__.'/../../ide_helper.php', $code);
     }
 
     private function getCollectionClassNameForFieldName(string $fieldName) {

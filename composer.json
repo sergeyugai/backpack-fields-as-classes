@@ -38,5 +38,12 @@
       "Tests\\": "tests"
     },
     "files": ["vendor/backpack/crud/src/helpers.php"]
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "SergeYugai\\Laravel\\Backpack\\FieldsAsClasses\\FieldsClassesServiceProvider"
+      ]
+    }
   }
 }
