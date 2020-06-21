@@ -23,7 +23,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 class SimplemdeField extends Field
 { 
 
-    protected $result = ['type' => 'simplemde']; 
+    protected $type = 'simplemde';
 
     // We re-declare this so that IDE would pick up 
     public static function make(string $name = null, string $label = null) : SimplemdeField

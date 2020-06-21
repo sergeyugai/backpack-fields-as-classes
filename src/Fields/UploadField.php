@@ -43,7 +43,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 class UploadField extends Field
 { 
 
-    protected $result = ['type' => 'upload']; 
+    protected $type = 'upload';
 
     // We re-declare this so that IDE would pick up 
     public static function make(string $name = null, string $label = null) : UploadField

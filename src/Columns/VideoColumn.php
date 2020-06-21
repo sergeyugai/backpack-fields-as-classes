@@ -21,7 +21,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 class VideoColumn extends Column
 { 
 
-    protected $result = ['type' => 'video']; 
+    protected $type = 'video';
 
     // We re-declare this so that IDE would pick up 
     public static function make(string $name = null, string $label = null) : VideoColumn

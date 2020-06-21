@@ -14,6 +14,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields\Field;
 
 class Column extends CrudColumn implements \ArrayAccess
 {
+    protected $type = 'text';
     /**
      * Column constructor.
      *
@@ -22,7 +23,7 @@ class Column extends CrudColumn implements \ArrayAccess
      */
     public function __construct(string $name = null, string $label = null)
     {
-        $this->attributes = ['type' => 'text']; // default type.
+        $this->attributes = ['type' => $this->type];
         parent::__construct($name?:'');
         if ($name !== null) {
             $this->offsetSet('name', $name);

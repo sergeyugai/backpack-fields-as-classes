@@ -23,7 +23,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 class TableColumn extends Column
 { 
 
-    protected $result = ['type' => 'table']; 
+    protected $type = 'table';
 
     // We re-declare this so that IDE would pick up 
     public static function make(string $name = null, string $label = null) : TableColumn

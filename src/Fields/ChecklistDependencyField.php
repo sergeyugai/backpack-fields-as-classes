@@ -22,7 +22,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 class ChecklistDependencyField extends Field
 { 
 
-    protected $result = ['type' => 'checklist_dependency']; 
+    protected $type = 'checklist_dependency';
 
     // We re-declare this so that IDE would pick up 
     public static function make(string $name = null, string $label = null) : ChecklistDependencyField

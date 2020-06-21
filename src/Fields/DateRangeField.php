@@ -29,7 +29,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 class DateRangeField extends Field
 { 
 
-    protected $result = ['type' => 'date_range']; 
+    protected $type = 'date_range';
 
     // We re-declare this so that IDE would pick up 
     public static function make(string $name = null, string $label = null) : DateRangeField

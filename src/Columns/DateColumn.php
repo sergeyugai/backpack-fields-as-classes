@@ -23,7 +23,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 class DateColumn extends Column
 { 
 
-    protected $result = ['type' => 'date']; 
+    protected $type = 'date';
 
     // We re-declare this so that IDE would pick up 
     public static function make(string $name = null, string $label = null) : DateColumn

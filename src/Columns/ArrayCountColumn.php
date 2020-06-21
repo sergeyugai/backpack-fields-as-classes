@@ -20,7 +20,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 class ArrayCountColumn extends Column
 { 
 
-    protected $result = ['type' => 'array_count']; 
+    protected $type = 'array_count';
 
     // We re-declare this so that IDE would pick up 
     public static function make(string $name = null, string $label = null) : ArrayCountColumn

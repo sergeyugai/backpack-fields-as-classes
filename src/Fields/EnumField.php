@@ -25,7 +25,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 class EnumField extends Field
 { 
 
-    protected $result = ['type' => 'enum']; 
+    protected $type = 'enum';
 
     // We re-declare this so that IDE would pick up 
     public static function make(string $name = null, string $label = null) : EnumField

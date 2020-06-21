@@ -19,7 +19,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 class SelectMultipleColumn extends Column
 { 
 
-    protected $result = ['type' => 'select_multiple']; 
+    protected $type = 'select_multiple';
 
     // We re-declare this so that IDE would pick up 
     public static function make(string $name = null, string $label = null) : SelectMultipleColumn

@@ -26,7 +26,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 class SelectGroupedField extends Field
 { 
 
-    protected $result = ['type' => 'select_grouped']; 
+    protected $type = 'select_grouped';
 
     // We re-declare this so that IDE would pick up 
     public static function make(string $name = null, string $label = null) : SelectGroupedField

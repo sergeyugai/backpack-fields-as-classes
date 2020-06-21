@@ -22,7 +22,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 class AddressAlgoliaField extends Field
 { 
 
-    protected $result = ['type' => 'address_algolia']; 
+    protected $type = 'address_algolia';
 
     // We re-declare this so that IDE would pick up 
     public static function make(string $name = null, string $label = null) : AddressAlgoliaField

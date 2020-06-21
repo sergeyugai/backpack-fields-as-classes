@@ -23,7 +23,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 class PageOrLinkField extends Field
 { 
 
-    protected $result = ['type' => 'page_or_link']; 
+    protected $type = 'page_or_link';
 
     // We re-declare this so that IDE would pick up 
     public static function make(string $name = null, string $label = null) : PageOrLinkField

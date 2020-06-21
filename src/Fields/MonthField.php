@@ -31,7 +31,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 class MonthField extends Field
 { 
 
-    protected $result = ['type' => 'month']; 
+    protected $type = 'month';
 
     // We re-declare this so that IDE would pick up 
     public static function make(string $name = null, string $label = null) : MonthField

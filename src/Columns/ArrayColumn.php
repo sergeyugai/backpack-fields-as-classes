@@ -17,7 +17,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 class ArrayColumn extends Column
 { 
 
-    protected $result = ['type' => 'array']; 
+    protected $type = 'array';
 
     // We re-declare this so that IDE would pick up 
     public static function make(string $name = null, string $label = null) : ArrayColumn

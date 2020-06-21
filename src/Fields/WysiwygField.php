@@ -38,7 +38,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 class WysiwygField extends Field
 { 
 
-    protected $result = ['type' => 'wysiwyg']; 
+    protected $type = 'wysiwyg';
 
     // We re-declare this so that IDE would pick up 
     public static function make(string $name = null, string $label = null) : WysiwygField

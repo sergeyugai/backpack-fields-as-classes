@@ -28,7 +28,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 class Select2MultipleField extends Field
 { 
 
-    protected $result = ['type' => 'select2_multiple']; 
+    protected $type = 'select2_multiple';
 
     // We re-declare this so that IDE would pick up 
     public static function make(string $name = null, string $label = null) : Select2MultipleField

@@ -24,7 +24,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 class RangeField extends Field
 { 
 
-    protected $result = ['type' => 'range']; 
+    protected $type = 'range';
 
     // We re-declare this so that IDE would pick up 
     public static function make(string $name = null, string $label = null) : RangeField

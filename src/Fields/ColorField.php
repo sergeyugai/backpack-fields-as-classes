@@ -24,7 +24,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 class ColorField extends Field
 { 
 
-    protected $result = ['type' => 'color']; 
+    protected $type = 'color';
 
     // We re-declare this so that IDE would pick up 
     public static function make(string $name = null, string $label = null) : ColorField

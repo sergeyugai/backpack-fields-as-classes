@@ -13,6 +13,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 
 class Field extends Arrayable
 {
+    protected $type = 'text';
     /**
      * Field constructor.
      *
@@ -21,7 +22,7 @@ class Field extends Arrayable
      */
     public function __construct(string $name, string $label = null)
     {
-        $this->attributes = ['type' => 'text']; // default type.
+        $this->attributes = ['type' => $this->type];
         parent::__construct($name);
 
         $this->offsetSet('wrapperAttributes', []);

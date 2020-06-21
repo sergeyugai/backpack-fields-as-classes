@@ -37,7 +37,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 class PasswordField extends Field
 { 
 
-    protected $result = ['type' => 'password']; 
+    protected $type = 'password';
 
     // We re-declare this so that IDE would pick up 
     public static function make(string $name = null, string $label = null) : PasswordField

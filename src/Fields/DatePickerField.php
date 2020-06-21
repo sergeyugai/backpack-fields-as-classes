@@ -24,7 +24,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 class DatePickerField extends Field
 { 
 
-    protected $result = ['type' => 'date_picker']; 
+    protected $type = 'date_picker';
 
     // We re-declare this so that IDE would pick up 
     public static function make(string $name = null, string $label = null) : DatePickerField

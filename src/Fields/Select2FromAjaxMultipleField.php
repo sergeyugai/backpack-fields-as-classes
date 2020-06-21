@@ -38,7 +38,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 class Select2FromAjaxMultipleField extends Field
 { 
 
-    protected $result = ['type' => 'select2_from_ajax_multiple']; 
+    protected $type = 'select2_from_ajax_multiple';
 
     // We re-declare this so that IDE would pick up 
     public static function make(string $name = null, string $label = null) : Select2FromAjaxMultipleField

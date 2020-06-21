@@ -22,7 +22,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 class RelationshipCountColumn extends Column
 { 
 
-    protected $result = ['type' => 'relationship_count']; 
+    protected $type = 'relationship_count';
 
     // We re-declare this so that IDE would pick up 
     public static function make(string $name = null, string $label = null) : RelationshipCountColumn

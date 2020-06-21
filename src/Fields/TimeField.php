@@ -22,7 +22,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 class TimeField extends Field
 { 
 
-    protected $result = ['type' => 'time']; 
+    protected $type = 'time';
 
     // We re-declare this so that IDE would pick up 
     public static function make(string $name = null, string $label = null) : TimeField

@@ -22,7 +22,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 class IconPickerField extends Field
 { 
 
-    protected $result = ['type' => 'icon_picker']; 
+    protected $type = 'icon_picker';
 
     // We re-declare this so that IDE would pick up 
     public static function make(string $name = null, string $label = null) : IconPickerField

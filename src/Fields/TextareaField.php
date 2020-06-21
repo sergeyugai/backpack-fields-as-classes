@@ -26,7 +26,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 class TextareaField extends Field
 { 
 
-    protected $result = ['type' => 'textarea']; 
+    protected $type = 'textarea';
 
     // We re-declare this so that IDE would pick up 
     public static function make(string $name = null, string $label = null) : TextareaField

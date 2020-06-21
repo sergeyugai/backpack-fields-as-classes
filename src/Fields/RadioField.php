@@ -21,7 +21,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 class RadioField extends Field
 { 
 
-    protected $result = ['type' => 'radio']; 
+    protected $type = 'radio';
 
     // We re-declare this so that IDE would pick up 
     public static function make(string $name = null, string $label = null) : RadioField

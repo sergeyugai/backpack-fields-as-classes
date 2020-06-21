@@ -24,7 +24,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 class NumberField extends Field
 { 
 
-    protected $result = ['type' => 'number']; 
+    protected $type = 'number';
 
     // We re-declare this so that IDE would pick up 
     public static function make(string $name = null, string $label = null) : NumberField

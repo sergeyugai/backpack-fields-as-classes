@@ -21,7 +21,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 class RowNumberColumn extends Column
 { 
 
-    protected $result = ['type' => 'row_number']; 
+    protected $type = 'row_number';
 
     // We re-declare this so that IDE would pick up 
     public static function make(string $name = null, string $label = null) : RowNumberColumn

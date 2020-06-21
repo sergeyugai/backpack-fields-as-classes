@@ -28,7 +28,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 class Base64ImageField extends Field
 { 
 
-    protected $result = ['type' => 'base64_image']; 
+    protected $type = 'base64_image';
 
     // We re-declare this so that IDE would pick up 
     public static function make(string $name = null, string $label = null) : Base64ImageField

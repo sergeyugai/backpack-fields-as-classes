@@ -21,7 +21,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Common\Arrayable;
 class ClosureColumn extends Column
 { 
 
-    protected $result = ['type' => 'closure']; 
+    protected $type = 'closure';
 
     // We re-declare this so that IDE would pick up 
     public static function make(string $name = null, string $label = null) : ClosureColumn
