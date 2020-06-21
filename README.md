@@ -1,34 +1,35 @@
-# Fields as classes for Laravel Backpack 
+# Better field/column syntax declaration for Laravel Backpack 
 
 This is a **drop-in** solution for [Laravel backpack](https://backpackforlaravel.com) to replace column/fields
 declarations-via-array with object-oriented approach. Allows your IDE to help you write that stuff.
 
 **This version is compatible with Backpack 4.1 and above**; for older Backpack versions, use 0.3.* versions of this package.
 
-Package TLDR: 
+TLDR: With this package, you can write Backpack code like this:
 ```php
+use Backpack\CRUD\app\Library\CrudPanel\CrudPanel;
 
-// Changes this
 public function setupOperation() 
 {
+    // option 1 (via CrudPanel)
+    CrudPanel::textField('user')->suffix('...etc');
 
-    $this->crud->addField(
-        [ // Text
-            'name' => 'title',
-            'label' => "Title",
-            'type' => 'text',
+    // option 2 (via builder method)
+    TextField::name('user')->prefix('1.'); 
+    TextField::make('field_name', 'optional_label')
 
-            // optional
-            //'prefix' => '',
-        ]);
+    // option 3 (via constructor)
+    (new TextField('user', 'some label'))->chained_methods...
+
+    // option 4 (older ways):
+    $this->crud->addFields([
+        TextField::make('field_name', 'optional_label')->other_chained_methods...,
+        (new TextField('title'))->prefix('1.')
+    ]); 
+    
+    // Has methods generated for all backpack fields and columns!
+    // Widgets not supported yet.
 }
-
-// To this
-public function setupOperation() 
-{
-    TextField::name('title')->prefix('1.');
-}
-
 ```
 
 ## Benefits:
@@ -37,91 +38,6 @@ public function setupOperation()
 * Fully compatible with **Fluent syntax** (read more about it [here](https://backpackforlaravel.com/docs/4.1/crud-fluent-syntax))
 * Provides many different ways to declare your fields and columns - pick the one you like
 * you can make your code more DRY by using **field collections** which also work as drop-in with current Backpack.
-
-## In this document: 
-
-* Quick syntax demo 
-* Installation
-* How to use (fields, columns, field collections)
-* Extra perks that you get
-* Rationale behind this
-* Code generation? 
-* What is supported?
-* Tests?
-* Contributions
-
-## Quick demo 
-
-If you've used Laravel Backpack, you are used to have lots of these in your code:
-
-```php
-$this->crud->addField(
-    [ // Text
-        'name' => 'title',
-        'label' => "Title",
-        'type' => 'text',
-
-        // optional
-        //'prefix' => '',
-    ]);
-```
-
-While nothing wrong with that, I personally don't like constantly jumping to documentation
-to look up an option. Besides, there are all sorts of typos and other bad things related to 
-magic values.
-
-This package allows you to use classes instead (**or alongside**):
-
-```php
-$this->crud->addField(
-    (new TextField('title'))->prefix('1.')
-);
-```
-
-or, if you prefer:
-
-```php
-$this->crud->addField(
-    TextField::make('title')->prefix('1.')
-);
-```
-
-or:
-```php
-$this->crud->addField(
-    TextField::name('title')->prefix('1.')
-);
-```
-
-or even without **$this->crud** reference: 
-```php
-public function setupOperation() 
-{
-    TextField::name('title')->prefix('1.');
-}
-```
-
-If you have repeatable code, you could use something cool like this:
-```php
-$this->crud->addFields(
-    FieldCollection::make([
-        TextFields([
-            'name' => 'First name', // this is field name => field label mapping
-            'surname' => 'Last name',
-            TextField::make('some_prefixed_field')->label('I need special stuff')->prefix('Stuff:'),
-        ])->tab('User'), // produces 3 fields in 5 lines
-        NumericFields([
-            'visits' => '# Visits',
-            'purchases' => '# Purchases',
-            'profile_views' => '# Views'
-        ])->prefix('#')->suffix(' times')->tab('Stats')
-    ])
-    ->hint('Global hint for all the fields, or something else')
-    ->attributes([...]) // set for all fields in collection
-);
-```
-
-Read about collections below.
 
 ## Installation
 
@@ -157,6 +73,9 @@ $this->crud->addField(
 
 // OR just directly without any CRUD calls:
 TextField::make()->name('title')->label('Title')->prefix('whatever')
+
+// Or by using CrudPanel:
+\Backpack\CRUD\app\Library\CrudPanel\CrudPanel::addressAlgoliaField('field')
 ```
 So we have 1 class per field type and per column type.
 
