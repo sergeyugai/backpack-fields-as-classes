@@ -264,9 +264,10 @@ namespace SergeYugai\Laravel\Backpack\FieldsAsClasses;
 
 
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanel;
+use Illuminate\Support\ServiceProvider;
 @USAGES@
 
-class FieldsClassesServiceProvider
+class FieldsClassesServiceProvider extends ServiceProvider
 {
     protected \$defer = false;
     

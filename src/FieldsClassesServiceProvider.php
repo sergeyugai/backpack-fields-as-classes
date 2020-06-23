@@ -5,6 +5,7 @@ namespace SergeYugai\Laravel\Backpack\FieldsAsClasses;
 
 
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanel;
+use Illuminate\Support\ServiceProvider;
 use SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields\AddressAlgoliaField;
 use SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields\AddressGoogleField;
 use SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields\BrowseField;
@@ -92,7 +93,7 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Columns\VideoColumn;
 use SergeYugai\Laravel\Backpack\FieldsAsClasses\Columns\ViewColumn;
 
 
-class FieldsClassesServiceProvider
+class FieldsClassesServiceProvider extends ServiceProvider
 {
     protected $defer = false;
     
