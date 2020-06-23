@@ -94,6 +94,8 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Columns\ViewColumn;
 
 class FieldsClassesServiceProvider
 {
+    protected $defer = false;
+    
     public function boot(): void
     {
         CrudPanel::macro('addressAlgoliaField', function (string $name) {

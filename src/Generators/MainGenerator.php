@@ -268,6 +268,8 @@ use Backpack\CRUD\app\Library\CrudPanel\CrudPanel;
 
 class FieldsClassesServiceProvider
 {
+    protected \$defer = false;
+    
     public function boot(): void
     {
 @MACROABLE_CODE@
