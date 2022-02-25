@@ -83,4 +83,14 @@ class Field extends Arrayable
         $this->offsetSet($name, $arguments[0]);
         return $this;
     }
+
+    public function toArray()
+    {
+        return $this->attributes;
+    }
+
+    public function asArray()
+    {
+        return $this->attributes;
+    }
 }
