@@ -9,6 +9,8 @@ use SergeYugai\Laravel\Backpack\FieldsAsClasses\Fields\Field;
 
 class FieldsCollection extends Arrayable implements \Countable
 {
+    public array $result = [];
+
     public function __construct($fields = null, $class = null)
     {
         if ($fields !== null) {
